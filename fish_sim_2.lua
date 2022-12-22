@@ -122,7 +122,7 @@ end
 function EquipTool()
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetEquippedItem:InvokeServer(2)
     local args = {
-     [1] = game:GetService("ReplicatedStorage").ToolsCache:FindFirstChild(player.UserId)[plrTools]
+     [1] = game:GetService("ReplicatedStorage").ToolsCache:FindFirstChild("3993855426")[plrTools]
     }
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EquipTool:FireServer(unpack(args))
 end
@@ -248,14 +248,19 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked: \nEpic \nLegendary \nEvent \nSecret")
  
-local Toggle1 = Section1:CreateToggle("Auto Caught (Dont'use, high BAN chance)", nil, function(State)
+local Toggle1 = Section1:CreateToggle("Auto Caught (BAN risky)", nil, function(State)
 toggle = State
+local r = Random.new()
+print(r:NextNumber(3, 6))
     while toggle do
-        wait(2.6)
+        wait(r:NextNumber(5, 8))
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
     end
 end)
- 
+
+Toggle1:AddToolTip("throw the rod into the water then activate this option")
+
+
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
 toggle = State
     while toggle do
