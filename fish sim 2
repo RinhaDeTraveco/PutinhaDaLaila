@@ -139,7 +139,7 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
      if shared.toggle then
     fuckMonster = RunService.Stepped:Connect(function()
      for i, v in pairs(game.Workspace:GetChildren()) do
-     if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaMonster") then
+     if v:FindFirstChild("Health") and v:FindFirstChild("TakeDamage") then
         if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
  
  
@@ -151,7 +151,7 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
  
                     teleport(v.HumanoidRootPart.CFrame + Vector3.new(0, 30, 0))
                     wait(1)
-                    game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.MonsterHit:FireServer(workspace[v.Name], tostring(plrTools), true)
+                    game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.MonsterHit:FireServer(Workspace[v.Name], tostring(plrTools), true)
                     break
                 elseif not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
                     EquipTool()
@@ -172,7 +172,7 @@ local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(Sta
     fuckMobby = RunService.Stepped:Connect(function()
      for i, v in pairs(game.Workspace:GetChildren()) do
      if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaMonster") and v.Name == "MobyWood" then
-        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+        if game.Players.LocalPlayer.PlayerGui.Interface.Inventory:FindFirstChildOfClass("Tool") then
  
  
                     for i, getTools in pairs(player.Character:GetChildren()) do
@@ -248,7 +248,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked: \nEpic \nLegendary \nEvent \nSecret")
  
-local Toggle1 = Section1:CreateToggle("Auto Caught (Dont'use)", nil, function(State)
+local Toggle1 = Section1:CreateToggle("Auto Caught (Dont'use, high BAN chance)", nil, function(State)
 toggle = State
     while toggle do
         wait(2.6)
@@ -463,7 +463,7 @@ switchServer()
 end)   
  
 local Button7 = Section2:CreateButton("Discord", function()
-setclipboard("adgXmSMCUM") 
+setclipboard("https://discord.gg/qqSAxTfd") 
 end)
  
 local Toggle7 = Section2:CreateToggle("UI Toggle", nil, function(State)
