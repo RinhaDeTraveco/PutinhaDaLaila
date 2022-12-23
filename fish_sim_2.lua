@@ -258,7 +258,7 @@ print(r:NextNumber(3, 6))
     end
 end)
 
-Toggle1:AddToolTip("throw the rod into the water then activate this option")
+Toggle1:AddToolTip("throw the fish hook into the water then activate this option")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
@@ -456,7 +456,7 @@ game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function
 end)
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and chang Handle per GripC1 or theopposite")
+Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and change "Handle" per "GripC1" or the opposite")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
