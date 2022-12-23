@@ -276,13 +276,10 @@ local Toggle3 = Section1:CreateToggle("Remove Fog", nil, function(State)
          game.Lighting.FogEnd = 1000000
         end
             game.Lighting.FogEnd = 1000000
-            game.Lighting.GlobalLighting:Destroy()
-            game.Lighting.Atmosphere:Destroy()     
-             game.Lighting.Lighting:Destroy()  
-              game.Lighting.ColorCorrection:Destroy()     
-               game.Lighting.Bloom:Destroy()     
-                game.Lighting.Blur:Destroy()     
-                 game.Lighting.Atmosphere:Destroy()                 
+            game.Lighting.Blur:Destroy()
+            game.Lighting.Bloom:Destroy()     
+             game.Lighting.Athmosphere:Destroy()  
+              game.Lighting.ColorCorrection:Destroy()                 
         end
 end)
  
@@ -453,12 +450,14 @@ end)
 Section2:CreateLabel("Misc")
  
  
-local Button8 = Section2:CreateButton("Instant ProximityPrompt", function()
+local Button8 = Section2:CreateButton("hey, put your mouse here >:)", function()
 game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
    prompt.HoldDuration = 0
 end)
 end) 
- 
+
+Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and chang Handle per GripC1 or theopposite")
+
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
 end) 
@@ -468,9 +467,17 @@ switchServer()
 end)   
  
 local Button7 = Section2:CreateButton("Discord", function()
-setclipboard("https://discord.gg/qqSAxTfd") 
+getgenv().InviteCode = "qqSAxTfd"
+
+--Example getgenv().InviteCode = "pATHmbedmh"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
+
+--by TweedLeak#4003
 end)
  
+Button7:AddToolTip("if you want to report a problem mention me and i will do my best (i'm really trash and newbie scripter) my discord nick:᲼᲼᲼#5691")
+
 local Toggle7 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
 end)
