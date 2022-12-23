@@ -455,7 +455,7 @@ game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function
 end)
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and change "Handle" per "GripC1" or the opposite")
+Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and change 'Handle' per 'GripC1' or the opposite")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
