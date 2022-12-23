@@ -175,7 +175,7 @@ local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(Sta
  
  
                     for i, getTools in pairs(player.Character:GetChildren()) do
-                        if getTools:IsA("Tool") and  getTools:FindFirstChild("Handle") then --GripC1/Handle
+                        if getTools:IsA("Tool") and  getTools:FindFirstChild("GripC1") then --GripC1/Handle
                             plrTools = getTools.Name
                         end
                     end
