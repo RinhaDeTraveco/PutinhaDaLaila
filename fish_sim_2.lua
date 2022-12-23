@@ -1,4 +1,3 @@
-
 local Config = {
     WindowName = "version 2.4 (non official)                                                                 Purple Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
