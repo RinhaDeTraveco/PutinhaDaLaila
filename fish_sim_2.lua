@@ -117,15 +117,22 @@ for i, getTools in pairs(player.Character:GetChildren()) do
         plrTools = getTools.Name
     end
 end
- 
+
+local porn = game.ReplicatedStorage.ToolsCache
+
+for i, v in pairs(porn:GetChildren()) do
+    print(v.Name)
+end
+
 function EquipTool()
+    wait(6)
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetEquippedItem:InvokeServer(2)
     local args = {
-     [1] = game:GetService("ReplicatedStorage").ToolsCache:FindFirstChild("3993855426")[plrTools]
+     [1] = game:GetService("ReplicatedStorage").ToolsCache:GetChildren()[plrTools]
     }
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EquipTool:FireServer(unpack(args))
 end
- 
+
 game:service'Players'.LocalPlayer.Idled:connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
