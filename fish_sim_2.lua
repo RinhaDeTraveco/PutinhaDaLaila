@@ -221,7 +221,7 @@ end)
 
 Toggle8:AddToolTip("Delete Dropped Items in 30 sec :)")
 
-local Toggle10 = Section1:CreateToggle("Auto Lock Rare Items", nil, function(State)
+local Toggle10 = Section1:CreateToggle("trying fix", nil, function(State)
     toggle = State
      if toggle then
         while toggle do 
@@ -230,7 +230,7 @@ for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Interface.Inventory.Invento
         if string.match(v.Name, "key") then
             for i, model in pairs(v:GetDescendants()) do
                 if model:IsA("Tool") then
-                    if model.RarityLevel.Value >= 4 then
+                    if Model.porgy == porgy then
  
                         if v.DraggableComponent.Contents.LockIcon.Visible == false then
                             print(v.Name, model.Name, model.RarityLevel.Value)
@@ -373,14 +373,24 @@ local Button2 = Section1:CreateButton("Teleport", function()
     if locationSelected == "Port Jackson" then
         teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))           
         elseif locationSelected == "Ancient Shores" then
+        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        wait(1.7)
         teleport(CFrame.new(-2436.431640625, 43.564971923828, -1683.4526367188))    
         elseif locationSelected == "Shadow Isles" then
+        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        wait(1.7)
         teleport(CFrame.new(2196.9926757812, 43.491630554199, -2216.4543457031))    
         elseif locationSelected == "Pharaoh's Dunes" then
+        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        wait(1.7)
         teleport(CFrame.new(-4142.74609375, 46.71378326416, 262.05679321289))
         elseif locationSelected == "Eruption Island" then
+        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        wait(1.7)
         teleport(CFrame.new(3022.9311523438, 52.347640991211, 1323.74609375))
         elseif locationSelected == "Monster's Borough" then
+        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        wait(1.7)
         teleport(CFrame.new(-3211.9047851562, 41.850345611572, 2735.306640625))  
         elseif locationSelected == "Suken Ship" then
              for i, v in pairs(game.Workspace:GetChildren()) do
