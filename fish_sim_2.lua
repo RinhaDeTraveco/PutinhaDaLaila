@@ -255,12 +255,12 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked: \nEpic \nLegendary \nEvent \nSecret")
  
-local Toggle1 = Section1:CreateToggle("Auto Caught (BAN risky)", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 2 in test phase ", nil, function(State)
 toggle = State
 local r = Random.new()
-print(r:NextNumber(3, 6))
-    while toggle do
-        wait(r:NextNumber(5, 8))
+print(r:NextNumber(4, 6))
+while toggle do
+        wait(r:NextNumber(3, 6))
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
     end
 end)
@@ -493,7 +493,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main
 --by TweedLeak#4003
 end)
  
-Button7:AddToolTip("if you want to report a problem mention me and i will do my best (i'm really trash and newbie scripter) my discord nick:᲼᲼᲼#5691")
+Button7:AddToolTip("Hi: \nif you want to report a problem mention me and i will do my best \n(i'm really trash and newbie scripter) \nmy discord nick:   #5691")
 
 local Toggle7 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
