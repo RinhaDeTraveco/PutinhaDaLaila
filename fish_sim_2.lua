@@ -302,7 +302,7 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
                         for i, x in pairs(v:GetChildren()) do
                             if string.match(x.Name, "Model") then
                                 teleport(x.Handle.CFrame)
-                                wait(1)  
+                                wait(0.39)  
                             end                                
                         end
                     break
