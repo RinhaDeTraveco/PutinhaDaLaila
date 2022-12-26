@@ -276,17 +276,17 @@ toggle = State
     end
 end)
  
-local Toggle3 = Section1:CreateToggle("Remove Fog", nil, function(State)
+local Toggle3 = Section1:CreateToggle("Remove Fog and Water", nil, function(State)
     toggle = State
         while toggle do
-        if  game.Lighting.FogEnd == 100 then
-         game.Lighting.FogEnd = 1000000
+        if  game.Lighting.FogEnd == 2000 then
+         game.Lighting.FogEnd = 20000000
         end
-            game.Lighting.FogEnd = 1000000
-            game.Lighting.Blur:Destroy()
+            game.Lighting.Blur:Desatroy()
             game.Lighting.Bloom:Destroy()     
-             game.Lighting.Athmosphere:Destroy()  
-              game.Lighting.ColorCorrection:Destroy()                 
+            game.Lighting.Atmosphere:Destroy()  
+            game.Lighting.ColorCorrection:Destroy()
+            game.Workspace.OceanWaves:Destroy()
         end
 end)
  
@@ -473,7 +473,7 @@ game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function
 end)
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work open the raw of script and go to the line 177 and change 'Handle' per 'GripC1' or the opposite")
+Button8:AddToolTip("if the auto kill doesn't work \nopen the raw of script and go to the line 177 and change 'Handle' per 'GripC1' or the opposite")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
