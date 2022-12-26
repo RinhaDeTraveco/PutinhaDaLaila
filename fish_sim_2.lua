@@ -171,6 +171,7 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
           teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))
         end
 end)
+Toggle6:AddToolTip("put your spear on the square space of hotbar")
  
 local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(State)
     shared.toggle = State
