@@ -29,40 +29,7 @@ local seacreatureSelectionned
 local locationSelected
 local eggs
 
-local lock = {
-    "Babygreatwhitesharkegg",
-    "Sharktooth",
-    "Ornamentpufferfish",
-    "Ornamentgoldfish",
-    "Starfish",
-    "Sandray",
-    "Alienstarfish",
-    "Flounder",
-    "Yellowsnapper",
-    "Redrockfish",
-    "Piranha",
-    "Mosasaurus",
-    "Cobia",
-    "Dragonfish",
-    "Snapper",
-    "Magmanapoleonfish",
-    "Magmatrout",
-    "Largemouthbass",
-    "Yellowfintuna",
-    "Rainbowparrotfish",
-    "Swordfish",
-    "Porgy",
-    "sunfish",
-    "bluefish",
-    "tigerfish",
-    "rockfish",
-    "starfish",
-    "cuttlefish",
-    "seabear",
-    "ninjafish",
-    "purplecandyfish",
-    "gemheartfish"
-}
+local lock = babygreatwhitesharkegg or sharktooth or ornamentpufferfish or ornamentgoldfish or starfish or sandray or alienstarfish or flounder or yellowsnapper or redrockfish or piranha or mosasaurus or cobia or dragonfish or snapper or magmanapoleonfish or magmatrout or largemouthbass or ellowfintuna or rainbowparrotfish or swordfish or porgy or sunfish or luefish or tigerfish or rockfish or starfish or cuttlefish or seabear or ninjafish or purplecandyfish or gemheartfish or babygreatwhiteshark or babyhammerheadshark or babykillerwhale or babyneongreatwhiteshark or babyneonkillerwhale or babyoversizedgreatwhiteshark or oversizedgreatwhitetooth or whalehead or whaleheart or whaletooth or whalekey or neongreatwhitetooth or hammerheadsharktooth or hammerheadsharkhead or babyhammerheadshark or kronkasaurusheart or kronkasaurustooth or kronkasaurushead or voidhammerheadsharkhead or voidhammerheadsharktooth or babyvoidhammerheadshark
 -- Credits To Charwar for Server Hop
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -256,7 +223,7 @@ end)
 
 Toggle8:AddToolTip("Delete Dropped Items in 30 sec :)")
 
-local Toggle10 = Section1:CreateToggle("trying fix", nil, function(State)
+local Toggle10 = Section1:CreateToggle("auto lock", nil, function(State)
     toggle = State
      if toggle then
         while toggle do 
@@ -265,10 +232,10 @@ for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Interface.Inventory.Invento
         if string.match(v.Name, "key") then
             for i, model in pairs(v:GetDescendants()) do
                 if model:IsA("Tool") then
-                    if Model.porgy == porgy then
+                    if Config.Parent == lock then
  
                         if v.DraggableComponent.Contents.LockIcon.Visible == false then
-                            print(v.Name, model.Name, model.RarityLevel.Value)
+                            print(v.Name, model.Name)
                         local args = {
                             [1] = "Tools",
                             [2] = v.Name,
@@ -287,7 +254,7 @@ end
       end
 end)
  
-Toggle10:AddToolTip("Rarity Locked: \nEpic \nLegendary \nEvent \nSecret")
+Toggle10:AddToolTip("Rarity Locked:\nLegendary \nSMythic")
  
 local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 3 in test phase", nil, function(State)
 toggle = State
