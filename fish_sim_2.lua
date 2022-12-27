@@ -28,7 +28,41 @@ local fuckMobby
 local seacreatureSelectionned
 local locationSelected
 local eggs
- 
+
+local lock = {
+    "Babygreatwhitesharkegg",
+    "Sharktooth",
+    "Ornamentpufferfish",
+    "Ornamentgoldfish",
+    "Starfish",
+    "Sandray",
+    "Alienstarfish",
+    "Flounder",
+    "Yellowsnapper",
+    "Redrockfish",
+    "Piranha",
+    "Mosasaurus",
+    "Cobia",
+    "Dragonfish",
+    "Snapper",
+    "Magmanapoleonfish",
+    "Magmatrout",
+    "Largemouthbass",
+    "Yellowfintuna",
+    "Rainbowparrotfish",
+    "Swordfish",
+    "Porgy",
+    "sunfish",
+    "bluefish",
+    "tigerfish",
+    "rockfish",
+    "starfish",
+    "cuttlefish",
+    "seabear",
+    "ninjafish",
+    "purplecandyfish",
+    "gemheartfish"
+}
 -- Credits To Charwar for Server Hop
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -171,7 +205,7 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
           teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))
         end
 end)
-Toggle6:AddToolTip("put your spear on the second square of hotbar")
+Toggle6:AddToolTip("put your spear on the square space of hotbar")
  
 local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(State)
     shared.toggle = State
@@ -255,7 +289,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked: \nEpic \nLegendary \nEvent \nSecret")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 2 in test phase ", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 3 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4, 6))
@@ -282,7 +316,7 @@ local Toggle3 = Section1:CreateToggle("Remove Fog and Water", nil, function(Stat
         if  game.Lighting.FogEnd == 2000 then
          game.Lighting.FogEnd = 20000000
         end
-            game.Lighting.Blur:Desatroy()
+            game.Lighting.Blur:Destroy()
             game.Lighting.Bloom:Destroy()     
             game.Lighting.Atmosphere:Destroy()  
             game.Lighting.ColorCorrection:Destroy()
@@ -295,7 +329,8 @@ Section1:CreateLabel("Chest and Items")
 local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
     toggle = State
         while toggle do
-            wait(0,3)
+            wait(0.3)
+            if game.Workspace.DroppedItems:FindFirstChildOfClass("Model") then
              for i, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
                 if v:IsA("Model") then
                         print("larry")
@@ -310,8 +345,9 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
                  end
               end
         end
+    end
 end)
- 
+
 Toggle4:AddToolTip("ONLY turn ON after kill 1 or more sea creatura")
 
 local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
