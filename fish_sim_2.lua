@@ -125,7 +125,7 @@ for i, v in pairs(porn:GetChildren()) do
 end
 
 function EquipTool()
-    wait(6)
+    wait(7)
     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetEquippedItem:InvokeServer(2)
     local args = {
      [1] = game:GetService("ReplicatedStorage").ToolsCache:GetChildren()[plrTools]
@@ -295,14 +295,15 @@ Section1:CreateLabel("Chest and Items")
 local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
     toggle = State
         while toggle do
-            wait(0.1)
+            wait(0,3)
              for i, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
                 if v:IsA("Model") then
+                        print("larry")
                         teleport(v.Handle.CFrame)
                         for i, x in pairs(v:GetChildren()) do
                             if string.match(x.Name, "Model") then
                                 teleport(x.Handle.CFrame)
-                                wait(0.57)  
+                                wait(3)  
                             end                                
                         end
                     break
