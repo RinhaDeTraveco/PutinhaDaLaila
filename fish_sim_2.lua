@@ -472,9 +472,7 @@ Section2:CreateLabel("Misc")
  
  
 local Button8 = Section2:CreateButton("hey, put your mouse here >:)", function()
-game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
-   prompt.HoldDuration = 0
-end)
+setclipboard("i like kaede to suzu the animation")
 end) 
 
 Button8:AddToolTip("if the auto kill doesn't work \nopen the raw of script and go to the line 177 and change 'Handle' per 'GripC1' or the opposite")
