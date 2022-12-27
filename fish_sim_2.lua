@@ -223,7 +223,7 @@ end)
 
 Toggle8:AddToolTip("Delete Dropped Items in 30 sec :)")
 
-local Toggle10 = Section1:CreateToggle("auto lock", nil, function(State)
+local Toggle10 = Section1:CreateToggle("fixing or trying", nil, function(State)
     toggle = State
      if toggle then
         while toggle do 
