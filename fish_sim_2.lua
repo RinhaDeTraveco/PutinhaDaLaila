@@ -254,7 +254,7 @@ Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \
 local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 4 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
-print(r:NextNumber(4, 6))
+print(r:NextNumber(3, 6))
 while toggle do
         wait(r:NextNumber(3, 6))
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
