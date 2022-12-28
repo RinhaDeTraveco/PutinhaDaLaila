@@ -223,40 +223,35 @@ end)
 
 Toggle8:AddToolTip("Delete Dropped Items in 30 sec :)")
 
-local Toggle10 = Section1:CreateToggle("fixing or trying", nil, function(State)
-    toggle = State
-     if toggle then
-        while toggle do 
-            wait(.1)
-for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Interface.Inventory.Inventory.Frame.Backpack.List.Container:GetChildren()) do
-        if string.match(v.Name, "key") then
-            for i, model in pairs(v:GetDescendants()) do
-                if model:IsA("Tool") then
-                    if Config.Parent == lock then
- 
-                        if v.DraggableComponent.Contents.LockIcon.Visible == false then
-                            print(v.Name, model.Name)
-                        local args = {
-                            [1] = "Tools",
-                            [2] = v.Name,
-                            [3] = true
-                        }
-                        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetInventoryItemLock:InvokeServer(unpack(args))
- 
+local Toggle10 = Section1:CreateToggle("Auto Lock Rare Items", nil, function(State)
+    toggle10 = State
+    if toggle10 then
+        spawn(function()
+            while toggle10 do 
+                wait(.1)
+                for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Interface.Inventory.Inventory.Frame.Backpack.List.Container:GetChildren()) do
+                    if string.match(v.Name, "key") then
+                        for i, model in pairs(v:GetDescendants()) do
+                            if model:IsA("Tool") then
+                                if model.Name == "babygreatwhitesharkegg" or model.Name == "sharktooth" or model.Name == "ornamentpufferfish" or model.Name == "ornamentgoldfish" or model.Name == "starfish" or model.Name == "sandray" or model.Name == "alienstarfish" or model.Name == "flounder" or model.Name == "yellowsnapper" or model.Name == "redrockfish" or model.Name == "piranha" or model.Name == "mosasaurus" or model.Name == "cobia" or model.Name == "dragonfish" or model.Name == "snapper" or model.Name == "magmanapoleonfish" or model.Name == "magmatrout" or model.Name == "largemouthbass" or model.Name == "yellowfintuna" or model.Name == "rainbowparrotfish" or model.Name == "swordfish" or model.Name == "porgy" or model.Name == "sunfish" or model.Name == "bluefish" or model.Name == "tigerfish" or model.Name == "rockfish" or model.Name == "starfish" or model.Name == "cuttlefish" or model.Name == "seabear" or model.Name == "ninjafish" or model.Name == "purplecandyfish" or model.Name == "gemheartfish" or model.Name == "babygreatwhiteshark" or model.Name == "babyhammerheadshark" or model.Name == "babykillerwhale" or model.Name == "babyneongreatwhiteshark" or model.Name == "babyneonkillerwhale" or model.Name == "babyoversizedgreatwhiteshark" or model.Name == "oversizedgreatwhitetooth" or model.Name == "whalehead" or model.Name == "whaleheart" or model.Name == "whaletooth" or model.Name == "whalekey" or model.Name == "neongreatwhitetooth" or model.Name == "hammerheadsharktooth" or model.Name == "hammerheadsharkhead" or model.Name == "babyhammerheadshark" or model.Name == "kronkasaurusheart" or model.Name == "kronkasaurustooth" or model.Name == "kronkasaurushead" or model.Name == "voidhammerheadsharkhead" or model.Name == "voidhammerheadsharktooth" or model.Name == "babyvoidhammerheadshark" then
+                                    if v.DraggableComponent.Contents.LockIcon.Visible == false then
+                                        print(v.Name, model.Name)
+                                        local args = {[1] = "Tools",[2] = v.Name,[3] = true}
+                                        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetInventoryItemLock:InvokeServer(unpack(args))
+                                    end
+                                end
+                            end
                         end
                     end
-                end
+                 end
             end
-        end
-end
- 
-        end
-      end
+        end)
+    end
 end)
  
-Toggle10:AddToolTip("Rarity Locked:\nLegendary \nSMythic")
+Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nSAll Mythic")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 3 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 4 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4, 6))
@@ -266,7 +261,7 @@ while toggle do
     end
 end)
 
-Toggle1:AddToolTip("throw the fish hook into the water then activate this option")
+Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 4 days on a alt and for now no ban (alt with 15k fish caught)")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
