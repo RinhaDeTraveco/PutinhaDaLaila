@@ -5,8 +5,10 @@ local Config = {
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("Fishing Simulator")
+
 
 local Section1 = Tab1:CreateSection("")
 local Section2 = Tab1:CreateSection("")
@@ -17,18 +19,17 @@ local hum = player.Character.HumanoidRootPart
 local mouse = player:GetMouse() 
 local tpservice= game:GetService("TeleportService")
 local VirtualUser= game:service'VirtualUser'
- 
+
 local ToolsCache = game:GetService("ReplicatedStorage").ToolsCache[player.UserId]
 local plrTools
 local bLocation
 local fuckMonster
 local fuckMobby
- 
+
 local seacreatureSelectionned
 local locationSelected
 local eggs
 
-local lock = babygreatwhitesharkegg or sharktooth or ornamentpufferfish or ornamentgoldfish or starfish or sandray or alienstarfish or flounder or yellowsnapper or redrockfish or piranha or mosasaurus or cobia or dragonfish or snapper or magmanapoleonfish or magmatrout or largemouthbass or ellowfintuna or rainbowparrotfish or swordfish or porgy or sunfish or luefish or tigerfish or rockfish or starfish or cuttlefish or seabear or ninjafish or purplecandyfish or gemheartfish or babygreatwhiteshark or babyhammerheadshark or babykillerwhale or babyneongreatwhiteshark or babyneonkillerwhale or babyoversizedgreatwhiteshark or oversizedgreatwhitetooth or whalehead or whaleheart or whaletooth or whalekey or neongreatwhitetooth or hammerheadsharktooth or hammerheadsharkhead or babyhammerheadshark or kronkasaurusheart or kronkasaurustooth or kronkasaurushead or voidhammerheadsharkhead or voidhammerheadsharktooth or babyvoidhammerheadshark
 -- Credits To Charwar for Server Hop
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -248,7 +249,7 @@ local Toggle10 = Section1:CreateToggle("Auto Lock Rare Items", nil, function(Sta
     end
 end)
  
-Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \n \nPlease report any bugs with this function on discord")
+Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
 local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 4 in test phase", nil, function(State)
 toggle = State
