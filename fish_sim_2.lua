@@ -5,7 +5,6 @@ local Config = {
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
-local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local Tab1 = Window:CreateTab("Fishing Simulator")
 
@@ -249,9 +248,9 @@ local Toggle10 = Section1:CreateToggle("Auto Lock Rare Items", nil, function(Sta
     end
 end)
  
-Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \n \nPlease report any bugs with this function to me on discord (I am not the server admin))
+Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 4 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 4 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4, 6))
