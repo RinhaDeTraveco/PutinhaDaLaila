@@ -254,14 +254,14 @@ Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \
 local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 1 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
-print(r:NextNumber(5, 8.3))
+print(r:NextNumber(4.5, 6))
 while toggle do
-        wait(r:NextNumber(5, 8.3))
+        wait(r:NextNumber(4.5, 6))
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
     end
 end)
 
-Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban)")
+Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
@@ -470,7 +470,7 @@ local Button8 = Section2:CreateButton("hey, put your mouse here >:)", function()
 setclipboard("i like kaede to suzu the animation")
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work \nopen the raw of script and go to the line 177 and change 'Handle' per 'GripC1' or the opposite")
+Button8:AddToolTip("if the auto kill doesn't work \nopen the raw script and go to the line 154 and change 'Handle' per 'GripC1'")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
