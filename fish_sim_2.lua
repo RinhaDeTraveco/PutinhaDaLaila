@@ -428,35 +428,35 @@ end)
 Section2:CreateLabel("Pets")
  
  
-local Dropdown4 = Section2:CreateDropdown("Egg's", {"Royal","Normal","Ruby", "Void", "Silver", "Stone", "Gold"}, function(String)
-    eggs = String
+local Dropdown4 = Section2:CreateDropdown("Egg's and Chest", {"Royal - Egg","Normal - Egg","Ruby - Egg", "Void - Egg", "Silver - Chest", "Stone - Chest", "Gold - Chest"}, function(String)
+    eggsandchest = String
 end)
  
 local Button8 = Section2:CreateButton("Buy", function()
-    if eggs == "Royal" then
+    if eggsandchest == "Royal" then
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("royalegg")
 
-        elseif eggs == "Normal" then
+        elseif eggsandchest == "Normal - Egg" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("normalegg")
         
-        elseif eggs == "Ruby" then
+        elseif eggsandchest == "Ruby - Egg" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("rubyegg")
         
-        elseif eggs == "Void" then
+        elseif eggsandchest == "Void - Egg" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("voidegg")
         
-        elseif eggs == "Silver" then
+        elseif eggsandchest == "Silver - Chest" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("silverchest")
         
-        elseif eggs == "Stone" then
+        elseif eggsandchest == "Stone - Chest" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("stonechest")
         
-        elseif eggs == "Gold" then
+        elseif eggsandchest == "Gold - Chest" then
        
  game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("goldchest")       
 
