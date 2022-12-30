@@ -251,7 +251,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 4 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 2 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(3.5, 5))
