@@ -251,17 +251,17 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?) \nday 2 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 1 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
-print(r:NextNumber(3.5, 5))
+print(r:NextNumber(4, 6.3))
 while toggle do
-        wait(r:NextNumber(3.5, 5))
+        wait(r:NextNumber(4, 6.3))
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
     end
 end)
 
-Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 4 days on a alt and for now no ban (alt with 15k fish caught)")
+Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban)")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
