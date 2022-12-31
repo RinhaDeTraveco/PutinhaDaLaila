@@ -483,7 +483,7 @@ end)
 local Button7 = Section2:CreateButton("Discord", function()
 getgenv().InviteCode = "qqSAxTfd"
 
---Example getgenv().InviteCode = "pATHmbedmh"
+--Example getgenv().InviteCode = "Kaede To Suzu The Animation"
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
 
