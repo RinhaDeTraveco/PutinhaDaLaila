@@ -179,8 +179,8 @@ local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(Sta
      if shared.toggle then
     fuckMobby = RunService.Stepped:Connect(function()
      for i, v in pairs(game.Workspace:GetChildren()) do
-     if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaMonster") and v.Name == "MobyWood" then
-        if game.Players.LocalPlayer.PlayerGui.Interface.Inventory:FindFirstChildOfClass("Tool") then
+     if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaBoss") and v.Name == "MobyWood" then
+        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
  
  
                     for i, getTools in pairs(player.Character:GetChildren()) do
