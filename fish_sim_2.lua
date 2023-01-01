@@ -256,12 +256,117 @@ toggle = State
 local r = Random.new()
 print(r:NextNumber(4.5, 6))
 while toggle do
-        wait(r:NextNumber(4.5, 6))
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
-    end
-end)
 
-Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN")
+local r = Random.new()
+
+local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
+local count = #children
+
+wait(0.1)
+if count >= 2 then
+
+wait(r:NextNumber(0.1, 0.2))
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0, 0.7))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.4, 1.1))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.1, 0.8))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.1, 0.3))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.7))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.4, 0.7))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.8))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.7))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 1))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.3, 1))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.4, 1))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.3, 1.6))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.1, 0.85))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+--game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
+
+--wait(9)
+--local vuser = game:GetService("VirtualUser")
+--vuser:CaptureController()
+--vuser:ClickButton1(Vector2.new())
+
+end
+
+wait(r:NextNumber(3, 4.6))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+end
+end)
+--
+Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
