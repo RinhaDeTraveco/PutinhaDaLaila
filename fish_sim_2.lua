@@ -261,11 +261,10 @@ local r = Random.new()
 
 local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 local count = #children
-
-wait(0.1)
+            
 if count >= 2 then
 
-wait(r:NextNumber(0.1, 0.2))
+wait(r:NextNumber(0.1, 0.25))
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
