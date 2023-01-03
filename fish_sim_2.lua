@@ -347,16 +347,9 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
---game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
-
---wait(9)
---local vuser = game:GetService("VirtualUser")
---vuser:CaptureController()
---vuser:ClickButton1(Vector2.new())
-
 end
 
-wait(r:NextNumber(3, 4.6))
+wait(r:NextNumber(3.2, 4.7))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -364,7 +357,7 @@ vuser:ClickButton1(Vector2.new())
 
 end
 
-wait(1800)
+wait(600)
 
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
