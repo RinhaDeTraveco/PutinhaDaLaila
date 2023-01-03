@@ -368,15 +368,9 @@ wait(1800)
 
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
-wait(0.5)
-vim:SendKeyEvent(false, "One", false, nil)
-
-wait(r:NextNumber(1, 1.7))
-
+wait(r:NextNumber(4.5, 5.7))
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
-wait(0.5)
-vim:SendKeyEvent(false, "One", false, nil)
 
 wait(r:NextNumber(2, 4.6))
 
