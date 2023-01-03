@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "version 2.4 (non official)                                                                 Purple Gui on top(practically",
+    WindowName = "version 2.4 (unofficial)                                                                 Purple Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
