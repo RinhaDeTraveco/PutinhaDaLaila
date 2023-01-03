@@ -251,7 +251,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 1 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 2 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4.5, 6))
@@ -363,9 +363,30 @@ vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 end
+
+wait(1800)
+
+local vim = game:GetService("VirtualInputManager")
+vim:SendKeyEvent(true, "One", false, nil)
+wait(0.5)
+vim:SendKeyEvent(false, "One", false, nil)
+
+wait(r:NextNumber(1, 1.7))
+
+local vim = game:GetService("VirtualInputManager")
+vim:SendKeyEvent(true, "One", false, nil)
+wait(0.5)
+vim:SendKeyEvent(false, "One", false, nil)
+
+wait(r:NextNumber(2, 4.6))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
 end)
 --
-Toggle1:AddToolTip("throw the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
+Toggle1:AddToolTip("HEY, hey put your fishing rod on the first slot, ~NOW~ \nthrow the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
