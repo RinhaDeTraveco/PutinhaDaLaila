@@ -264,7 +264,7 @@ local count = #children
             
 if count >= 2 then
 
-wait(r:NextNumber(0.03, 0.175))
+wait(r:NextNumber(0.1, 0.15))
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
