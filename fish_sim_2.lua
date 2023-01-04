@@ -264,96 +264,102 @@ local count = #children
             
 if count >= 2 then
 
-wait(r:NextNumber(0.1, 0.15))
+wait(r:NextNumber(0, 0.13))
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.4, 1.1))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.1, 0.8))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.1, 0.3))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.2, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.4, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.2, 0.8))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.2, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.2, 1))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.3, 1))
-
-local vuser = game:GetService("VirtualUser")
+wait(r:NextNumber(0.3, 0.5))
+                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.4, 1))
 
-local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.3, 1.6))
+wait(r:NextNumber(0.1, 0.8))
 
-local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.1, 0.85))
+wait(r:NextNumber(0.1, 0.3))
+                
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
 
-local vuser = game:GetService("VirtualUser")
+wait(r:NextNumber(0.2, 0.4))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.4, 0.7))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.8))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.7))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.4))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.3, 0.9))
+                
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.6, 1.2))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.5))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.5))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.5))
+
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.2, 0.5))
+
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 end
 
-wait(r:NextNumber(3.2, 4.7))
+local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
+local count = #children
+            
+if count == 1 then
+                
+wait(r:NextNumber(0.3, 0.85))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+                
+wait(r:NextNumber(3.2, 4.7))
+                
+end
 
 end
 
@@ -427,6 +433,92 @@ Toggle4:AddToolTip("ONLY turn ON after kill 1 or more sea creatura")
 local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
     toggle = State
         while toggle do
+
+wait(0.1)
+
+local children = game.Workspace.RandomChests:GetChildren()
+local count = #children
+
+print(count)            
+if count == 0 then
+
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+function TPReturner()
+    local Site;
+    if foundAnything == "" then
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+    else
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+    end
+    local ID = ""
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+        foundAnything = Site.nextPageCursor
+    end
+    local num = 0;
+    for i,v in pairs(Site.data) do
+        local Possible = true
+        ID = tostring(v.id)
+        if tonumber(v.maxPlayers) > tonumber(v.playing) then
+            for _,Existing in pairs(AllIDs) do
+                if num ~= 0 then
+                    if ID == tostring(Existing) then
+                        Possible = false
+                    end
+                else
+                    if tonumber(actualHour) ~= tonumber(Existing) then
+                        local delFile = pcall(function()
+                            delfile("NotSameServers.json")
+                            AllIDs = {}
+                            table.insert(AllIDs, actualHour)
+                        end)
+                    end
+                end
+                num = num + 1
+            end
+            if Possible == true then
+                table.insert(AllIDs, ID)
+                wait()
+                pcall(function()
+                    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                    wait()
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                end)
+                wait(4)
+            end
+        end
+    end
+end
+
+function Teleport()
+    while wait() do
+        pcall(function()
+            TPReturner()
+            if foundAnything ~= "" then
+                TPReturner()
+            end
+        end)
+    end
+end
+
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
+Teleport(0)
+
+end
+
+if count >= 1 then
+
+                wait(0.3)
                 for i, v in pairs(game.Workspace.RandomChests:GetChildren()) do
                     if v:IsA("Model") and string.match(v.Name, "Chest") then
                         teleport (v.Bottom.CFrame)
@@ -435,9 +527,8 @@ local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
                     end
                 end            
         end
+    end
 end)
-
-Toggle9:AddToolTip("ONLY click if have a chest on the map (if don't have the game crash)")
  
 local Toggle5 = Section1:CreateToggle("Suken Chest", nil, function(State)
     toggle = State
@@ -485,23 +576,23 @@ local Button2 = Section1:CreateButton("Teleport", function()
     if locationSelected == "Port Jackson" then
         teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))           
         elseif locationSelected == "Ancient Shores" then
-        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797))
         wait(1.7)
         teleport(CFrame.new(-2436.431640625, 43.564971923828, -1683.4526367188))    
         elseif locationSelected == "Shadow Isles" then
-        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
         wait(1.7)
         teleport(CFrame.new(2196.9926757812, 43.491630554199, -2216.4543457031))    
         elseif locationSelected == "Pharaoh's Dunes" then
-        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
         wait(1.7)
         teleport(CFrame.new(-4142.74609375, 46.71378326416, 262.05679321289))
         elseif locationSelected == "Eruption Island" then
-        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
         wait(1.7)
         teleport(CFrame.new(3022.9311523438, 52.347640991211, 1323.74609375))
         elseif locationSelected == "Monster's Borough" then
-        teleport(CFrame.new(105.8046875, 54.29261779785156, -90.3286361694336))
+        teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797))
         wait(1.7)
         teleport(CFrame.new(-3211.9047851562, 41.850345611572, 2735.306640625))  
         elseif locationSelected == "Suken Ship" then
