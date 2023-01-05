@@ -251,11 +251,14 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (BAN risky) \nday 2 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky¿) \nday 2 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4.5, 6))
 while toggle do
+
+local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
+penis.Parent = game.Players.LocalPlayer.PlayerGui
 
 wait(r:NextNumber(0, 0.13))
 local r = Random.new()
@@ -270,77 +273,92 @@ vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.3, 0.5))
-                
+
+local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.4, 1))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.1, 0.8))
+wait(r:NextNumber(0.1, 0.6))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.1, 0.3))
-                
+
+local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.4))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.4, 0.7))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.8))
+wait(r:NextNumber(0.2, 0.5))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.7))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.4))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.3, 0.9))
-                
+
+local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.6, 1.2))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.5))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.5))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.5))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 wait(r:NextNumber(0.2, 0.5))
 
+local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
@@ -433,8 +451,6 @@ Toggle4:AddToolTip("ONLY turn ON after kill 1 or more sea creatura")
 local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
     toggle = State
         while toggle do
-
-wait(0.1)
 
 local children = game.Workspace.RandomChests:GetChildren()
 local count = #children
