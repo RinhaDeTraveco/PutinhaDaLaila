@@ -255,18 +255,22 @@ local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky¿) \nday 2 in t
 toggle = State
 local r = Random.new()
 print(r:NextNumber(4.5, 6))
+
 while toggle do
 
-local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
-penis.Parent = game.Players.LocalPlayer.PlayerGui
-
-wait(r:NextNumber(0, 0.13))
 local r = Random.new()
 
 local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 local count = #children
             
 if count >= 2 then
+
+wait(r:NextNumber(0, 0.11))
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0, 0.11))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -365,6 +369,7 @@ vuser:ClickButton1(Vector2.new())
 end
 
 local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
+
 local count = #children
             
 if count == 1 then
@@ -383,11 +388,19 @@ end
 
 wait(600)
 
+local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
+penis.Parent = game.Players.LocalPlayer.PlayerGui
+
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
 wait(r:NextNumber(4.5, 5.7))
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
+
+ instance = game.Players.LocalPlayer.PlayerGui.FishBubbles
+ instance.Name = "FishBubbles1"
+
+            game.Players.LocalPlayer.PlayerGui.FishBubbles1:Destroy()
 
 wait(r:NextNumber(2, 4.6))
 
