@@ -315,13 +315,13 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.5))
+wait(r:NextNumber(0.2, 0.56))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.7))
+wait(r:NextNumber(0.2, 0.74))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -333,26 +333,32 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.3, 0.9))
+wait(r:NextNumber(0.3, 0.92))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.6, 1.2))
+wait(r:NextNumber(0.6, 1.21))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 
-wait(r:NextNumber(0, 0.15))
+wait(r:NextNumber(0, 0.35))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
                 
-wait(r:NextNumber(0.2, 0.5))
+wait(r:NextNumber(0.3, 0.53))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+
+wait(r:NextNumber(0.4, 0.65))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -364,18 +370,24 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.5))
+wait(r:NextNumber(0.4, 0.58))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.5))
+wait(r:NextNumber(0.2, 0.37))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+                
+wait(r:NextNumber(0.4, 0.7))
 
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+                
 end
 
 local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
