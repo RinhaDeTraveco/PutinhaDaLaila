@@ -264,8 +264,7 @@ local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 local count = #children
             
 if count >= 2 then
-
-wait(r:NextNumber(0, 0.11))
+                
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
@@ -276,13 +275,13 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.5, 0.912))
+wait(r:NextNumber(0.4, 0.912))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.57, 1))
+wait(r:NextNumber(0.4, 1))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -297,13 +296,13 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.1, 0.3))
+wait(r:NextNumber(0.4, 0.3))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.219, 0.493))
+wait(r:NextNumber(0.319, 0.493))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -346,13 +345,13 @@ vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
 
-wait(r:NextNumber(0, 0.35))
+wait(r:NextNumber(0.4, 0.41))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
                 
-wait(r:NextNumber(0.3, 0.53))
+wait(r:NextNumber(0.4, 0.53))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -364,7 +363,7 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.5))
+wait(r:NextNumber(0.378, 0.5))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -376,7 +375,7 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
-wait(r:NextNumber(0.2, 0.37))
+wait(r:NextNumber(0.5, 0.77))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -396,40 +395,35 @@ local count = #children
             
 if count == 1 then
                 
-wait(r:NextNumber(0.3, 0.85))
+wait(r:NextNumber(0.583, 0.85))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
                 
-wait(r:NextNumber(3.2, 4.7))
+wait(r:NextNumber(3.89, 4.7))
                 
 end
 
 end
 
 wait(600)
-
+-- clone the FishBubbles
 local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
 penis.Parent = game.Players.LocalPlayer.PlayerGui
 
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
-wait(r:NextNumber(4.5, 5.7))
+wait(r:NextNumber(3.5, 5.7))
 local vim = game:GetService("VirtualInputManager")
 vim:SendKeyEvent(true, "One", false, nil)
-
+-- the cloned FishBubbles have the name FishBubbles1
  instance = game.Players.LocalPlayer.PlayerGui.FishBubbles
  instance.Name = "FishBubbles1"
 
             game.Players.LocalPlayer.PlayerGui.FishBubbles1:Destroy()
-
-wait(r:NextNumber(2, 4.6))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
+-- now the FishBubbles1 die
+        
 end)
 --
 Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
