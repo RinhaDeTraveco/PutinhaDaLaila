@@ -308,13 +308,6 @@ wait(r:NextNumber(0.2, 0.4))
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
-
-wait(r:NextNumber(0, 0.15))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
                 
 wait(r:NextNumber(0.4, 0.7))
 
@@ -352,6 +345,13 @@ local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 
+
+wait(r:NextNumber(0, 0.15))
+
+local vuser = game:GetService("VirtualUser")
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+                
 wait(r:NextNumber(0.2, 0.5))
 
 local vuser = game:GetService("VirtualUser")
