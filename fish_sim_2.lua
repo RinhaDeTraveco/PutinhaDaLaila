@@ -254,8 +254,7 @@ Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \
 local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky¿) \nday 2 in test phase", nil, function(State)
 toggle = State
 local r = Random.new()
-print(r:NextNumber(4.5, 6))
-
+        
 while toggle do
 
 local r = Random.new()
@@ -268,124 +267,95 @@ if count >= 2 then
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("debio")
 wait(r:NextNumber(0.4, 0.7))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("1")
 wait(r:NextNumber(0.4, 0.912))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+print("2")
 
 wait(r:NextNumber(0.4, 1))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+print("3")
+              
+wait(r:NextNumber(0.4, 0.6))
+                
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("4")
 wait(r:NextNumber(0.46, 0.61))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("5")
 wait(r:NextNumber(0.4, 0.3))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("6")
 wait(r:NextNumber(0.319, 0.493))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-                
+print("7")              
 wait(r:NextNumber(0.405, 0.736))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("8")
 wait(r:NextNumber(0.298, 0.56))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("9")
 wait(r:NextNumber(0.526, 0.749))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("10")
 wait(r:NextNumber(0.389, 0.513))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.3, 0.92))
+print("11")
+wait(r:NextNumber(0.5, 0.72))
 
 local vuser = game:GetService("VirtualUser")                
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-
+print("12")
 wait(r:NextNumber(0.6, 1.21))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+print("13")
 
-
-wait(r:NextNumber(0.4, 0.41))
+wait(r:NextNumber(0.4, 0.443))
 
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-                
+print("14")               
 wait(r:NextNumber(0.4, 0.53))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.4, 0.65))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.378, 0.5))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.4, 0.58))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-
-wait(r:NextNumber(0.5, 0.77))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-                
-wait(r:NextNumber(0.4, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
                 
 end
 
@@ -395,14 +365,14 @@ local count = #children
             
 if count == 1 then
                 
+wait(r:NextNumber(3.79, 3.98))
+print("sui")                
 wait(r:NextNumber(0.583, 0.85))
-
+print("ci")
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-                
-wait(r:NextNumber(3.89, 4.7))
-                
+print("Pedro caminhões")                
 end
 
 end
