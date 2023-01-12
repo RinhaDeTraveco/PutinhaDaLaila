@@ -251,7 +251,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky¿) \nday 2 in test phase", nil, function(State)
+local Toggle1 = Section1:CreateToggle("\nAuto Caught (?BAN risky?)", nil, function(State)
 toggle = State
 local r = Random.new()
         
@@ -396,7 +396,7 @@ vim:SendKeyEvent(true, "One", false, nil)
         
 end)
 --
-Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option \nI've been using auto fish for 1 days on a alt and for now no ban (alt#1 get a ban) \n \nNOT joking about BAN \nTesting new auto fish method")
+Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
 
 
 local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
