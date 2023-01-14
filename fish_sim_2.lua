@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "version 2.4 (unofficial)                                                                 Purple Gui on top(practically",
+    WindowName = "version 2.4 (unofficial)                                                                   Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -251,7 +251,7 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("Auto Caught (?BAN risky?)", nil, function(State)
+local Toggle1 = Section1:CreateToggle("No more auto fish (sorry)", nil, function(State)
 toggle = State
 local r = Random.new()
         
