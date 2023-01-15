@@ -251,16 +251,16 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
  
-local Toggle1 = Section1:CreateToggle("No more auto fish (sorry)", nil, function(State)
+local Toggle1 = Section1:CreateToggle("Auto Fish", nil, function(State)
 toggle = State
 local r = Random.new()
         
 while toggle do
 
-local r = Random.new()
-
+wait(0.01)
 local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 local count = #children
+print(count)
             
 if count >= 2 then
                 
@@ -359,15 +359,27 @@ wait(r:NextNumber(0.4, 0.53))
                 
 end
 
-local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 
+end
+
+end)
+--
+Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
+
+local Toggle2 = Section1:CreateToggle("USE WITH AUTO FISH", nil, function(State)
+toggle = State
+local r = Random.new()
+        
+while toggle do
+
+wait(0.01)
+local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
 local count = #children
-            
 if count == 1 then
                 
-wait(r:NextNumber(3.79, 3.98))
+wait(r:NextNumber(4.79, 4.98))
 print("sui")                
-wait(r:NextNumber(0.583, 0.85))
+wait(r:NextNumber(0.283, 0.45))
 print("ci")
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
@@ -375,7 +387,8 @@ vuser:ClickButton1(Vector2.new())
 print("Pedro caminhões")                
 end
 
-end
+
+end -- TUGLADILSON
 
 wait(600)
 -- clone the FishBubbles
@@ -393,13 +406,11 @@ vim:SendKeyEvent(true, "One", false, nil)
 
             game.Players.LocalPlayer.PlayerGui.FishBubbles1:Destroy()
 -- now the FishBubbles1 die
-        
+
 end)
---
-Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
 
 
-local Toggle2 = Section1:CreateToggle("Auto Sell", nil, function(State)
+local Toggle3 = Section1:CreateToggle("Auto Sell", nil, function(State)
 toggle = State
     while toggle do
         wait(2.6)
@@ -407,7 +418,7 @@ toggle = State
     end
 end)
  
-local Toggle3 = Section1:CreateToggle("Remove Fog and Water", nil, function(State)
+local Toggle4 = Section1:CreateToggle("Remove Fog and Water", nil, function(State)
     toggle = State
         while toggle do
         if  game.Lighting.FogEnd == 2000 then
