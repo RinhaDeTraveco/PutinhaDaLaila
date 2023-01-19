@@ -1,5 +1,0 @@
-while true do
-local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
-local contagem = #children
-print("AA")
-end
