@@ -1,0 +1,217 @@
+local Config = {
+    WindowName = "version 2.4 (unofficial)                                                                        Pink Gui on top(practically",
+    Color = Color3.fromRGB(245, 81, 231),
+    Keybind = Enum.KeyCode.RightControl
+}
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local Tab1 = Window:CreateTab("Generic Roleplay Gaem")
+
+
+local Section1 = Tab1:CreateSection("")
+local Section2 = Tab1:CreateSection("")
+
+local RunService = game:GetService("RunService")
+local player = game.Players.LocalPlayer
+local hum = player.Character.HumanoidRootPart
+local mouse = player:GetMouse() 
+local tpservice= game:GetService("TeleportService")
+local VirtualUser= game:service'VirtualUser'
+
+local plrTools
+local bLocation
+local fuckMonster
+local fuckMobby
+
+local seacreatureSelectionned
+local locationSelected
+local eggs
+
+-- Credits To Charwar for Server Hop
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+ 
+ 
+function teleport(loc)
+    bLocation = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    if game.Players.LocalPlayer.Character.Humanoid.Sit then
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+    end
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
+end
+ 
+
+local Toggle1 = Section1:CreateToggle("Auto Trees", nil, function(State)
+    toggle = State 
+        while toggle do
+            wait(0.1)
+
+for i, v in pairs(game.Workspace:GetChildren()) do
+     if v:FindFirstChild("Basic Axe") then
+
+            if game.Workspace.Trees:FindFirstChild("OG_Money") or ("OG_Fruit") or ("Presente1") or ("Presente2") or ("Presente3") or ("Presente4") then
+             for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+                if v:IsA("Model") then
+                        teleport(v.PhysicalTree.Middle.CFrame + Vector3.new(0, -4.5, 0))
+                        for i, x in pairs(v:GetChildren()) do
+                            if string.match(x.Name, "Model") then
+                                teleport(x.Handle.CFrame)
+                                wait(0)
+                            end                                
+                        end
+                    break
+                 end
+               end
+            end
+          end
+        end
+    end
+end)
+
+local Toggle2 = Section1:CreateToggle("fuck me", nil, function(State)
+    toggle = State 
+        while toggle do
+            wait(0.001)
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("Present4") then
+if Workspace.Trees.Present4.Health.Value <= 1 then
+            game.Workspace.Trees.Present4:Destroy()
+end
+end
+end
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("Present3") then
+if Workspace.Trees.Present3.Health.Value <= 1 then
+            game.Workspace.Trees.Present3:Destroy()
+end
+end
+end
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("Present2") then
+if Workspace.Trees.Present2.Health.Value <= 1 then
+            game.Workspace.Trees.Present2:Destroy()
+end
+end
+end
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("Present1") then
+if Workspace.Trees.Present1.Health.Value <= 1 then
+            game.Workspace.Trees.Present1:Destroy()
+end
+end
+end
+
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("OG_Fruit") then
+if Workspace.Trees.OG_Fruit.Health.Value <= 1 then
+            game.Workspace.Trees.OG_Fruit:Destroy()
+end
+end
+end
+
+for i, v in pairs(game.Workspace.Trees:GetChildren()) do
+     if Workspace.Trees:FindFirstChild("OG_Money") then
+if Workspace.Trees.OG_Money.Health.Value <= 1 then
+            game.Workspace.Trees.OG_Money:Destroy()
+end
+end
+end
+
+end --toggle
+end) --fun :(
+
+local Toggle3= Section1:CreateToggle("pepe the frog", nil, function(State)
+toggle = State
+while toggle do
+
+for i, v in pairs(game.Workspace:GetChildren()) do
+     if v:FindFirstChild("OG_Normal") then
+            game.Workspace.Trees.OG_Normal:Destroy()   
+end
+end         
+wait(0)
+end
+end)
+local Toggle4 = Section1:CreateToggle("MACHO ALFA", nil, function(State)
+    toggle = State
+        while toggle do
+        wait(0)
+local children = game.Players.LocalPlayer.Backpack:GetChildren()
+local count = #children
+print(count)
+            
+if count >= 2 then
+
+local KeyPress = function(v)
+   return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
+end
+KeyPress("Two")
+end
+end
+end)
+
+local Toggle5 = Section1:CreateToggle("Get Axe", nil, function(State)
+    toggle = State
+        while toggle do
+        wait(0)
+
+local children = game.Players.LocalPlayer.Backpack:GetChildren()
+local count = #children
+print(count)
+print("CABAÇOOOOOOOOOOOOOOOOOOOO")
+            
+if count == 1 then
+
+local Saved = {
+Vector3.new(75.5, 23.06185531616211, 329.5)
+}
+local Move = false
+Move = not Move
+if Move == true then
+for i,v in pairs(Saved)do
+game.Players.LocalPlayer.Character.Humanoid:MoveTo(v)
+end
+end
+end
+end
+end)
+--VAI QUE EU USO ESSA PARADA DEPOIS (PARECE QUE EU ESTOU FALANDO DE DROGAS, SERA QUE NÃO ESTOU?)
+--local Toggle6 = Section1:CreateToggle("save????", nil, function(State)
+--toggle = State
+--while toggle do
+--wait(0)
+--if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y <= -9.5 then
+
+--teleport(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, 44, 0))
+
+--end
+--end
+--end)
+
+local Toggle7 = Section2:CreateToggle("UI Toggle", nil, function(State)
+    Window:Toggle(State)
+end)
+ 
+Toggle7:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+    Config.Keybind = Enum.KeyCode[Key]
+end)    
+Toggle7:SetState(true)
+ 
