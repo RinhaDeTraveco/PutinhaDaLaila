@@ -7,7 +7,7 @@ local Config = {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
-local Tab1 = Window:CreateTab("Generic Roleplay Gaem")
+local Tab1 = Window:CreateTab("Generic Roleplay Gaem (Be a Barbarian)")
 
 
 local Section1 = Tab1:CreateSection("")
@@ -57,10 +57,10 @@ end
 local Toggle1 = Section1:CreateToggle("Auto Trees", nil, function(State)
     toggle = State 
         while toggle do
-            wait(0.31)
+            wait(0.01)
 
 for i, v in pairs(game.Workspace:GetChildren()) do
-     if v:FindFirstChild("Basic Axe") then
+     if v:FindFirstChild("Axe") or ("Basic Axe") then
 
             if game.Workspace.Trees:FindFirstChild("OG_Money") or ("OG_Fruit") or ("Presente1") or ("Presente2") or ("Presente3") or ("Presente4") then
              for i, v in pairs(game.Workspace.Trees:GetChildren()) do
@@ -140,12 +140,12 @@ end) --fun :(
 local Toggle4 = Section1:CreateToggle("Auto Equip Axe", nil, function(State)
     toggle = State
         while toggle do
-        wait(0.0000000000000000000000000000000000000000000001)
+        wait(0.00001)
+
 local children = game.Players.LocalPlayer.Backpack:GetChildren()
 local count = #children
-print(count)
 
-if count >= 2 then
+if count >= 4 then
 
 local KeyPress = function(v)
    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
