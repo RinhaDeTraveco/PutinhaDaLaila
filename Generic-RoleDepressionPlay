@@ -81,7 +81,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
             if game.Workspace.Trees:FindFirstChild("OG_Money") or ("OG_Fruit") or ("Presente1") or ("Presente2") or ("Presente3") or ("Presente4") then
              for i, v in pairs(game.Workspace.Trees:GetChildren()) do
                 if v:IsA("Model") then
-                        teleport(v.PhysicalTree.Wood.CFrame + Vector3.new(0, 0, 0))
+                        teleport(v.PhysicalTree.Wood.CFrame + Vector3.new(2.37, 0, 1))
                         for i, x in pairs(v:GetChildren()) do
                             if string.match(x.Name, "Model") then
                                 teleport(x.Handle.CFrame)
