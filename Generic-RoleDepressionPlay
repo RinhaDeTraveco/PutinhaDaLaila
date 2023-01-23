@@ -52,10 +52,26 @@ function teleport(loc)
     wait()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
+
  
 
 local Toggle1 = Section1:CreateToggle("Auto Trees", nil, function(State)
-    toggle = State 
+
+local JESUS = game.Players.LocalPlayer.Name
+local PlayerPosition = game.Workspace:WaitForChild(JESUS).HumanoidRootPart.Position
+local Closest
+    
+for i,v in pairs(Workspace.Trees:GetChildren()) do
+	if Closest == nil then
+		Closest = v
+	else
+		if (PlayerPosition - v.PhysicalTree.Middle.Position).magnitude < (Closest.PhysicalTree.Middle.Position - PlayerPosition).magnitude then
+			Closest = v
+		end
+	end
+end
+
+toggle = State 
         while toggle do
             wait(0.01)
 
@@ -84,7 +100,23 @@ end)
 local Toggle2 = Section1:CreateToggle("Tree verify", nil, function(State)
     toggle2 = State 
         while toggle2 do
-            wait(0.251)
+            wait(0.07)
+
+local JESUS = game.Players.LocalPlayer.Name
+local PlayerPosition = game.Workspace:WaitForChild(JESUS).HumanoidRootPart.Position
+local Closest -- get closest tree from local player
+
+for i,v in pairs(Workspace.Trees:GetChildren()) do
+	if Closest == nil then
+		Closest = v
+	else
+		if (PlayerPosition - v.PhysicalTree.Middle.Position).magnitude < (Closest.PhysicalTree.Middle.Position - PlayerPosition).magnitude then
+			Closest = v
+		end
+	end
+end
+
+game.Workspace:WaitForChild(JESUS).HumanoidRootPart.CFrame = CFrame.new(game.Workspace:WaitForChild(JESUS).HumanoidRootPart.Position, Closest.PhysicalTree.Middle.Position)
 
 for i, v in pairs(game.Workspace.Trees:GetChildren()) do
      if Workspace.Trees:FindFirstChild("Present4") then
