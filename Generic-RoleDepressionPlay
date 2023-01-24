@@ -97,7 +97,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
     end
 end)
 
-local Toggle2 = Section1:CreateToggle("Tree verify", nil, function(State)
+local Toggle2 = Section1:CreateToggle("Only eyes", nil, function(State)
     toggle2 = State 
         while toggle2 do
             wait(0.07)
@@ -110,64 +110,17 @@ for i,v in pairs(Workspace.Trees:GetChildren()) do
 	if Closest == nil then
 		Closest = v
 	else
-		if (PlayerPosition - v.PhysicalTree.Middle.Position).magnitude < (Closest.PhysicalTree.Middle.Position - PlayerPosition).magnitude then
+		if (PlayerPosition - v.PhysicalTree.Wood.Position).magnitude < (Closest.PhysicalTree.Middle.Position - PlayerPosition).magnitude then
 			Closest = v
 		end
 	end
 end
 
-game.Workspace:WaitForChild(JESUS).HumanoidRootPart.CFrame = CFrame.new(game.Workspace:WaitForChild(JESUS).HumanoidRootPart.Position, Closest.PhysicalTree.Middle.Position)
+game.Workspace:WaitForChild(JESUS).HumanoidRootPart.CFrame = CFrame.new(game.Workspace:WaitForChild(JESUS).HumanoidRootPart.Position, Closest.PhysicalTree:WaitForChild("Middle").Position)
 
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("Present4") then
-if Workspace.Trees.Present4.Health.Value <= 1 then
-            game.Workspace.Trees.Present4:Destroy()
 end
-end
-end
+end)
 
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("Present3") then
-if Workspace.Trees.Present3.Health.Value <= 1 then
-            game.Workspace.Trees.Present3:Destroy()
-end
-end
-end
-
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("Present2") then
-if Workspace.Trees.Present2.Health.Value <= 1 then
-            game.Workspace.Trees.Present2:Destroy()
-end
-end
-end
-
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("Present1") then
-if Workspace.Trees.Present1.Health.Value <= 1 then
-            game.Workspace.Trees.Present1:Destroy()
-end
-end
-end
-
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("OG_Money") then
-if Workspace.Trees.OG_Money.Health.Value <= 1 then
-            game.Workspace.Trees.OG_Money:Destroy()
-end
-end
-end
-
-for i, v in pairs(game.Workspace.Trees:GetChildren()) do
-     if Workspace.Trees:FindFirstChild("OG_Fruit") then
-if Workspace.Trees.OG_Fruit.Health.Value <= 1 then
-            game.Workspace.Trees.OG_Fruit:Destroy()
-end
-end
-end
-
-end --toggle
-end) --fun :(
 
 local Toggle4 = Section1:CreateToggle("Auto Equip Axe", nil, function(State)
     toggle = State
@@ -177,7 +130,9 @@ local Toggle4 = Section1:CreateToggle("Auto Equip Axe", nil, function(State)
 local children = game.Players.LocalPlayer.Backpack:GetChildren()
 local count = #children
 
-if count >= 4 then
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Punch") then
+
+if count == 2 then
 
 local KeyPress = function(v)
    return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
@@ -185,37 +140,36 @@ end
 KeyPress("Two")
 end
 end
+
+
+if game.Players.LocalPlayer.Backpack:FindFirstChild("Sword") then
+
+if count >= 4 then
+
+local KeyPress = function(v)
+   return game:GetService("VirtualInputManager"):SendKeyEvent(true, v, false, game)
+end
+KeyPress("Four")
+end
+end
+
+
+
+end
 end)
 
 local Toggle5 = Section1:CreateToggle("Buy Axe", nil, function(State)
     toggle = State
         while toggle do
         wait(0)
-
-local chilldren = game.Players.LocalPlayer.Backpack:GetChildren()
-local count = #chilldren
-
-            
-if count == 1 then
-
-local Saved = {
-Vector3.new(75.5, 23.06185531616211, 329.5)
-}
-local Move = false
-Move = not Move
-if Move == true then
-for i,v in pairs(Saved)do
-game.Players.LocalPlayer.Character.Humanoid:MoveTo(v)
-end
-end
-end
 end
 end)
+
 
 local Toggle6 = Section1:CreateToggle("Auto click", nil, function(State)
     toggle6 = State
         while toggle do
-            wait(0)
+            wait(0.1)
 local vuser = game:GetService("VirtualUser")
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())            
