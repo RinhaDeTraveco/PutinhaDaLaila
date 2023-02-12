@@ -7,6 +7,7 @@ function teleport(loc)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 
+wait(3)
 local children = game.Workspace.RandomChests:GetChildren()
 local count = #children
 
@@ -87,6 +88,20 @@ Teleport(0)
 
 end
 
+
+if count >= 1 then
+
+                wait(0.3)
+                for i, v in pairs(game.Workspace.RandomChests:GetChildren()) do
+                    if v:IsA("Model") and string.match(v.Name, "Chest") then
+                        teleport (v.Bottom.CFrame)
+                        wait(1.5)
+                        fireproximityprompt(v.HumanoidRootPart.ProximityPrompt)
+                    end
+                end            
+        end
+
+wait(1.5)
 
 if count >= 1 then
 
