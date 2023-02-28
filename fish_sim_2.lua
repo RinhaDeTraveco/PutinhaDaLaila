@@ -713,7 +713,7 @@ switchServer()
 end)   
  
 local Button7 = Section2:CreateButton("Discord", function()
-getgenv().InviteCode = "qqSAxTfd"
+    getgenv().InviteCode = "ngVB6bkb"
 
 --Example getgenv().InviteCode = "Kaede To Suzu The Animation"
 
