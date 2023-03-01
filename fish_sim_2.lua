@@ -713,12 +713,12 @@ switchServer()
 end)   
  
 local Button7 = Section2:CreateButton("Discord", function()
-    getgenv().InviteCode = "ngVB6bkb"
+--  getgenv().InviteCode = "ngVB6bkb"
 
---Example getgenv().InviteCode = "Kaede To Suzu The Animation"
+getgenv().InviteCode = "Kaede To Suzu The Animation"
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
-
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
+--no Work
 --by TweedLeak#4003
 end)
  
