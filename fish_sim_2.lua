@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "version 2.4 (unofficial)                                                                        Pink Gui on top(practically",
+    WindowName = "version 2.5 (unofficial)                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -441,6 +441,7 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
             wait(0.3)
             if game.Workspace.DroppedItems:FindFirstChildOfClass("Model") then
              for i, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
+                if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
                 if v:IsA("Model") then
                         print("larry")
                         teleport(v.Handle.CFrame)
@@ -448,11 +449,12 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
                             if string.match(x.Name, "Model") then
                                 teleport(x.Handle.CFrame)
                                 wait(3)  
-                            end                                
-                        end
-                    break
-                 end
-              end
+                                end                                
+                            end
+                        break
+                     end
+                  end
+            end
         end
     end
 end)
