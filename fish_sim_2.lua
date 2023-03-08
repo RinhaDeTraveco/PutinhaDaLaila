@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "version 2.5 (unofficial)                                                                        Pink Gui on top(practically",
+    WindowName = "version 2.6 (unofficial)                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -250,166 +250,6 @@ local Toggle10 = Section1:CreateToggle("Auto Lock Rare Items", nil, function(Sta
 end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
- 
-local Toggle1 = Section1:CreateToggle("Auto Fish", nil, function(State)
-toggle = State
-local r = Random.new()
-        
-while toggle do
-
-wait(0.01)
-local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
-local count = #children
-print(count)
-            
-if count >= 2 then
-
-wait(r:NextNumber(0.01, 0.23))
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("debio")
-wait(r:NextNumber(0.4, 0.7))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("LETICIA POR QUE ME TRAIU COM O RONALDO DA PADARIA?? POR QUE LETICIA")
-wait(r:NextNumber(0.4, 0.912))
-
-local vuser = game:GetService("VirtualUser")                
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("BUCETA DA SUA MAE")
-
-wait(r:NextNumber(0.4, 1))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("YO MAMA")
-              
-wait(r:NextNumber(0.4, 0.6))
-                
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("YOU MAMA")
-wait(r:NextNumber(0.46, 0.61))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("S")
-wait(r:NextNumber(0.4, 0.3))
-
-local vuser = game:GetService("VirtualUser")                
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("U")
-wait(r:NextNumber(0.319, 0.493))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("U")              
-wait(r:NextNumber(0.405, 0.736))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("U")
-wait(r:NextNumber(0.298, 0.56))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("U")
-wait(r:NextNumber(0.526, 0.749))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("S")
-wait(r:NextNumber(0.389, 0.513))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("É UM PAIS DA EUROPA")
-wait(r:NextNumber(0.5, 0.72))
-
-local vuser = game:GetService("VirtualUser")                
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("VALENDO O CU DE QUEM LEU")
-wait(r:NextNumber(0.6, 1.21))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("PAU NO CU DO LULA")
-
-wait(r:NextNumber(0.4, 0.443))
-
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("BEM-VINDO AO SITE PORNO GAY")               
-wait(r:NextNumber(0.4, 0.53))
-                
-end
-
-
-end
-
-end)
---
-Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
-
-local Toggle2 = Section1:CreateToggle("USE WITH AUTO FISH", nil, function(State)
-toggle = State
-local r = Random.new()
-        
-while toggle do
-
-wait(0.01)
-local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
-local count = #children
-if count == 1 then
-                
-wait(r:NextNumber(4.79, 4.98))
-print("JOAO CU BTS")                
-wait(r:NextNumber(0.283, 0.45))
-print("")
-local vuser = game:GetService("VirtualUser")
-vuser:CaptureController()
-vuser:ClickButton1(Vector2.new())
-print("Pedro caminhões")                
-end
-
-
-end -- TUGLADILSON
-
-wait(600)
--- clone the FishBubbles
-local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
-penis.Parent = game.Players.LocalPlayer.PlayerGui
-
-local vim = game:GetService("VirtualInputManager")
-vim:SendKeyEvent(true, "One", false, nil)
-wait(r:NextNumber(3.5, 5.7))
-local vim = game:GetService("VirtualInputManager")
-vim:SendKeyEvent(true, "One", false, nil)
--- the cloned FishBubbles have the name FishBubbles1
- instance = game.Players.LocalPlayer.PlayerGui.FishBubbles
- instance.Name = "FishBubbles1"
-
-            game.Players.LocalPlayer.PlayerGui.FishBubbles1:Destroy()
--- now the FishBubbles1 die
-
-end)
-
 
 local Toggle3 = Section1:CreateToggle("Auto Sell", nil, function(State)
 toggle = State
@@ -432,7 +272,114 @@ local Toggle4 = Section1:CreateToggle("Remove Fog and Water", nil, function(Stat
             game.Workspace.OceanWaves:Destroy()
         end
 end)
- 
+
+Section1:CreateLabel("auto Fishing")
+
+local Button1 = Section1:CreateButton("auto Fishing (TryHard)", function()
+
+local replication = game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams
+
+local MAX_CONCURRENCY = 100
+local current_index = 1
+game:GetService("RunService").RenderStepped:Connect(function()
+task.spawn(function()
+for i = current_index, current_index + MAX_CONCURRENCY - 1 do
+wait(0.3)
+if i > 102 then return end
+replication.FishBiting:InvokeServer()
+game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer("SellEverything")
+end
+current_index = current_index + MAX_CONCURRENCY
+end)
+end)
+
+end)
+
+local Toggle1 = Section1:CreateToggle("Auto Fish(Tryhard Mode)", nil, function(State)
+toggle = State
+local r = Random.new()
+local children = game.Players.LocalPlayer.PlayerGui:WaitForChild("FishBubbles"):GetChildren()
+local count = #children
+
+while toggle do
+wait(0)
+
+if count >= 2 then
+
+wait(0.3)
+game.ReplicatedStorage.CloudFrameShared.DataStreams.FishCaught:FireServer()
+
+end
+end-- toggle
+
+end) -- fun
+
+local Toggle1 = Section1:CreateToggle("Auto Fish(Safe Mode)", nil, function(State)
+toggle = State
+local r = Random.new()
+        
+while toggle do wait(0.15)
+
+local children = game.Players.LocalPlayer.PlayerGui:WaitForChild("FishBubbles"):GetChildren()
+local count = #children
+print(count)          
+if count >= 2 then
+
+wait(r:NextNumber(0, 0.3))
+game.ReplicatedStorage.CloudFrameShared.DataStreams.FishCaught:FireServer()
+print("gozei")
+local vim = game:GetService("VirtualInputManager")
+vim:SendKeyEvent(true, "One", false, nil)
+wait(1.24)
+local vim = game:GetService("VirtualInputManager")
+vim:SendKeyEvent(true, "One", false, nil)
+local vuser = game:GetService("VirtualUser")
+wait(1.499)
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
+end
+end-- toggle
+
+end) -- fun
+--
+Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
+
+local Toggle2 = Section1:CreateToggle("use this with ANY auto fish", nil, function(State)
+toggle = State
+local r = Random.new()
+        
+while toggle do
+
+wait(0.01)
+local children = game.Players.LocalPlayer.PlayerGui.FishBubbles:GetChildren()
+local count = #children
+
+end -- TUGLADILSON
+
+--wait(600)
+-- clone the FishBubbles
+--local penis = game.Players.LocalPlayer.PlayerGui.FishBubbles:Clone()
+--penis.Parent = game.Players.LocalPlayer.PlayerGui
+
+--local vim = game:GetService("VirtualInputManager")
+--vim:SendKeyEvent(true, "One", false, nil)
+--wait(r:NextNumber(3.5, 5.7))
+--local vim = game:GetService("VirtualInputManager")
+--vim:SendKeyEvent(true, "One", false, nil)
+-- the cloned FishBubbles have the name FishBubbles1
+ --instance = game.Players.LocalPlayer.PlayerGui.FishBubbles
+ --instance.Name = "FishBubbles1"
+
+            --game.Players.LocalPlayer.PlayerGui.FishBubbles1:Destroy()
+-- now the FishBubbles1 die
+
+--local vuser = game:GetService("VirtualUser")
+--vuser:CaptureController()
+--vuser:ClickButton1(Vector2.new())
+
+end)
+
+
 Section1:CreateLabel("Chest and Items")
  
 local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
@@ -665,7 +612,7 @@ local Dropdown4 = Section2:CreateDropdown("Egg's and Chest", {"Royal - Egg","Nor
 end)
  
 local Button8 = Section2:CreateButton("Buy", function()
-    if eggsandchest == "Royal" then
+    if eggsandchest == "Royal - Egg" then
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.OpenLootboxFunction:InvokeServer("royalegg")
 
         elseif eggsandchest == "Normal - Egg" then
