@@ -7,7 +7,8 @@ function teleport(loc)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 
-wait(3)
+wait(12)
+
 local children = game.Workspace.RandomChests:GetChildren()
 local count = #children
 
