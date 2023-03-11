@@ -51,7 +51,7 @@ local JESUS = game.Players.LocalPlayer.Name
 local Toggle1 = Section1:CreateToggle("Ignore the trash (not talking about me)", nil, function(State)
 toggle = State 
         while toggle do
-            wait(0.1)
+            wait(0)
 
 instance = game.Workspace.Minerals:WaitForChild("MinedRock")
 
