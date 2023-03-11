@@ -7,6 +7,7 @@ local Config = {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
+
 local Tab1 = Window:CreateTab("Fishing Simulator")
 
 
@@ -272,7 +273,7 @@ local Toggle4 = Section1:CreateToggle("Remove Fog and Water", nil, function(Stat
         end
 end)
 
-Section1:CreateLabel("auto Fishing")
+Section1:CreateLabel("\n auto Fishing")
 
 local Button1 = Section1:CreateButton("auto Fishing (TryHard)", function()
 
