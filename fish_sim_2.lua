@@ -329,6 +329,8 @@ end)
 
 end)
 
+Button1:AddToolTip("use ONLY in Public server")
+
 local Toggle1 = Section1:CreateToggle("Auto Fish(Safe Mode)", nil, function(State)
 toggle = State
 local r = Random.new()
@@ -420,8 +422,6 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
         end
     end
 end)
-
-Toggle4:AddToolTip("ONLY turn ON after kill 1 or more sea creatura")
 
 local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
     toggle = State
@@ -543,7 +543,7 @@ end)
 ---------------------------------------------------------------------
 Section1:CreateLabel("Teleport")
  
-local Dropdown2 = Section1:CreateDropdown("Store", {"Boat Store","Raygan's Tavern","Supplies Store", "Pets Store"}, function(String)
+local Dropdown2 = Section1:CreateDropdown("Store", {"Boat Store","Raygan's Tavern","Supplies Store", "Bait Store", "Pets Store"}, function(String)
     locationSelected = String
 end)
  
@@ -554,6 +554,8 @@ local Button1 = Section1:CreateButton("Teleport", function()
             game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EnterDoor:InvokeServer("TavernInterior", "Inside")
         elseif locationSelected == "Supplies Store" then
             game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EnterDoor:InvokeServer("SuppliesStoreInterior", "Inside")  
+        elseif locationSelected == "Bait Store" then
+            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EnterDoor:InvokeServer("BaitShop", "MainEntrance")        
         elseif locationSelected == "Pets Store" then
             game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.EnterDoor:InvokeServer("PetShop", "MainEntrance")
     end
