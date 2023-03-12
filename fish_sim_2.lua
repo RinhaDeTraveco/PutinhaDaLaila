@@ -1,12 +1,11 @@
 local Config = {
-    WindowName = "version 2.7 (unofficial)                                                                        Pink Gui on top(practically",
+    WindowName = "version 2.8 (unofficial)                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
-
 
 local Tab1 = Window:CreateTab("Fishing Simulator")
 
@@ -152,11 +151,11 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
  
  
                     for i, getTools in pairs(player.Character:GetChildren()) do
-                        if getTools:IsA("Tool") and getTools:FindFirstChild("Handle") then --GripC1/Handle
+                        if getTools:IsA("Tool") and  getTools:FindFirstChild("Handle") then --GripC1/Handle
                             plrTools = getTools.Name
                         end
                     end
-
+ 
                     teleport(v.HumanoidRootPart.CFrame + Vector3.new(0, 30, 0))
                     wait(1)
                     game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.MonsterHit:FireServer(Workspace[v.Name], tostring(plrTools), true)
@@ -181,8 +180,9 @@ local Toggle11 = Section1:CreateToggle("Auto Kill Mobby Wood", nil, function(Sta
     fuckMobby = RunService.Stepped:Connect(function()
      for i, v in pairs(game.Workspace:GetChildren()) do
      if v:FindFirstChild("Health") and v:FindFirstChild("IsSeaBoss") and v.Name == "MobyWood" then
-        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
-
+        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+ 
+ 
                     for i, getTools in pairs(player.Character:GetChildren()) do
                         if getTools:IsA("Tool") and  getTools:FindFirstChild("Handle") then --GripC1/Handle
                             plrTools = getTools.Name
@@ -251,10 +251,42 @@ end)
  
 Toggle10:AddToolTip("Rarity Locked:\nWhaleKey \nLegendary fish \nAll Mythic \n \nPlease report any bugs with this function on discord")
 
+local Toggle10 = Section1:CreateToggle("Auto Lock leg/mit with glow", nil, function(State)
+    toggle10 = State
+    if toggle10 then
+        spawn(function()
+            while toggle10 do 
+                wait(.1)
+                for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Interface.Inventory.Inventory.Frame.Backpack.List.Container:GetChildren()) do
+                    if string.match(v.Name, "key") then
+                        for i, model in pairs(v:GetDescendants()) do
+                            if model:IsA("Tool") then -- this music start play https://www.youtube.com/watch?v=EytSP67tg_0
+                                if model.Name == "babygreatwhitesharkegg" or model.Name == "sharktooth" or model.Name == "ornamentpufferfish" or model.Name == "ornamentgoldfish" or model.Name == "starfish" or model.Name == "sandray" or model.Name == "alienstarfish" or model.Name == "flounder" or model.Name == "yellowsnapper" or model.Name == "redrockfish" or model.Name == "piranha" or model.Name == "mosasaurus" or model.Name == "cobia" or model.Name == "dragonfish" or model.Name == "snapper" or model.Name == "magmanapoleonfish" or model.Name == "magmatrout" or model.Name == "largemouthbass" or model.Name == "yellowfintuna" or model.Name == "rainbowparrotfish" or model.Name == "swordfish" or model.Name == "porgy" or model.Name == "sunfish" or model.Name == "bluefish" or model.Name == "tigerfish" or model.Name == "rockfish" or model.Name == "starfish" or model.Name == "cuttlefish" or model.Name == "seabear" or model.Name == "ninjafish" or model.Name == "purplecandyfish" or model.Name == "gemheartfish" or model.Name == "babygreatwhiteshark" or model.Name == "babyhammerheadshark" or model.Name == "babykillerwhale" or model.Name == "babyneongreatwhiteshark" or model.Name == "babyneonkillerwhale" or model.Name == "babyoversizedgreatwhiteshark" or model.Name == "oversizedgreatwhitetooth" or model.Name == "whalehead" or model.Name == "whaleheart" or model.Name == "whaletooth" or model.Name == "whalekey" or model.Name == "neongreatwhitetooth" or model.Name == "hammerheadsharktooth" or model.Name == "hammerheadsharkhead" or model.Name == "babyhammerheadshark" or model.Name == "kronkasaurusheart" or model.Name == "kronkasaurustooth" or model.Name == "kronkasaurushead" or model.Name == "voidhammerheadsharkhead" or model.Name == "voidhammerheadsharktooth" or model.Name == "babyvoidhammerheadshark" then
+                                    if v.DraggableComponent.Contents.LockIcon.Visible == false then -- GOD OF SCRIPT (ironia guys)
+                                    if v.DraggableComponent.Contents:FindFirstChild("MutationIcon") then
+                                        print(v.Name, model.Name)
+                                        local args = {[1] = "Tools",[2] = v.Name,[3] = true}
+                                        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.SetInventoryItemLock:InvokeServer(unpack(args))
+                                    end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+ 
+
+
+
+
 local Toggle3 = Section1:CreateToggle("Auto Sell", nil, function(State)
 toggle = State
     while toggle do
-     wait(5)
+        wait(2.6)
         game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer("SellEverything")
     end
 end)
@@ -284,9 +316,10 @@ local current_index = 1
 game:GetService("RunService").RenderStepped:Connect(function()
 task.spawn(function()
 for i = current_index, current_index + MAX_CONCURRENCY - 1 do
-wait(0.3)
+wait(0.01)
 if i > 102 then return end
 replication.FishBiting:InvokeServer()
+wait(0.04)
 game.ReplicatedStorage.CloudFrameShared.DataStreams.FishCaught:FireServer()
 game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer("SellEverything")
 end
@@ -304,7 +337,7 @@ while toggle do wait(0.15)
 
 local children = game.Players.LocalPlayer.PlayerGui:WaitForChild("FishBubbles"):GetChildren()
 local count = #children
---print(count)          
+print(count)          
 if count >= 2 then
 
 wait(r:NextNumber(0, 0.3))
@@ -326,7 +359,7 @@ end) -- fun
 --
 Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
 
-local Toggle2 = Section1:CreateToggle("use this with SAFE auto fish", nil, function(State)
+local Toggle2 = Section1:CreateToggle("use this with ANY auto fish", nil, function(State)
 toggle = State
 local r = Random.new()
         
@@ -372,7 +405,7 @@ local Toggle4 = Section1:CreateToggle("Collect Items", nil, function(State)
              for i, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
                 if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
                 if v:IsA("Model") then
-                        --print("larry")
+                        print("larry")
                         teleport(v.Handle.CFrame)
                         for i, x in pairs(v:GetChildren()) do
                             if string.match(x.Name, "Model") then
@@ -392,14 +425,86 @@ Toggle4:AddToolTip("ONLY turn ON after kill 1 or more sea creatura")
 
 local Toggle9 = Section1:CreateToggle("Random Chest", nil, function(State)
     toggle = State
-        while toggle do wait(0.1)
+        while toggle do
 
 local children = game.Workspace.RandomChests:GetChildren()
 local count = #children
 
---print(count)            
+print(count)            
 if count == 0 then
-print("No Chest")
+
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+function TPReturner()
+    local Site;
+    if foundAnything == "" then
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+    else
+        Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+    end
+    local ID = ""
+    if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+        foundAnything = Site.nextPageCursor
+    end
+    local num = 0;
+    for i,v in pairs(Site.data) do
+        local Possible = true
+        ID = tostring(v.id)
+        if tonumber(v.maxPlayers) > tonumber(v.playing) then
+            for _,Existing in pairs(AllIDs) do
+                if num ~= 0 then
+                    if ID == tostring(Existing) then
+                        Possible = false
+                    end
+                else
+                    if tonumber(actualHour) ~= tonumber(Existing) then
+                        local delFile = pcall(function()
+                            delfile("NotSameServers.json")
+                            AllIDs = {}
+                            table.insert(AllIDs, actualHour)
+                        end)
+                    end
+                end
+                num = num + 1
+            end
+            if Possible == true then
+                table.insert(AllIDs, ID)
+                wait()
+                pcall(function()
+                    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                    wait()
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                end)
+                wait(4)
+            end
+        end
+    end
+end
+
+function Teleport()
+    while wait() do
+        pcall(function()
+            TPReturner()
+            if foundAnything ~= "" then
+                TPReturner()
+            end
+        end)
+    end
+end
+
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
+Teleport(0)
+
 end
 
 if count >= 1 then
