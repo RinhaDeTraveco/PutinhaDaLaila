@@ -272,7 +272,8 @@ local Toggle4 = Section1:CreateToggle("Remove Fog and Water", nil, function(Stat
         end
 end)
 
-Section1:CreateLabel("auto Fishing")
+Section1:CreateLabel("auto Fishing \n\n IF YOU CAUGHT \nMORE THAN 10K FISH \nIN LESSE THAN 3 DAYS YOU WILL \nBANNED")
+
 
 local Button1 = Section1:CreateButton("auto Fishing (TryHard)", function()
 
@@ -343,7 +344,7 @@ end) -- fun
 --
 Toggle1:AddToolTip("HEY, put your fishing rod on the first slot. NOW \nthrow the fish hook into the water then activate this option")
 
-local Toggle2 = Section1:CreateToggle("use this with ANY auto fish", nil, function(State)
+local Toggle2 = Section1:CreateToggle("use this with auto fish", nil, function(State)
 toggle = State
 local r = Random.new()
         
