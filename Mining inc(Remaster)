@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "1.1                                                                                                            Pink Gui on top(practically",
+    WindowName = "1.2                                                                                                            Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -48,7 +48,24 @@ end
 
 local JESUS = game.Players.LocalPlayer.Name
 
-local Toggle1 = Section1:CreateToggle("Ignore the trash (not talking about me)", nil, function(State)
+
+local Toggle1 = Section1:CreateToggle("Enable this (or no)", nil, function(State)
+toggle = State 
+        while toggle do
+            wait(0)
+
+jesus = game.Players.LocalPlayer.Name
+
+if game:GetService("Workspace").Players.dudugamer20173.HumanoidRootPart.CFrame == game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 94) then
+
+
+
+end
+
+end
+end)
+
+local Toggle2 = Section1:CreateToggle("Ignore the trash (not talking about me)", nil, function(State)
 toggle = State 
         while toggle do
             wait(0)
@@ -134,6 +151,10 @@ end)--fun
 
 local Button3 = Section2:CreateButton("Factory", function()
 
+local Number = 0
+
+workspace.Gravity = tonumber(Number) or 196.2 
+
 local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 94)
 
                     local ts = game:GetService("TweenService")
@@ -142,6 +163,10 @@ local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new
                     local ti = TweenInfo.new(0,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
+
+local Number = 196.2
+
+workspace.Gravity = tonumber(Number) 
 
 end)	
 
@@ -348,7 +373,11 @@ end)
 
 local Button18 = Section1:CreateButton("tp to Factory", function()
 
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7.1, 94)
+local Number = 0
+
+workspace.Gravity = tonumber(Number) or 196.2 
+
+local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 94)
 
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
@@ -356,6 +385,12 @@ local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new
                     local ti = TweenInfo.new(0,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
+
+wait(1)
+
+local Number = 196.2
+
+workspace.Gravity = tonumber(Number)
 
 end)	
 
