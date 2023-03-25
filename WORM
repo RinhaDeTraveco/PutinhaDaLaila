@@ -45,7 +45,7 @@ function teleport(loc)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
 end
 
-local Toggle1 = Section1:CreateToggle("leaf", nil, function(State)
+local Toggle1 = Section1:CreateToggle("auto leaf", nil, function(State)
 toggle = State 
         while toggle do
             wait(.01)
@@ -85,7 +85,7 @@ instance.Name = "Asset_55269643"
 
 end)
 
-local Button = Section1:CreateButton("click here", function()
+local Button = Section1:CreateButton("click here before active the auto leaf", function()
 
 jesus = game.Players.LocalPlayer.Name
 instance = game.Workspace:WaitForChild(jesus)
