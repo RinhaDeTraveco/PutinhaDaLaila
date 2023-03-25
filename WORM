@@ -1,0 +1,104 @@
+local Config = {
+    WindowName = "1.0                                                                                                            Pink Gui on top(practically",
+    Color = Color3.fromRGB(245, 81, 231),
+    Keybind = Enum.KeyCode.RightControl
+}
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local Tab1 = Window:CreateTab("WORM")
+
+
+local Section1 = Tab1:CreateSection("")
+local Section2 = Tab1:CreateSection("")
+
+local RunService = game:GetService("RunService")
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse() 
+local tpservice= game:GetService("TeleportService")
+local VirtualUser= game:service'VirtualUser'
+
+local bLocation
+
+-- Credits To Charwar for Server Hop
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+local File = pcall(function()
+    AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+end)
+if not File then
+    table.insert(AllIDs, actualHour)
+    writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+end
+ 
+ 
+function teleport(loc)
+    bLocation = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    if game.Players.LocalPlayer.Character.Humanoid.Sit then
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+    end
+    wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
+end
+
+local Toggle1 = Section1:CreateToggle("leaf", nil, function(State)
+toggle = State 
+        while toggle do
+            wait(.01)
+                for _,v in pairs(game.Workspace:GetChildren()) do
+                    if string.match(v.Name, "-") then
+game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
+v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+end
+end
+
+                for _,v in pairs(game.Workspace.MountainLeaves:GetChildren()) do
+                    if string.match(v.Name, "-") or string.match(v.Name, "1") or string.match(v.Name, "2") or string.match(v.Name, "3") or string.match(v.Name, "4") or string.match(v.Name, "5") or string.match(v.Name, "6") or string.match(v.Name, "7") or string.match(v.Name, "8") or string.match(v.Name, "9") or string.match(v.Name, "0") then
+game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
+v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+
+end
+end
+
+                for _,v in pairs(game.Workspace:GetChildren()) do
+                    if string.match(v.Name, "StrangeLeaf") then
+game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
+v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+
+end
+end
+
+end
+end)
+
+local Button = Section1:CreateButton("go back to normal", function()
+
+game.Workspace.kelvin.Torso.Anchored = false
+instance = game.Workspace.kelvin
+instance.Name = game.Players.LocalPlayer.Name
+instance = game.Workspace.SexSolo
+instance.Name = "Asset_55269643"
+
+end)
+
+local Button = Section1:CreateButton("click here", function()
+
+jesus = game.Players.LocalPlayer.Name
+instance = game.Workspace:WaitForChild(jesus)
+instance.Name = "kelvin"
+plr = game.Players.LocalPlayer
+
+end)
+
+local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
+    Window:Toggle(State)
+end)
+ 
+Toggle8:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+    Config.Keybind = Enum.KeyCode[Key]
+end)    
+Toggle8:SetState(true)
