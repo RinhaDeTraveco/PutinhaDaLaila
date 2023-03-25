@@ -1,5 +1,5 @@
 local Config = {
-    WindowName = "1.0                                                                                                            Pink Gui on top(practically",
+    WindowName = "1.0                                                                                                           Pink Gui on top(practically)",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -48,29 +48,47 @@ end
 local Toggle1 = Section1:CreateToggle("auto leaf", nil, function(State)
 toggle = State 
         while toggle do
-            wait(.01)
+            wait(0)
                 for _,v in pairs(game.Workspace:GetChildren()) do
-                    if string.match(v.Name, "-") then
-game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
+                    if string.match(v.Name, "-") or string.match(v.Name, "1") or string.match(v.Name, "3") or string.match(v.Name, "4") or string.match(v.Name, "5") or string.match(v.Name, "6") or string.match(v.Name, "7") or string.match(v.Name, "8") or string.match(v.Name, "9") or string.match(v.Name, "0") then
+if v.ClassName == ("Part") then
+--game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
+v.CanCollide = false
 v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
 end
 end
+end
+
+                for _,v in pairs(game.Workspace["Pumpkin Farm"].Pumpkins:GetChildren()) do
+                    if string.match(v.Name, "PumpkinEat") then
+v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+v.CanCollide = false
+end
+end
+
 
                 for _,v in pairs(game.Workspace.MountainLeaves:GetChildren()) do
                     if string.match(v.Name, "-") or string.match(v.Name, "1") or string.match(v.Name, "2") or string.match(v.Name, "3") or string.match(v.Name, "4") or string.match(v.Name, "5") or string.match(v.Name, "6") or string.match(v.Name, "7") or string.match(v.Name, "8") or string.match(v.Name, "9") or string.match(v.Name, "0") then
-game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
 v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
-
+v.CanCollide = false
 end
 end
 
                 for _,v in pairs(game.Workspace:GetChildren()) do
                     if string.match(v.Name, "StrangeLeaf") then
-game.Workspace:WaitForChild("kelvin").Torso.Anchored = true
 v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+v.CanCollide = false
+end
+end
 
+                for _,v in pairs(game["Workspace"]["Pumpkin Farm"].Pumpkins:GetChildren()) do
+                    if string.match(v.Name, "StrangeLeaf") then
+v.CFrame = game.Workspace:WaitForChild("kelvin").Torso.CFrame
+v.CanCollide = false
 end
 end
+
+
 
 end
 end)
