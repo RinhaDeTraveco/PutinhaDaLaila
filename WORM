@@ -51,6 +51,13 @@ toggle = State
         while toggle do
             wait(0)
 game.Workspace:WaitForChild(jesus).Torso.Anchored = true
+
+                for _,j in pairs(game.Workspace:WaitForChild(jesus):GetChildren()) do
+if j.ClassName == ("Part") then
+j.CFrame = game.Workspace.RebithButton.CFrame
+end
+end
+
             game.Workspace.Gravity = 103
                 for _,v in pairs(game.Workspace:GetChildren()) do
                     if string.match(v.Name, "-") or string.match(v.Name, "1") or string.match(v.Name, "3") or string.match(v.Name, "4") or string.match(v.Name, "5") or string.match(v.Name, "6") or string.match(v.Name, "7") or string.match(v.Name, "8") or string.match(v.Name, "9") or string.match(v.Name, "0") then
@@ -87,7 +94,7 @@ v.CFrame = game.Workspace:WaitForChild(jesus).Head.CFrame
 end
 end
 
-wait(3)
+wait(0.7)
 game.Workspace:WaitForChild(jesus).Torso.Anchored = false
 
 end
