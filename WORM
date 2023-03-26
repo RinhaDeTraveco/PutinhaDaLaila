@@ -104,15 +104,6 @@ instance.Name = "Asset_55269643"
 
 end)
 
-local Button = Section1:CreateButton("click here before active the auto leaf", function()
-
-jesus = game.Players.LocalPlayer.Name
-instance = game.Workspace:WaitForChild(jesus)
-instance.Name = "kelvin"
-plr = game.Players.LocalPlayer
-
-end)
-
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
 end)
