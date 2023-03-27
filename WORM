@@ -1,5 +1,5 @@
-local Config = {
-    WindowName = "1.0                                                                                                            Pink Gui on top(practically",
+local Config = {--                                                                                                                                        "
+    WindowName = "1.0.1                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -51,7 +51,11 @@ toggle = State
         while toggle do
             wait(0)
 game.Workspace:WaitForChild(jesus).Torso.Anchored = true
-
+--anti afk
+			local VirtualUser = game:GetService("VirtualUser")
+			VirtualUser:CaptureController()
+			VirtualUser:ClickButton2(Vector2.new())
+--
                 for _,j in pairs(game.Workspace:WaitForChild(jesus):GetChildren()) do
 if j.ClassName == ("Part") then
 j.CFrame = game.Workspace.RebithButton.CFrame
