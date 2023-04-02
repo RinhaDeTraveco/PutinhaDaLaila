@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.0.1                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.0.2                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -35,15 +35,6 @@ if not File then
     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
 end
  
- 
-function teleport(loc)
-    bLocation = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    if game.Players.LocalPlayer.Character.Humanoid.Sit then
-        game.Players.LocalPlayer.Character.Humanoid.Sit = false
-    end
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = loc
-end
 jesus = game.Players.LocalPlayer.Name
 
 local Toggle1 = Section1:CreateToggle("auto leaf", nil, function(State)
@@ -104,15 +95,119 @@ game.Workspace:WaitForChild(jesus).Torso.Anchored = false
 end
 end)
 
-local Button = Section1:CreateButton("go back to normal", function()
+local Toggle1 = Section2:CreateToggle("auto leaf for purple world", nil, function(State)
+toggle = State 
+        while toggle do
+            wait(0)
+game.Workspace:WaitForChild(jesus).Torso.Anchored = true
+--anti afk
+			local VirtualUser = game:GetService("VirtualUser")
+			VirtualUser:CaptureController()
+			VirtualUser:ClickButton2(Vector2.new())
+
+            game.Workspace.Gravity = 103
+                for _,v in pairs(game.Workspace:GetChildren()) do
+                    if string.match(v.Name, "-") or string.match(v.Name, "1") or string.match(v.Name, "3") or string.match(v.Name, "4") or string.match(v.Name, "5") or string.match(v.Name, "6") or string.match(v.Name, "7") or string.match(v.Name, "8") or string.match(v.Name, "9") or string.match(v.Name, "0") then
+if v.ClassName == ("Part") then
+v.CanCollide = false
+v.Anchored = true
+v.CFrame = game.Workspace:WaitForChild(jesus).Head.CFrame
+end
+end
+end
+
+                for _,v in pairs(game.Workspace:GetChildren()) do
+                    if string.match(v.Name, "StrangeLeaf") then
+v.CanCollide = false
+v.Anchored = true
+v.CFrame = game.Workspace:WaitForChild(jesus).Head.CFrame
+end
+end
+
+                for _,v in pairs(game.Workspace:GetChildren()) do
+                    if string.match(v.Name, "Leaf") then
+v.CanCollide = false
+v.Anchored = true
+v.CFrame = game.Workspace:WaitForChild(jesus).Head.CFrame
+end
+end
+
+wait(0.7)
+game.Workspace:WaitForChild(jesus).Torso.Anchored = false
+
+end
+end)
+
+
+
+local Button2 = Section2:CreateButton("go to purple World", function()
+
+p = Instance.new('Part')
+p.Parent = game.Workspace
+p.Anchored = true
+p.CanCollide = false
+p.Size = Vector3.new(512, 512, 512)
+p.Transparency = 1
+p.Position = Vector3.new(0,0,0)
+wait()
+target = CFrame.new(p.Position)
+
+wait()
+script:Clone()
+
+
+function onTouched(hit)
+print('Teleported.')
+   local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+   if player then
+       game:GetService("TeleportService"):Teleport(6275812053, player) --The numbers are place id. You can put whatever place id you want.
+   end
+end
+
+p.Touched:connect(onTouched)
+
+for i, player in ipairs(game.Players:GetChildren()) do
+player.Character.Torso.CFrame = target + Vector3.new(0, i * 5, 0)
+end
+end)
+
+local Button2 = Section2:CreateButton("go to normal World", function()
+
+p = Instance.new('Part')
+p.Parent = game.Workspace
+p.Anchored = true
+p.CanCollide = false
+p.Size = Vector3.new(512, 512, 512)
+p.Transparency = 1
+p.Position = Vector3.new(0,0,0)
+wait()
+target = CFrame.new(p.Position)
+
+wait()
+script:Clone()
+
+
+function onTouched(hit)
+print('Teleported.')
+   local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+   if player then
+       game:GetService("TeleportService"):Teleport(4107856405, player) --The numbers are place id. You can put whatever place id you want.
+   end
+end
+
+p.Touched:connect(onTouched)
+
+for i, player in ipairs(game.Players:GetChildren()) do
+player.Character.Torso.CFrame = target + Vector3.new(0, i * 5, 0)
+end
+end)
+
+Section2:CreateLabel("you need to return to normal \nworld to rebirth :(")
+
+local Button = Section1:CreateButton("go back to normal \n talking about your worm", function()
 
 game.Workspace.Gravity = 196.2
 game.Workspace:WaitForChild(jesus).Torso.Anchored = false
---instance = game.Workspace.kelvin
---instance.Name = game.Players.LocalPlayer.Name
-instance = game.Workspace.SexSolo
-instance.Name = "Asset_55269643"
-
 end)
 
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
