@@ -46,7 +46,7 @@ game.Workspace:WaitForChild(jesus).Torso.Anchored = true
 			local VirtualUser = game:GetService("VirtualUser")
 			VirtualUser:CaptureController()
 			VirtualUser:ClickButton2(Vector2.new())
---
+--c
                 for _,j in pairs(game.Workspace:WaitForChild(jesus):GetChildren()) do
 if j.ClassName == ("Part") then
 j.CFrame = game.Workspace.RebithButton.CFrame
