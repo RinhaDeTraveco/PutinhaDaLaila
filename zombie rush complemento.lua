@@ -1,3 +1,6 @@
+--execute this loadstring
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Zombie%20Rush/ZombieRushGUI")))()
+--and after execute the script above
 local Config = {--                                                                                                                                        "
     WindowName = "1.0                                                                                                         Pink Gui on top(practically)",
     Color = Color3.fromRGB(245, 81, 231),
