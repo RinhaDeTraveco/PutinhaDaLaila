@@ -1,11 +1,8 @@
---execute this loadstring
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Zombie%20Rush/ZombieRushGUI")))()
---and after execute the script above
 local Config = {--                                                                                                                                        "
     WindowName = "1.0                                                                                                         Pink Gui on top(practically)",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
-}
+}--ZOMBIE
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
@@ -48,22 +45,29 @@ toggle = State
 			local VirtualUser = game:GetService("VirtualUser")
 			VirtualUser:CaptureController()
 			VirtualUser:ClickButton2(Vector2.new())
---
+
 local vai = game:GetService("VirtualInputManager")
 
-game.Players:WaitForChild(jesus).Backpack:WaitForChild("PaintballGun") print "vvv" vai:SendKeyEvent(true, "One", false, nil)
-			
+if game.Workspace:WaitForChild(jesus).Humanoid.Health == 0 then
+print "waiting" 
+wait(65)
+vai:SendKeyEvent(true, "One", false, nil)
+print "equiped"
+end
+
 game.Workspace:WaitForChild(jesus).HumanoidRootPart.CFrame = game:GetService("Workspace").SafehouseLobby[".Barriers"].Barrier.CFrame + Vector3.new(0, -11.25, -3)
+
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("auto KYS on leaderboard", nil, function(State)
+local Toggle2 = Section2:CreateToggle("auto KYS on leaderboard", nil, function(State)
 toggle = State 
         while toggle do
-            wait(0)
+            wait(.1)
 
-local best = game:GetService("Workspace").SafehouseLobby[".Functional"].LeaderboardAllTime.Board.LeaderboardGUI.Container.Body:WaitForChild("4").Score.Text
+local best = game:GetService("Workspace").SafehouseLobby[".Functional"].LeaderboardAllTime.Board.LeaderboardGUI.Container.Body["4"].Score.Text
 local now = game.ReplicatedStorage.GameProperties.CurrentWave.Value
+print (best)
 
 if now == best then game.Workspace:WaitForChild(jesus).Humanoid.Health = 0
 
