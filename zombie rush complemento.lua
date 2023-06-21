@@ -1,3 +1,6 @@
+--loadstring(game:HttpGet(("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Zombie%20Rush/ZombieRushGUI")))() wait(3)
+--ZOMBIE
+
 local Config = {--                                                                                                                                        "
     WindowName = "1.0                                                                                                         Pink Gui on top(practically)",
     Color = Color3.fromRGB(245, 81, 231),
@@ -63,13 +66,12 @@ end)
 local Toggle2 = Section2:CreateToggle("auto KYS on leaderboard", nil, function(State)
 toggle = State 
         while toggle do
-            wait(.1)
+            wait(.01)
 
-local best = game:GetService("Workspace").SafehouseLobby[".Functional"].LeaderboardAllTime.Board.LeaderboardGUI.Container.Body["4"].Score.Text
+local best = game:GetService("Workspace").SafehouseLobby[".Functional"].LeaderboardAllTime.Board.LeaderboardGUI.Container.Body["3"].Score.Text
 local now = game.ReplicatedStorage.GameProperties.CurrentWave.Value
-print (best)
-
-if now == best then game.Workspace:WaitForChild(jesus).Humanoid.Health = 0
+best = best * 1
+if now >= best then game.Workspace:WaitForChild(jesus).Humanoid.Health = 0 print "OOF"
 
 end
 
