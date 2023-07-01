@@ -427,6 +427,17 @@ local Button4 = Section2:CreateButton("Delete", function()
     end
 end)
 
+local Button19 = Section2:CreateButton("teleport to your vehicle", function()
+local porn = game.Workspace.Trucks
+for i, v in pairs(porn:GetChildren()) do
+    v.Name = v.Options.Owner.Value
+
+end
+
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = Game.Workspace.Trucks:WaitForChild(JESUS).Base.CFrame + Vector3.new(5, 8, 2)
+
+end)
+
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
 end)
