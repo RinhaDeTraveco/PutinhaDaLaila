@@ -1,4 +1,6 @@
-instance = game.Workspace.Minerals:WaitForChild("MinedRock") or game.Workspace.map.Refinery.Areas.StagingArea:WaitForChild("MoveRock")
+while true do tick (1000)
+
+instance = game.Workspace.Minerals.MinedRock
 
 if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
 	print("Iron")
@@ -54,4 +56,6 @@ if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Uranium" then 
 	print("Uranium")
 	instance.Name = "Uranium"
+end
+
 end
