@@ -18,7 +18,7 @@ local player = game.Players.LocalPlayer
 local hum = player.Character.HumanoidRootPart
 local mouse = player:GetMouse() 
 local tpservice= game:GetService("TeleportService")
-local VirtualUser= game:service'VirtualUser'
+local vuser = game:GetService("VirtualUser")
 
 local bLocation
 
@@ -50,29 +50,89 @@ local JESUS = game.Players.LocalPlayer.Name
 plr = game.Players.LocalPlayer
 
 
-local Toggle2 = Section1:CreateToggle("Ignore the trash (not talking about me)", nil, function(State)
-toggle = State 
-        while toggle do
-            wait(0)
+local Button1 = Section1:CreateButton("Give name to rocks", function()
 
-instance = game.Workspace.Minerals:WaitForChild("MinedRock")
+while true do tick (1000)
 
-if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then print("Iron") instance.Name = "Iron"
-	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Bronze" then print("Bronze") instance.Name = "Bronze" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Copper" then print("Copper") instance.Name = "Copper" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Aluminium" then print("Aluminium") instance.Name = "Aluminium" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Silver" then print("Silver") instance.Name = "Silver" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Titanium" then print("Titanium") instance.Name = "Titanium" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Ruby" then print("Ruby") instance.Name = "Ruby" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Gold" then print("Gold") instance.Name = "Gold" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Quartz" then print("Quartz") instance.Name = "Quartz" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Cobalt" then print("Cobalt") instance.Name = "Cobalt" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Lithium" then print("Lithium") instance.Name = "Lithium" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Diamond" then print("Diamond") instance.Name = "Diamond" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Sapphire" then print("Sapphire") instance.Name = "Sapphire" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Jade" then print("Jade") instance.Name = "Jade" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Mercury" then print("Mercury") instance.Name = "Mercury" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Emerald" then print("Emerald") instance.Name = "Emerald" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Twitchium" then print("Twitchium") instance.Name = "Twitchium" elseif game.Workspace.Minerals.MinedRock.Type.Value == "Uranium" then print("Uranium") instance.Name = "Uranium"
+instance = game.Workspace.Minerals.MinedRock
 
+if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
+	print("Iron")
+	instance.Name = "Iron"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Bronze" then 
+	print("Bronze")
+	instance.Name = "Bronze"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Copper" then 
+	print("Copper")
+	instance.Name = "Copper"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Aluminium" then 
+	print("Aluminium")
+	instance.Name = "Aluminium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Silver" then 
+	print("Silver")
+	instance.Name = "Silver"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Titanium" then 
+	print("Titanium")
+	instance.Name = "Titanium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Ruby" then 
+	print("Ruby")
+	instance.Name = "Ruby"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Gold" then 
+	print("Gold")
+	instance.Name = "Gold"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Quartz" then 
+	print("Quartz")
+	instance.Name = "Quartz"	
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Cobalt" then 
+	print("Cobalt")
+	instance.Name = "Cobalt"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Lithium" then 
+	print("Lithium")
+	instance.Name = "Lithium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Diamond" then 
+	print("Diamond")
+	instance.Name = "Diamond"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Sapphire" then 
+	print("Sapphire")
+	instance.Name = "Sapphire"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Jade" then 
+	print("Jade")
+	instance.Name = "Jade"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Mercury" then 
+	print("Mercury")
+	instance.Name = "Mercury"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Emerald" then 
+	print("Emerald")
+	instance.Name = "Emerald"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Twitchium" then 
+	print("Twitchium")
+	instance.Name = "Twitchium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Uranium" then 
+	print("Uranium")
+	instance.Name = "Uranium"
 end
-end--wait
+end
+
 end)--fun
 
-local Toggle2 = Section1:CreateToggle("check 'MovedRock'", nil, function(State)
+local Toggle2 = Section1:CreateToggle("auto factory", nil, function(State)
 toggle = State 
         while toggle do
-            wait(0)
+            wait(0.3)
+            
+game.Workspace.Players:WaitForChild(JESUS):WaitForChild("HoldingRock")
+local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 94)
 
-instance2 = game.Workspace.Minerals:WaitForChild("MoveRock")
-if game.Workspace.Minerals.MoveRock.Type.Value == "Bronze" then print("Bronze") instance2.Name = "Bronze" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Copper" then print("Copper") instance2.Name = "Copper" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Aluminium" then print("Aluminium") instance2.Name = "Aluminium" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Silver" then print("Silver") instance2.Name = "Silver" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Titanium" then print("Titanium") instance2.Name = "Titanium" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Ruby" then print("Ruby") instance2.Name = "Ruby" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Gold" then print("Gold") instance2.Name = "Gold" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Quartz" then print("Quartz") instance2.Name = "Quartz" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Cobalt" then print("Cobalt") instance2.Name = "Cobalt" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Lithium" then print("Lithium") instance2.Name = "Lithium" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Diamond" then print("Diamond") instance2.Name = "Diamond" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Sapphire" then print("Sapphire") instance2.Name = "Sapphire" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Jade" then print("Jade") instance2.Name = "Jade" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Mercury" then print("Mercury") instance2.Name = "Mercury" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Emerald" then print("Emerald") instance2.Name = "Emerald" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Twitchium" then print("Twitchium") instance2.Name = "Twitchium" elseif game.Workspace.Minerals.MoveRock.Type.Value == "Uranium" then print("Uranium") instance2.Name = "Uranium"
+                    local ts = game:GetService("TweenService")
+                    local Char = game.Players.LocalPlayer.Character            
+                    local part = Char.HumanoidRootPart
+                    local ti = TweenInfo.new(0.4,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = New_CFrame}
+                    ts:Create(part,ti,tp):Play()
+wait(0.5)
+vuser:CaptureController()
+vuser:ClickButton1(Vector2.new())
 
-end
 end--wait
 end)--fun
 
@@ -83,7 +143,7 @@ local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(6,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 		
@@ -100,7 +160,7 @@ local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(0,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
@@ -110,343 +170,177 @@ local Button5 = Section1:CreateButton("Titanium", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Titanium" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Titanium            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Titanium
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Titanium.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Titanium.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
-
-wait()
 end
 end
+game.Workspace.Minerals.Titanium.Name = "MinedRock"
 end)
 
 local Button6 = Section1:CreateButton("Ruby", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Ruby" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Ruby            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Ruby
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Ruby.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Ruby.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
 end
 end
+game.Workspace.Minerals.Ruby.Name = "MinedRock"
 end)
 
 local Button7 = Section1:CreateButton("Gold", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Gold" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Gold            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Gold
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Gold.CFrame
-
+local New_CFrame = Workspace.Minerals.Gold.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Gold.Name = "MinedRock"
 end)
 
 local Button8 = Section1:CreateButton("Quartz", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Quartz" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Quartz            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Quartz
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Quartz.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Quartz.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Quartz.Name = "MinedRock"
 end)
 
 local Button9 = Section1:CreateButton("Cobalt", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Cobalt" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Cobalt            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Cobalt
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Cobalt.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Cobalt.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Cobalt.Name = "MinedRock"
 end)
 
 local Button10 = Section1:CreateButton("Lithium", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Lithium" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Lithium            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Lithium
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Lithium.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Lithium.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Lithium.Name = "MinedRock"
 end)
 
 local Button11 = Section1:CreateButton("Diamond", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Diamond" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Diamond            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Diamond
-instance.Name = "MoveRock"
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Diamond.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Diamond.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Diamond.Name = "MinedRock"
 end)
 
 local Button12 = Section1:CreateButton("Sapphire", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Sapphire" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Sapphire            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Sapphire
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Sapphire.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Sapphire.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Sapphire.Name = "MinedRock"
 end)
 
 local Button13 = Section1:CreateButton("Jade", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Jade" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Jade            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Jade
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Jade.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Jade.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Jade.Name = "MinedRock"
 end)
 
 local Button14 = Section1:CreateButton("Mercury", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Mercury" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Mercury            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Mercury
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Mercury.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Mercury
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Mercury.Name = "MinedRock"
 end)
 
 local Button15 = Section1:CreateButton("Emerald", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Emerald" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Emerald            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Emerald
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Emerald.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Emerald.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Emerald.Name = "MinedRock"
 end)
 
 
@@ -454,62 +348,32 @@ local Button16 = Section1:CreateButton("Twitchium", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Twitchium" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Twitchium            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Twitchium
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Twitchium.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Twitchium.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Twitchium.Name = "MinedRock"
 end)
 
 local Button17 = Section1:CreateButton("Uranium", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Uranium" then
-v.CanCollide = true
-v.Anchored = false
-
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 51)
-
-                    local ts = game:GetService("TweenService")
-                    local Char = game.workspace.Minerals.Uranium            
-                    local part = Char
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
-                    local tp = {CFrame = New_CFrame}
-                    ts:Create(part,ti,tp):Play()
-
-instance = game.Workspace.Minerals.Uranium
-instance.Name = "MoveRock"
---game:GetService("Workspace").Minerals.MoveRock.Parent = game:GetService("Workspace").map.Refinery.Areas.StagingArea
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.Uranium.CFrame
-
+local New_CFrame = game.Workspace.Minerals.Uranium.Cframe
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
-                    local ti = TweenInfo.new(11,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(0.5,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 end
 end
+game.Workspace.Minerals.Uranium.Name = "MinedRock"
 end)
 
 local Button18 = Section1:CreateButton("tp to Factory", function()
