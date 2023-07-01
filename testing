@@ -1,6 +1,6 @@
 while true do tick (1000)
 
-instance = game.Workspace.Minerals:WaitForChild("MinedRock")
+instance = game.Workspace.Minerals.MinedRock
 
 if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
 	print("Iron")
