@@ -1,0 +1,57 @@
+instance = game.Workspace.Minerals:WaitForChild("MinedRock") or game.Workspace.map.Refinery.Areas.StagingArea:WaitForChild("MoveRock")
+
+if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
+	print("Iron")
+	instance.Name = "Iron"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Bronze" then 
+	print("Bronze")
+	instance.Name = "Bronze"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Copper" then 
+	print("Copper")
+	instance.Name = "Copper"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Aluminium" then 
+	print("Aluminium")
+	instance.Name = "Aluminium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Silver" then 
+	print("Silver")
+	instance.Name = "Silver"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Titanium" then 
+	print("Titanium")
+	instance.Name = "Titanium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Ruby" then 
+	print("Ruby")
+	instance.Name = "Ruby"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Gold" then 
+	print("Gold")
+	instance.Name = "Gold"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Quartz" then 
+	print("Quartz")
+	instance.Name = "Quartz"	
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Cobalt" then 
+	print("Cobalt")
+	instance.Name = "Cobalt"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Lithium" then 
+	print("Lithium")
+	instance.Name = "Lithium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Diamond" then 
+	print("Diamond")
+	instance.Name = "Diamond"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Sapphire" then 
+	print("Sapphire")
+	instance.Name = "Sapphire"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Jade" then 
+	print("Jade")
+	instance.Name = "Jade"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Mercury" then 
+	print("Mercury")
+	instance.Name = "Mercury"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Emerald" then 
+	print("Emerald")
+	instance.Name = "Emerald"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Twitchium" then 
+	print("Twitchium")
+	instance.Name = "Twitchium"
+	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Uranium" then 
+	print("Uranium")
+	instance.Name = "Uranium"
+end
