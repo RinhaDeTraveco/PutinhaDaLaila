@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4                                                                                                          Pink Gui on top(practically",
+    WindowName = "1.4.1                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -47,7 +47,7 @@ function teleport(loc)
 end
 
 local JESUS = game.Players.LocalPlayer.Name
-plr = game.Players.LocalPlayer
+local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
 
 
 local Button1 = Section1:CreateButton("Give name to rocks", function()
@@ -179,6 +179,8 @@ local New_CFrame = game.Workspace.Minerals.Titanium.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Titanium.Name = "MinedRock"
 end)
 
@@ -196,6 +198,8 @@ local New_CFrame = game.Workspace.Minerals.Ruby.CFrame
 
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Ruby.Name = "MinedRock"
 end)
 
@@ -212,6 +216,8 @@ local New_CFrame = Workspace.Minerals.Gold.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Gold.Name = "MinedRock"
 end)
 
@@ -228,6 +234,8 @@ local New_CFrame = game.Workspace.Minerals.Quartz.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Quartz.Name = "MinedRock"
 end)
 
@@ -244,6 +252,8 @@ local New_CFrame = game.Workspace.Minerals.Cobalt.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Cobalt.Name = "MinedRock"
 end)
 
@@ -260,6 +270,8 @@ local New_CFrame = game.Workspace.Minerals.Lithium.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Lithium.Name = "MinedRock"
 end)
 
@@ -276,6 +288,8 @@ local New_CFrame = game.Workspace.Minerals.Diamond.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Diamond.Name = "MinedRock"
 end)
 
@@ -292,6 +306,8 @@ local New_CFrame = game.Workspace.Minerals.Sapphire.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Sapphire.Name = "MinedRock"
 end)
 
@@ -308,6 +324,8 @@ local New_CFrame = game.Workspace.Minerals.Jade.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Jade.Name = "MinedRock"
 end)
 
@@ -324,6 +342,8 @@ local New_CFrame = game.Workspace.Minerals.Mercury
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Mercury.Name = "MinedRock"
 end)
 
@@ -340,6 +360,8 @@ local New_CFrame = game.Workspace.Minerals.Emerald.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Emerald.Name = "MinedRock"
 end)
 
@@ -357,6 +379,8 @@ local New_CFrame = game.Workspace.Minerals.Twitchium.CFrame
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Twitchium.Name = "MinedRock"
 end)
 
@@ -373,6 +397,8 @@ local New_CFrame = game.Workspace.Minerals.Uranium.Cframe
                     ts:Create(part,ti,tp):Play()
 end
 end
+wait(0.55) timbu.Anchored = true
+wait(0.2) timbu.Anchored = false
 game.Workspace.Minerals.Uranium.Name = "MinedRock"
 end)
 
