@@ -333,7 +333,7 @@ local Button14 = Section1:CreateButton("Mercury", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Mercury" then
-local New_CFrame = game.Workspace.Minerals.Mercury
+local New_CFrame = game.Workspace.Minerals.Mercury.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
