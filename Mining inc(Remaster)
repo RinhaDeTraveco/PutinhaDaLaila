@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.3                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.4.4                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -182,8 +182,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Titanium.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Titanium.Name = "MinedRock"
 end)
 
 local Button6 = Section1:CreateButton("Ruby", function()
@@ -202,8 +203,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Ruby.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Ruby.Name = "MinedRock"
 end)
 
 local Button7 = Section1:CreateButton("Gold", function()
@@ -221,8 +223,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Gold.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Gold.Name = "MinedRock"
 end)
 
 local Button8 = Section1:CreateButton("Quartz", function()
@@ -240,8 +243,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Quartz.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Quartz.Name = "MinedRock"
 end)
 
 local Button9 = Section1:CreateButton("Cobalt", function()
@@ -259,8 +263,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Cobalt.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Cobalt.Name = "MinedRock"
 end)
 
 local Button10 = Section1:CreateButton("Lithium", function()
@@ -278,8 +283,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Lithium.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Lithium.Name = "MinedRock"
 end)
 
 local Button11 = Section1:CreateButton("Diamond", function()
@@ -297,8 +303,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Diamond.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Diamond.Name = "MinedRock"
 end)
 
 local Button12 = Section1:CreateButton("Sapphire", function()
@@ -316,8 +323,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Sapphire.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Sapphire.Name = "MinedRock"
 end)
 
 local Button13 = Section1:CreateButton("Jade", function()
@@ -335,8 +343,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Jade.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Jade.Name = "MinedRock"
 end)
 
 local Button14 = Section1:CreateButton("Mercury", function()
@@ -354,8 +363,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Mercury.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Mercury.Name = "MinedRock"
 end)
 
 local Button15 = Section1:CreateButton("Emerald", function()
@@ -373,8 +383,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Emerald.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Emerald.Name = "MinedRock"
 end)
 
 
@@ -393,8 +404,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Twitchium.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Twitchium.Name = "MinedRock"
 end)
 
 local Button17 = Section1:CreateButton("Uranium", function()
@@ -412,9 +424,9 @@ end
 end
 wait(0.5) timbu.Anchored = true
 game.Workspace.Gravity = 0
-game.Workspace.Minerals.Uranium.Name = "MinedRock"
 wait(0.7) timbu.Anchored = false
-end)
+game.Workspace.Gravity = 196
+game.Workspace.Minerals.Uranium.Name = "MinedRock"end)
 
 local Button18 = Section1:CreateButton("tp to Factory", function()
 
