@@ -497,7 +497,7 @@ for i, v in pairs(porn:GetChildren()) do
 
 end
 
-game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(21,40,40)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(21,40,32)
 while true do wait(0)
 game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
 game.Workspace.Trucks.dudugamer20173.Options.TopSpeed.Value = 33
