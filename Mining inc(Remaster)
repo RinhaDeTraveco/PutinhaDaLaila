@@ -500,8 +500,9 @@ end
 game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(40, 30, 40)
 while true do wait(0)
 game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
-game.Workspace.Trucks.dudugamer20173.Options.TopSpeed.Value = 33
-game.Workspace.Trucks.dudugamer20173.Options.Acceleration.Value = 4
+game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 33
+game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 4
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
 
 end
 
