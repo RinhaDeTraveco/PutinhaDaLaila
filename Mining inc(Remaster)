@@ -413,7 +413,7 @@ local Button17 = Section1:CreateButton("Uranium", function()
 
 for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
 if v.Name == "Uranium" then
-local New_CFrame = game.Workspace.Minerals.Uranium.Cframe
+local New_CFrame = game.Workspace.Minerals.Uranium.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
                     local part = Char.HumanoidRootPart
@@ -497,13 +497,9 @@ for i, v in pairs(porn:GetChildren()) do
 
 end
 
-game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(40, 30, 40)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(33, 25, 50)
 while true do wait(0)
 game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
-game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 33
-game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 4
-game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
-
 end
 
 end)
