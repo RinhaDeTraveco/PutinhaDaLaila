@@ -49,7 +49,6 @@ end
 local JESUS = game.Players.LocalPlayer.Name
 local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
 
-game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
 game.Workspace.map:WaitForChild("Refinery").Parts:GetChildren()[740]:Destroy()
 local Button1 = Section1:CreateButton("Give name to rocks", function()
 
@@ -112,6 +111,11 @@ if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then
 	print("Uranium")
 	instance.Name = "Uranium"
 end
+
+while true do wait(1)
+game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
+end
+
 end
 
 end)--fun
