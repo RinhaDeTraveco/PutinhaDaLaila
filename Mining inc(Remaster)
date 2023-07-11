@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.5                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.4.6                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -49,7 +49,8 @@ end
 local JESUS = game.Players.LocalPlayer.Name
 local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
 
-
+game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
+game.Workspace.map:WaitForChild("Refinery").Parts:GetChildren()[740]:Destroy()
 local Button1 = Section1:CreateButton("Give name to rocks", function()
 
 while true do tick (1000)
@@ -121,7 +122,7 @@ toggle = State
             wait(0.3)
             
 game.Workspace.Players:WaitForChild(JESUS):WaitForChild("HoldingRock")
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(90, -7, 94)
+local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(97, 47, 111)
 
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
@@ -130,9 +131,12 @@ local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 wait(0.5)
-game.Workspace.Gravity = 196
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.Anchored = true
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
+wait(0.2)
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.Anchored = false
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(111, 57, 79)
 
 end--wait
 end)--fun
@@ -490,21 +494,40 @@ game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = Game.Worksp
 
 end)
 
-local Button20 = Section2:CreateButton("Make you drill bigger", function()
+local Button20 = Section2:CreateButton("Make your drill bigger", function()
 local porn = game.Workspace.Trucks
 for i, v in pairs(porn:GetChildren()) do
     v.Name = v.Options.Owner.Value
-
 end
 
 game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(33, 25, 50)
 while true do wait(0)
 game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
+game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 33
+game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 4
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
 end
 
 end)
 
 Button20:AddToolTip("Only for big Miners")
+
+local Button21 = Section2:CreateButton("Make your drill GIANT", function()
+local porn = game.Workspace.Trucks
+for i, v in pairs(porn:GetChildren()) do
+    v.Name = v.Options.Owner.Value
+end
+
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(1024, 100, 1024)
+while true do wait(0)
+game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
+game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 33
+game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 4
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
+end
+end)--fin
+
+Button21:AddToolTip("Click here ONLY if you are deep on the cave\n really lag for trash computer")
 
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
