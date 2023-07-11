@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.6                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.4.7                                                                                                       Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -50,6 +50,7 @@ local JESUS = game.Players.LocalPlayer.Name
 local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
 
 game.Workspace.map:WaitForChild("Refinery").Parts:GetChildren()[740]:Destroy()
+
 local Button1 = Section1:CreateButton("Give name to rocks", function()
 
 while true do tick (1000)
@@ -58,28 +59,28 @@ instance = game.Workspace.Minerals.MinedRock
 
 if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
 	print("Iron")
-	instance.Name = "Iron"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Bronze" then 
 	print("Bronze")
-	instance.Name = "Bronze"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Copper" then 
 	print("Copper")
-	instance.Name = "Copper"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Aluminium" then 
 	print("Aluminium")
-	instance.Name = "Aluminium"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Silver" then 
 	print("Silver")
-	instance.Name = "Silver"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Titanium" then 
 	print("Titanium")
-	instance.Name = "Titanium"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Ruby" then 
 	print("Ruby")
-	instance.Name = "Ruby"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Gold" then 
 	print("Gold")
-	instance.Name = "Gold"
+	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Quartz" then 
 	print("Quartz")
 	instance.Name = "Quartz"	
@@ -111,14 +112,13 @@ if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then
 	print("Uranium")
 	instance.Name = "Uranium"
 end
+end
 
 while true do wait(1)
 game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
 end
 
-end
-
-end)--fun
+end)
 
 local Toggle2 = Section1:CreateToggle("auto factory", nil, function(State)
 toggle = State 
@@ -532,6 +532,27 @@ end
 end)--fin
 
 Button21:AddToolTip("Click here ONLY if you are deep on the cave\n really lag for trash computer")
+
+Button22 = Section2:CreateButton("bye worthless ores", function()
+
+for _,v in pairs(game.Workspace.Minerals:GetChildren()) do
+
+if v.Name == "me" then
+
+local New_CFrame = game.Workspace.Incinerator.Lava.CFrame
+
+                    local ts = game:GetService("TweenService")
+                    local Char = v            
+                    local part = Char
+                    local ti = TweenInfo.new(300,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = New_CFrame}
+                    ts:Create(part,ti,tp):Play()
+
+end
+end
+end)--fun
+
+Button22:AddToolTip("5 min")
 
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
