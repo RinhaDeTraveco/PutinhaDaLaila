@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.7                                                                                                       Pink Gui on top(practically",
+    WindowName = "1.4.6                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -49,9 +49,9 @@ end
 local JESUS = game.Players.LocalPlayer.Name
 local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
 
-game.Workspace.map:WaitForChild("Refinery").Parts:GetChildren()[740]:Destroy()
-
 local Button1 = Section1:CreateButton("Give name to rocks", function()
+
+game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
 
 while true do tick (1000)
 
@@ -113,11 +113,6 @@ if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then
 	instance.Name = "Uranium"
 end
 end
-
-while true do wait(1)
-game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
-end
-
 end)
 
 local Toggle2 = Section1:CreateToggle("auto factory", nil, function(State)
