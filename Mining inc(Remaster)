@@ -58,28 +58,28 @@ while true do tick (1000)
 instance = game.Workspace.Minerals.MinedRock
 
 if game.Workspace.Minerals.MinedRock.Type.Value == "Iron" then 
-	print("Iron")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Bronze" then 
-	print("Bronze")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Copper" then 
-	print("Copper")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Aluminium" then 
-	print("Aluminium")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Silver" then 
-	print("Silver")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Titanium" then 
-	print("Titanium")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Ruby" then 
-	print("Ruby")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Gold" then 
-	print("Gold")
+	print("me")
 	instance.Name = "me"
 	elseif game.Workspace.Minerals.MinedRock.Type.Value == "Quartz" then 
 	print("Quartz")
@@ -539,15 +539,31 @@ local New_CFrame = game.Workspace.Incinerator.Lava.CFrame
                     local ts = game:GetService("TweenService")
                     local Char = v            
                     local part = Char
-                    local ti = TweenInfo.new(300,Enum.EasingStyle.Linear)
+                    local ti = TweenInfo.new(60,Enum.EasingStyle.Linear)
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
 end
 end
-end)--fun
 
-Button22:AddToolTip("5 min")
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.Minerals.me.CFrame
+
+local New_CFrame = game.Workspace.Incinerator.Lava.CFrame
+
+                    local ts = game:GetService("TweenService")
+                    local Char = game.Players.LocalPlayer.Character            
+                    local part = Char.HumanoidRootPart
+                    local ti = TweenInfo.new(60,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = New_CFrame}
+                    ts:Create(part,ti,tp):Play()
+
+wait(60)
+v.Name = "MinedRock"
+
+end)
+
+
+Button22:AddToolTip("1 min")
 
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
