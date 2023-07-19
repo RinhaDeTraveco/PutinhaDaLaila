@@ -146,7 +146,7 @@ wait(0.5)
 game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.Anchored = true
 vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
-wait(0.35)
+wait(0.5)
 game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.Anchored = false
 game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(111, 57, 100)
 
