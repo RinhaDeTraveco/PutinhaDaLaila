@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.6                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.4.9                                                                                                        Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -48,6 +48,9 @@ end
 
 local JESUS = game.Players.LocalPlayer.Name
 local timbu = game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart
+--autola
+local Mouse = game:GetService("UserInputService"):GetMouseLocation()
+local JO = "MinedRock"
 
 local ve = game:GetService("VirtualInputManager")
 
@@ -60,6 +63,8 @@ end
 local Button1 = Section1:CreateButton("Give name to rocks", function()
 
 game.Players:WaitForChild(JESUS):WaitForChild("PlayerGui"):WaitForChild("MainGui"):WaitForChild("Essentials"):WaitForChild("Holder").Position = UDim2.new(1, 0, 0.510000014, 0)
+
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
 
 while true do tick (1000)
 
@@ -129,7 +134,7 @@ toggle = State
             wait(0.3)
             
 game.Workspace.Players:WaitForChild(JESUS):WaitForChild("HoldingRock")
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(97, 47, 111)
+local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(27, -11 , 115)
 
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
@@ -143,7 +148,7 @@ vuser:CaptureController()
 vuser:ClickButton1(Vector2.new())
 wait(0.35)
 game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.Anchored = false
-game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(111, 57, 79)
+game.Workspace.Players:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(111, 57, 100)
 
 end--wait
 end)--fun
@@ -190,9 +195,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Titanium.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Titanium"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Titanium.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -208,9 +219,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Ruby.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Ruby"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Ruby.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -226,9 +243,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Gold.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Gold"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Gold.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -244,9 +267,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Quartz.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Quartz"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Quartz.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -262,9 +291,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Cobalt.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Cobalt"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Cobalt.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -280,9 +315,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Lithium.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Lithium"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Lithium.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -298,9 +339,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Diamond.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Diamond"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Diamond.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -316,9 +363,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Sapphire.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Sapphire"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Sapphire.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -336,7 +389,13 @@ end
 wait(0.2) timbu.Anchored = true
 game.Workspace.Minerals.Jade.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Jade"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -351,9 +410,14 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Mercury.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Mercury"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Mercury.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
 game.Workspace.Gravity = 196
 end)
 
@@ -369,9 +433,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Emerald.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Emerald"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Emerald.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -388,9 +458,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Twitchium.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Sapphire"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Twitchium.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -406,9 +482,15 @@ game.Workspace.Camera.CFrame = CFrame.new(game.Workspace.Camera.CFrame.Position,
 end
 end
 wait(0.2) timbu.Anchored = true
-game.Workspace.Minerals.Uranium.Name = "MinedRock"
 wait(0.2) timbu.Anchored = false
-click()
+
+local JO = "Uranium"
+local TargetPos = game.workspace.Camera:WorldToViewportPoint(game.Workspace.Minerals:FindFirstChild(JO).CFrame.Position)
+wait(.5)
+click(TargetPos.X, TargetPos.Y)
+game.Workspace.Minerals.Uranium.Name = "MinedRock"
+click(TargetPos.X, TargetPos.Y)
+
 game.Workspace.Gravity = 196
 end)
 
@@ -480,19 +562,27 @@ for i, v in pairs(porn:GetChildren()) do
     v.Name = v.Options.Owner.Value
 end
 
-game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(33, 25, 50)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Size = Vector3.new(50, 36, 40)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Position = game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Position + Vector3.new(0,4.2,0)
+
 while true do wait(0)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
 game.Workspace.Trucks:WaitForChild(JESUS).DrillBase.Motor.MaxVelocity = 0
 game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 33
 game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 4
-game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
 end
 
 end)
 
 Button20:AddToolTip("Only for big Miners")
 
-local Button21 = Section2:CreateButton("Make your drill GIANT", function()
+local Button21 = Section2:CreateButton("FIX drill position", function()
+while true do wait(.1)
+game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Workspace.Trucks:WaitForChild(JESUS).Base.Rotation
+end
+end)
+
+local Button22 = Section2:CreateButton("Make your drill GIANT", function()
 local porn = game.Workspace.Trucks
 for i, v in pairs(porn:GetChildren()) do
     v.Name = v.Options.Owner.Value
