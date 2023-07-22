@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.9                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.5                                                                                                          Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
