@@ -7,7 +7,7 @@ local Config = {--                                                              
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
-local Tab1 = Window:CreateTab("Mining Inc (Remaster)")
+local Tab1 = Window:CreateTab("Mining Inc Remaster (For Vip Server)")
 
 
 local Section1 = Tab1:CreateSection("")
@@ -134,7 +134,7 @@ toggle = State
             wait(0.3)
             
 game.Workspace.Players:WaitForChild(JESUS):WaitForChild("HoldingRock")
-local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(27, -11 , 115)
+local New_CFrame = game.Workspace.map.Refinery.Regions.Part.CFrame + Vector3.new(27, -11 , 105)
 
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
