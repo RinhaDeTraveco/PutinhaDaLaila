@@ -1,5 +1,5 @@
 local Config = {--                                                                                                                                        "
-    WindowName = "1.4.9                                                                                                        Pink Gui on top(practically",
+    WindowName = "1.5                                                                                                          Pink Gui on top(practically",
     Color = Color3.fromRGB(245, 81, 231),
     Keybind = Enum.KeyCode.RightControl
 }--
@@ -597,7 +597,22 @@ game.Workspace.Trucks:WaitForChild(JESUS).Drill.DrillTouch.Rotation = game.Works
 end
 end)--fin
 
-Button21:AddToolTip("Click here ONLY if you are deep on the cave\n really lag for trash computer")
+Button22:AddToolTip("Click here ONLY if you are deep on the cave\n really lag for trash computer")
+
+local Button23 = Section2:CreateButton("Formula 1", function()
+
+local porn = game.Workspace.Trucks
+for i, v in pairs(porn:GetChildren()) do
+    v.Name = v.Options.Owner.Value
+end
+
+game.Workspace.Trucks:WaitForChild(JESUS).Options.Acceleration.Value = 10
+game.Workspace.Trucks:WaitForChild(JESUS).Options.TopSpeed.Value = 170
+game.Workspace.Trucks:WaitForChild(JESUS).Options.TurnSpeed.Value = 0.087
+
+end)
+
+Button23:AddToolTip("Made for DISPATCHERS")
 
 local Toggle8 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
