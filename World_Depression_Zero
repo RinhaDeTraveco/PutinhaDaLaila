@@ -1,0 +1,3 @@
+local mm = 0
+
+print(mm)
