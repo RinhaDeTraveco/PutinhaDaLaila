@@ -1,7 +1,7 @@
 _G.putinha = "on" --on/off
 print "mae ta on"
-local Tenho_Gamepass_de_Bau_Duplo = "nao" -- sim/nao
-local Quero_Ir_Ate_A_Wave = 1000 -- cuidado para não ir muito longe
+local Tenho_Gamepass_de_Bau_Duplo = Tenho_Gamepass_de_Bau_Duplo -- sim/nao
+local Quero_Ir_Ate_A_Wave = Quero_Ir_Ate_A_Wave -- cuidado para não ir muito longe
 --[[         ___  ___       ___       __       __   __   __       ___                            
 			|   \/   |     /   \     |  |     |  | |  \ |  |     /   \                           
 			|  \  /  |    /  ^  \    |  |     |  | |   \|  |    /  ^  \                          
@@ -30,6 +30,9 @@ local Quero_Ir_Ate_A_Wave = 1000 -- cuidado para não ir muito longe
 
 
 wait(10)
+
+print(Tenho_Gamepass_de_Bau_Duplo)
+print(Quero_Ir_Ate_A_Wave)
 
 local ve = game:service'VirtualInputManager'
 
