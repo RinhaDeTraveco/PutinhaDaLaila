@@ -1,4 +1,4 @@
-_G.putinha = "on" --on/off
+_G.putinha = "_G.putinha" --on/off
 print "mae ta on"
 local Tenho_Gamepass_de_Bau_Duplo = Tenho_Gamepass_de_Bau_Duplo -- sim/nao
 local Quero_Ir_Ate_A_Wave = Quero_Ir_Ate_A_Wave -- cuidado para não ir muito longe
