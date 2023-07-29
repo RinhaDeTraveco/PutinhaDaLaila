@@ -1,7 +1,7 @@
-_G.putinha = "_G.putinha" --on/off
+_G.putinha = "on" --on/off
 print "mae ta on"
-local Tenho_Gamepass_de_Bau_Duplo = Tenho_Gamepass_de_Bau_Duplo -- sim/nao
-local Quero_Ir_Ate_A_Wave = Quero_Ir_Ate_A_Wave -- cuidado para não ir muito longe
+local Tenho_Gamepass_de_Bau_Duplo = nao -- sim/nao
+local Quero_Ir_Ate_A_Wave = 500 -- cuidado para não ir muito longe
 --[[         ___  ___       ___       __       __   __   __       ___                            
 			|   \/   |     /   \     |  |     |  | |  \ |  |     /   \                           
 			|  \  /  |    /  ^  \    |  |     |  | |   \|  |    /  ^  \                          
