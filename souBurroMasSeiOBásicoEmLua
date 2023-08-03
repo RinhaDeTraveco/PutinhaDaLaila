@@ -1,7 +1,5 @@
 local JESUS = game.Players.LocalPlayer.Name
 
-while game.Workspace.Characters:WaitForChild(JESUS).Humanoid.Health ~= 0 do wait(0)
-
 local ping = game.Players.LocalPlayer:GetNetworkPing() * 1421
 
 local Num = ping/666
