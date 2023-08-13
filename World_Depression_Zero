@@ -1,7 +1,7 @@
 local Config = {
     WindowName = "WZ trash script",
     Color = Color3.fromRGB(224, 13, 13),
-    Keybind = Enum.KeyCode.RightControl
+    Keybind = Enum.KeyCode.LeftControl
 }
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
