@@ -1,129 +1,526 @@
-_G.putinha = "on" --on/off
-print "mae ta on"
-local Tenho_Gamepass_de_Bau_Duplo = nao -- sim/nao
-local Quero_Ir_Ate_A_Wave = 500 -- cuidado para não ir muito longe
---[[         ___  ___       ___       __       __   __   __       ___                            
-			|   \/   |     /   \     |  |     |  | |  \ |  |     /   \                           
-			|  \  /  |    /  ^  \    |  |     |  | |   \|  |    /  ^  \                          
-			|  |\/|  |   /  /_\  \   |  |     |  | |  . `  |   /  /_\  \                         
-			|  |  |  |  /  _____  \  |  `----.|  | |  |\   |  /  _____  \                        
-			|__|  |__| /__/     \__\ |_______||__| |__| \__| /__/     \__\                       
-	                                                                                     
-								     ___                                                                             
-								    /   \                                                                            
-								   /  ^  \                                                                           
-								  /  /_\  \                                                                          
-								 /  _____  \                                                                         
-								/__/     \__\                                                                        
-	                                                                                     
-	  _______   ______        _______  ___________   ______        _______      ___      
-	 /  _____| /  __  \      /       ||           | /  __  \      /       |    /   \     
-	|  |  __  |  |  |  |    |   (----``---|  |----`|  |  |  |    |   (----`   /  ^  \    
-	|  | |_ | |  |  |  |     \   \        |  |     |  |  |  |     \   \      /  /_\  \   
-	|  |__| | |  `--'  | .----)   |       |  |     |  `--'  | .----)   |    /  _____  \  
-	 \______|  \______/  |_______/        |__|      \______/  |_______/    /__/     \__\ 
- 
- --]]
+local Config = {
+    WindowName = "WZ trash script",
+    Color = Color3.fromRGB(224, 13, 13),
+    Keybind = Enum.KeyCode.RightControl
+}
 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
+local JESUS = game.Players.LocalPlayer.Name
+--game:GetService("ReplicatedStorage").Profiles:WaitForChild(JESUS).Inventory.Slots.Value = 9999999999
 
+local Tab1 = Window:CreateTab("WZ inf tower")
+local Tab2 = Window:CreateTab("UI Settings")
 
+local Section1 = Tab1:CreateSection("Farm")
+local Section2 = Tab2:CreateSection("")
+local Section3 = Tab2:CreateSection("")
 
-wait(10)
+_G.Conf = {
+	KillAU = State,
+	Auto_Farm = State,
+	PickDrop = State,
+	InfTower = State,
+	WaveValue = 201,
+	Gamepass = Gamepass,
+	Load = State,
+	Vendinha = State,
+	Beck = 1495453507
+	}
+	
+local filename = "Pink_WZ.txt"
 
-print(Tenho_Gamepass_de_Bau_Duplo)
-print(Quero_Ir_Ate_A_Wave)
+function load()
+	local HttpService = game:GetService("HttpService")
+	if (readfile and isfile and isfile(filename)) then
+		_G.Conf = HttpService:JSONDecode(readfile(filename))
+		print"--------loadado--------"
+		for i,v in pairs(_G.Conf) do 
+			print(i,v)
+		end
+end
+end
 
-local ve = game:service'VirtualInputManager'
+function SaveMe()
+	print("saving")
+	local json
+	local HttpService = game:GetService("HttpService")
+	if (writefile) then
+		json = HttpService:JSONEncode(_G.Conf)
+		writefile(filename, json)
+	else
+		print"you exploit dont support this function :("
+	end
+end
 
-function volta()
-ve:SendMouseButtonEvent(203,111,0,true,game,0) wait(0.1) ve:SendMouseButtonEvent(203,111,0,false,game,0)
-wait(0.1)
-ve:SendMouseButtonEvent(203,171,0,true,game,0) wait(0.1) ve:SendMouseButtonEvent(203,171,0,false,game,0)
+local ve = game:GetService("VirtualInputManager")
+
+function mc_vv()
+ve:SendKeyEvent(true, "J", false, nil)
 end
 
 function click()
 ve:SendMouseButtonEvent(697,412,0,true,game,0) ve:SendMouseButtonEvent(697,412,0,false,game,0)
 end
 
-local JESUS = game.Players.LocalPlayer.Name
+function mc_vv()
+ve:SendKeyEvent(true, "J", false, nil)
+end
 
-game.Workspace.Boss_Gate.Interactions.Bounds.CanCollide = false
+local Toggle1 = Section1:CreateToggle("kill Aura",_G.Conf.KillAU,function(State)
+	_G.Conf.KillAU = State
+	print("KillAura is:", State)
+	SaveMe()
+	while _G.Conf.KillAU == true do wait(real)
 
-while wait(0) do
-if _G.putinha == "on" then
+local vezes = 1412
+local ping = game.Players.LocalPlayer:GetNetworkPing() * vezes
 
---local aa = game.Workspace.Mobs:GetChildren()
---local ab = #aa
+local Num = ping/666
+local Num2 = 30% Num
+
+local r = Random.new()
+
+local real = r:NextNumber(Num, Num2)
+_G.range = 80 -- killaura range xd (archer's max range is 80, melee classes's max range is 10 or 20 idfk
+
+print(real)
+wait(real)
+
+------------------------
+local class = game.Players.LocalPlayer.Character.Properties.Class.Value
+local Classes = { -- skidded from some old script + added the new classes :troll:
+   ["Swordmaster"]     = {"Swordmaster1", "Swordmaster2", "Swordmaster3", "Swordmaster4", "Swordmaster5", "Swordmaster6", "CrescentStrike1", "CrescentStrike2", "CrescentStrike3", "Leap"};
+   ["Mage"]            = {"Mage1", "ArcaneBlastAOE", "ArcaneBlast", "ArcaneWave1", "ArcaneWave2", "ArcaneWave3", "ArcaneWave4", "ArcaneWave5", "ArcaneWave6", "ArcaneWave7", "ArcaneWave8", "ArcaneWave9"};
+   ["Defender"]        = {"Defender1", "Defender2", "Defender3", "Defender4", "Defender5", "Groundbreaker", "Spin1", "Spin2", "Spin3", "Spin4", "Spin5"};
+   ["DualWielder"]     = {"DualWield1", "DualWield2", "DualWield3", "DualWield4", "DualWield5", "DualWield6", "DualWield7", "DualWield8", "DualWield9", "DualWield10", "DashStrike", "CrossSlash1", "CrossSlash2", "CrossSlash3", "CrossSlash4"};
+   ["Guardian"]        = {"Guardian1", "Guardian2", "Guardian3", "Guardian4", "SlashFury1", "SlashFury2", "SlashFury3", "SlashFury4", "SlashFury5", "SlashFury6", "SlashFury7", "SlashFury8", "SlashFury9", "SlashFury10", "SlashFury11", "SlashFury12", "SlashFury13", "RockSpikes1", "RockSpikes2", "RockSpikes3"};
+   ["IcefireMage"]     = {"IcefireMage1", "IcySpikes1", "IcySpikes2", "IcySpikes3", "IcySpikes4", "IcefireMageFireballBlast", "IcefireMageFireball", "LightningStrike1", "LightningStrike2", "LightningStrike3", "LightningStrike4", "LightningStrike5", "IcefireMageUltimateFrost", "IcefireMageUltimateMeteor1"};
+   ["Berserker"]       = {"Berserker1", "Berserker2", "Berserker3", "Berserker4", "Berserker5", "Berserker6", "AggroSlam", "GigaSpin1", "GigaSpin2", "GigaSpin3", "GigaSpin4", "GigaSpin5", "GigaSpin6", "GigaSpin7", "GigaSpin8", "Fissure1", "Fissure2", "FissureErupt1", "FissureErupt2", "FissureErupt3", "FissureErupt4", "FissureErupt5"};
+   ["Paladin"]         = {"Paladin1", "Paladin2", "Paladin3", "Paladin4", "LightThrust1", "LightThrust2", "LightPaladin1", "LightPaladin2"};
+   ["MageOfLight"]     = {"MageOfLightBlastCharged", "MageOfLightCharged", "MageOfLight", "MageOfLightBlast"};
+   ["Demon"]           = {"Demon1", "Demon4", "Demon7", "Demon10", "Demon13", "Demon16", "Demon19", "Demon22", "Demon25", "DemonDPS1", "DemonDPS2", "DemonDPS3", "DemonDPS4", "DemonDPS5", "DemonDPS6", "DemonDPS7", "DemonDPS8", "DemonDPS9", "ScytheThrowDPS1", "ScytheThrowDPS2", "ScytheThrowDPS3", "DemonLifeStealDPS", "DemonSoulDPS1", "DemonSoulDPS2", "DemonSoulDPS3"};
+   ["Dragoon"]         = {"Dragoon1", "Dragoon2", "Dragoon3", "Dragoon4", "Dragoon5", "Dragoon6"};
+   ["Archer"]          = {"Archer"};
+};
+
+local cl = Classes[class]
+
+function closest()
+	local plr = game.Players.LocalPlayer
+	local Character = plr.Character
+	local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+	if not (Character or HumanoidRootPart) then return end
+
+	local TargetDistance,Target = math.huge
+
+	for i,v in next, workspace.Mobs:GetChildren() do
+		if v:FindFirstChild("Collider") then
+			local mag = (HumanoidRootPart.Position - v.Collider.Position).magnitude
+				if mag < TargetDistance and mag <= _G.range and v.HealthProperties.Health.Value > 0 then
+               TargetDistance = mag
+               Target = v
+           end
+       end
+   end
+
+   return Target
+end
+
+local ind = 0
+   c = closest()
+   if c then
+       ind = ind + 1
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(real/vezes*8)
+       ind = ind + 2
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       ind = ind + 3
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(real/vezes*11)
+       ind = ind + 4
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(real/vezes*20)
+       ind = ind + 5
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       ind = ind + 6
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(real/vezes*4)
+       ind = ind + 7
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       if ind >= #cl then
+           ind = 0
+       end
+   end
+end
+end)
+Toggle1:CreateKeybind("Y", function(Key)
+end)
+
+function closest()
+	local plr = game.Players.LocalPlayer
+	local Character = plr.Character
+	local HumanoidRootPart = Character and Character:FindFirstChild("HumanoidRootPart")
+	if not (Character or HumanoidRootPart) then return end
+
+	local TargetDistance,Target = math.huge
+
+	for i,v in next, workspace.Mobs:GetChildren() do
+		if v:FindFirstChild("Collider") then
+			local mag = (HumanoidRootPart.Position - v.Collider.Position).magnitude
+			if mag < TargetDistance and v.HealthProperties.Health.Value > 0 then
+			TargetDistance = mag
+				Target = v
+           end
+       end
+   end
+
+   return Target
+end
+
+-------------------------------------------------------------------------------------------
+
+local Toggle2 = Section1:CreateToggle("Auto Farm",_G.Conf.Auto_Farm,function(State)
+	_G.Conf.Auto_Farm = State
+	print("Auto_Farm is:", State)
+	SaveMe()
+	Instance.new("Part",game.Workspace.Mobs)
+	while _G.Conf.Auto_Farm == true do wait(.00001)
+
+local part = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart
+local tau = 2*math.pi -- mathematical constant
+local increment = tau/180 -- for the loop
+local radius = 35 -- how far away the orbit is
+
+   for i,v in next, workspace.Mobs:GetChildren() do
+       if v:FindFirstChild("Collider") then
+       
+      	local origin = v.Collider.Position + Vector3.new(0,22.5,0)
+      	
+       	for i = 1, tau, increment do -- main for loop like in the example	
+			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
+		part.CFrame = CFrame.new(origin + pos, origin)
+		task.wait()
+		end
+		else wait(.1)
+		end
+	end
+	end
+end)
+Toggle2:CreateKeybind("J", function(Key)
+end)
+
+local Toggle3 = Section1:CreateToggle("Pickup Drops",_G.Conf.PickDrop,function(State)
+	_G.Conf.PickDrop = State
+	print("Auto Pickup is:", State)
+	SaveMe()
+	while _G.Conf.PickDrop == true do wait(.001)
+	
+for i,v in next,(game.Workspace.Coins:GetChildren()) do
+		v:FindFirstChild("CoinPart")
+			game.Workspace.Coins.CoinPart.CanCollide = false
+			game.Workspace.Coins.CoinPart.Position = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position + Vector3.new(0, -2 , 0)
+end
+
+end
+end)
+
+local Toggle4 = Section1:CreateToggle("Auto inf tower",_G.Conf.InfTower,function(State)
+	_G.Conf.InfTower = State
+	print("Infinite Tower is:", State)
+	SaveMe()
+	while _G.Conf.InfTower == true do wait()
+	
+if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
+ game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
+end
 
 for i, v in pairs(game.Workspace:GetChildren()) do
+	if v.Name == "IgnisShield" then  
+	
+	mc_vv()
+	game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IgnisShield.Ring.CFrame
+	wait(16)	mc_vv()
+	end
+
 	if v.Name == "IceWall" then
+	mc_vv()
+	game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IceWall.Ring.CFrame
+	wait(16)	mc_vv()
+	end
 
-volta()
-game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IceWall.Ring.CFrame
-wait(15)
-volta()
-
-end
-end
-   
-for i, v in pairs(game.Workspace:GetChildren()) do
-	if v.Name == "IgnisShield" then   				 
-
-volta()
-game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IgnisShield.Ring.CFrame
-wait(15)
-volta()
-
-end
-end
-
-if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, Quero_Ir_Ate_A_Wave) then
- 
-game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
-
-end
-
-for i, v in pairs(game.Workspace.Mobs:GetChildren()) do
-    if v.Name == "BOSSHogRider" then
-		
--- I NEED A GOOD KILL AURA ;(
-
-end
-end
-
-for i, v in pairs(game.Workspace.Mobs:GetChildren()) do
-    if v.Name == "BOSSAnubis" then
-
--- I NEED A GOOD KILL AURA ;(
-
-end
-end
-    
-for i, v in pairs(game.Workspace:GetChildren()) do
     if v.Name == "RaidChestGold" then
-    		
-			game.Workspace:WaitForChild("RaidChestGold").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-			click() wait(1) click() wait(1) click() wait(1) click() wait(1) click()
+		game.Workspace:WaitForChild("RaidChestGold").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		click() wait(.5) click() wait(.5) click() wait(.5) click() wait(.5) click()
 			
-	game.Workspace.MissionObjects.Arena["2"].TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.MissionObjects.Arena.BossArena.TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.MissionObjects.Arena["1"].TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+
+		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		
+	if 	_G.Conf.Gamepass == "sim" then
+		click() wait(.5) click() wait(.5) click() wait(.5) click() wait(.5) click()
+		game.Workspace:FindFirstChild("RaidChestSilver").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
 			
-			if Tenho_Gamepass_de_Bau_Duplo == "sim" then
-			click() wait(1) click() wait(1) click() wait(1) click() wait(1) click()
-			game.Workspace:WaitForChild("RaidChestSilver").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-			
-end
 end
 end
 
-	game.Workspace.MissionObjects.Arena["2"].TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.MissionObjects.Arena.BossArena.TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.MissionObjects.Arena["1"].TeleporterLocation.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
-	game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
 
 end
 end
+end)
+
+local Toggle7 = Section1:CreateToggle("Auto Sell Trash",_G.Conf.Vendinha,function(State)
+	_G.Conf.Vendinha = State
+	print("Auto Sell Trash is:", State)
+	SaveMe()
+	while _G.Conf.Vendinha == true do wait(.001)
+
+for i,v in next, game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren() do
+		if v:FindFirstChild("Perk2") then
+		if not v:FindFirstChild("Perk3") then 
+		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+		end
+		end
+		if v:FindFirstChild("Perk3") then
+		
+			if string.match(v.Name, "Zero") then
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Position = UDim2.new(-2.89999995, 0, 6.5, 0)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextColor3 = Color3.new(255, 0, 0)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextSize = 100
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Size = UDim2.new(4, 1, 5, 1)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Text = "PUT YOUR ZERO ON BANK TO USE THE AUTO SELL"
+			wait(9e1010)
+			end
+		
+		--if v.Perk3.Value ~= "OpeningStrike" or v.Perk3.Value ~= "MobBoss" or v.Perk3.Value ~= "EliteBoss" or v.Perk3.Value ~= "TestTier5" or v.Perk3.Value ~= "Fortress" or v.Perk3.Value ~= "Glass" or v.Perk3.Value ~= "DamageReduction" or v.Perk3.Value ~= "MasterThief" or v.Perk3.Value ~= "DodgeChance" or v.Perk3.Value ~= "BonusHP" then
+		
+	if v:FindFirstChild("Perk2") then
+		if v.Perk2 == "BonusAttack" then
+			if v.Perk2.PerkValue.Value <= 0.05 then
+
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+			
+	if v:FindFirstChild("Perk1") then
+		if v.Perk1 == "BonusAttack" then
+			if v.Perk1.PerkValue.Value <= 0.06 then
+
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+	if v:FindFirstChild("Perk2") then
+		if v.Perk2 == "BonusHP" then
+			if v.Perk2.PerkValue.Value <= 0.10 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+
+	if v:FindFirstChild("Perk1") then
+		if v.Perk1 == "BonusHP" then
+			if v.Perk1.PerkValue.Value <= 0.10 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+	if v:FindFirstChild("Perk2") then
+		if v.Perk2 == "DodgeChance" then
+			if v.Perk2.PerkValue.Value <= 0.18 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+	
+	
+	if v:FindFirstChild("Perk1") then
+		if v.Perk1 == "DodgeChance" then
+			if v.Perk1.PerkValue.Value <= 0.18 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+	if v:FindFirstChild("Perk2") then
+		if v.Perk2 == "DamageReduction" then
+			if v.Perk2.PerkValue.Value <= 0.18 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+--if v.Perk3.Value ~= "OpeningStrike" or v.Perk3.Value ~= "MobBoss" or v.Perk3.Value ~= "EliteBoss" or v.Perk3.Value ~= "TestTier5" or v.Perk3.Value ~= "Fortress" or v.Perk3.Value ~= "Glass" or v.Perk3.Value ~= "DamageReduction" or v.Perk3.Value ~= "MasterThief" or v.Perk3.Value ~= "DodgeChance" or v.Perk3.Value ~= "BonusHP" then		
+	if v:FindFirstChild("Perk3") then
+	
+		if v.Perk3.Value == "OpeningStrike" then
+			if v.Perk3.PerkValue.Value <= 0.23 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+
+	if v:FindFirstChild("Perk3") then
+
+		if v.Perk3.Value == "MobBoss" then
+			if v.Perk3.PerkValue.Value <= 0.28 then
+
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+	if v:FindFirstChild("Perk3") then
+		
+		if v.Perk3.Value == "EliteBoss" then
+			if v.Perk3.PerkValue.Value <= 0.28 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+	
+	if v:FindFirstChild("Perk3") then
+	
+		if v.Perk3.Value == "TestTier5" then --bob?
+			if v.Perk3.PerkValue.Value <= 0.28 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+	
+	if v:FindFirstChild("Perk3") then
+	
+		if v.Perk3.Value == "Fortress" then
+			if v.Perk3.PerkValue.Value <= 0.33 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+	
+	if v:FindFirstChild("Perk3") then
+		
+		if v.Perk3.Value == "Glass" then
+			if v.Perk3.PerkValue.Value <= 0.98 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+
+	if v:FindFirstChild("Perk3") then
+
+		if v.Perk3.Value == "MasterThief" then
+			if v.Perk3.PerkValue.Value <= 0.33 then
+			
+				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
+			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
+			end
+		end
+	end
+		
+		end
+		
+		end
+		end
+
+end
+end)
+
+Toggle7:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon \nif you dont wanna delete all your legs put them on your bank\n(this applies to all zeros)")
+
+
+local TextBox1 = Section1:CreateTextBox("which wave do you want to go to?", "Only numbers", true, function(WaveValue)
+	print("i want go to wave", WaveValue)
+	_G.Conf.WaveValue = WaveValue
+	SaveMe()
+end)
+
+local Label1 = Section1:CreateLabel("Label 1")
+Label1:UpdateText("i have double chest gamepass?")
+
+local Button1 = Section1:CreateButton("yes", function()
+	print("i have the gamepass :)")
+	_G.Conf.Gamepass = "yes"
+	SaveMe()
+end)
+local Button2 = Section1:CreateButton("no", function()
+	print("i dont have the gamepass ;(")
+	_G.Conf.Gamepass = "no"
+	SaveMe()
+end)
+
+local Toggle5 = Section2:CreateToggle("UI Toggle",nil,function(State)
+	Window:Toggle(State)
+end)
+Toggle5:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+	Config.Keybind = Enum.KeyCode[Key]
+end)
+Toggle5:SetState(true)
+
+local Togge6 = Section3:CreateToggle("Auto Reload on Hop (not working)",_G.Conf.Load,function(State)
+		_G.Conf.Load = State
+	print("Auto Pickup is:", "MAINTENCE")
+	SaveMe()
+end)
+
+local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime Girl","Anime Girl2","INS","Malina"}, function(Name)
+	if Name == "Flower" then
+		Window:SetBackground("1495453507")
+		_G.Conf.Beck = "1495453507"
+		SaveMe()
+	elseif Name == "Anime Girl" then
+		Window:SetBackground("10760342849")
+		_G.Conf.Beck = "10760342849"
+		SaveMe()
+	elseif Name == "Anime Girl2" then
+		Window:SetBackground("12426530906")
+		_G.Conf.Beck = "12426530906"
+		SaveMe()
+	elseif Name == "INS" then
+		Window:SetBackground("1153910770")
+		_G.Conf.Beck = "1153910770"
+		SaveMe()
+	elseif Name == "Malina" then
+		Window:SetBackground("7491405406")
+		_G.Conf.Beck = "7491405406"
+		SaveMe()
+	end
+end)
+
+-- para eu saber
+wait(2)
+load()
+Window:SetBackground(_G.Conf.Beck)-- OHHHHH MYYYYYY GOD
