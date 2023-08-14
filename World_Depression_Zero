@@ -29,7 +29,13 @@ _G.Conf = {
 	WaveValue = 201,
 	Gamepass = Gamepass,
 	Load = State,
-	Beck = 1495453507
+	Beck = 1495453507,
+        Epic = State,
+        Vendinha = State,
+        Killau = State,
+        AutoFarm = State,
+        Inf = State,
+        pe
 	}
 	
 local filename = "Pink_WZ.txt"
@@ -540,16 +546,38 @@ Toggle6:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 
+local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
+    toggle = State
+     if toggle then
+        while toggle do wait(.1)
+
+for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren()) do wait(.1)
+
+		if v:FindFirstChild("Perk2") then
+		if not v:FindFirstChild("Perk3") then
+		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+		end
+		end
+end
+end
+end)
+
 local Toggle8 = Section3:CreateToggle("Auto load config (will load everything)",nil,function(State)
 	_G.Conf.Load = State
 	
 	wait(1.75)
 	function dick()
+
 	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
+
 	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
+
 	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
+
 	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
+
 	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
+
 	end
 	dick()
 	print("Auto Load Config is:", State)
