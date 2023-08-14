@@ -381,8 +381,8 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		
 	if v:FindFirstChild("Perk2") then
 		if v.Perk2 == "DamageReduction" then
-			if v.Perk2.PerkValue.Value <= 0.18 then
-			
+			if v.Perk2.PerkValue.Value <= 0.6 then
+
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
 			end
