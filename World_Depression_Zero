@@ -313,7 +313,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextSize = 100
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Size = UDim2.new(4, 1, 5, 1)
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Text = "PUT YOUR ZERO ON BANK TO USE THE AUTO SELL (turn off and on)"
-			wait(99999^99999^99999)
+			wait(9999999999999999999999999999999999999999)
 			end
 		
 		--if v.Perk3.Value ~= "OpeningStrike" or v.Perk3.Value ~= "MobBoss" or v.Perk3.Value ~= "EliteBoss" or v.Perk3.Value ~= "TestTier5" or v.Perk3.Value ~= "Fortress" or v.Perk3.Value ~= "Glass" or v.Perk3.Value ~= "DamageReduction" or v.Perk3.Value ~= "MasterThief" or v.Perk3.Value ~= "DodgeChance" or v.Perk3.Value ~= "BonusHP" then
