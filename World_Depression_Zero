@@ -190,7 +190,7 @@ end
 local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
 local tau = 2*math.pi -- mathematical constant
 local increment = tau/360 -- for the loop
-local radius = 55 -- how far away the orbit is
+local radius = 60 -- how far away the orbit is
 
 ---------------------------------------
 
@@ -247,13 +247,30 @@ for i, v in pairs(game.Workspace:GetChildren()) do
 	if v.Name == "IgnisShield" then  
 	
 	mc_vv()
-	game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IgnisShield.Ring.CFrame
+
+local New_CFrame = game.Workspace.IgnisShield.Ring.CFrame
+
+                    local ts = game:GetService("TweenService")
+                    local Char = game.Players.LocalPlayer.Character            
+                    local part = Char.HumanoidRootPart
+                    local ti = TweenInfo.new(1,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = New_CFrame}
+                    ts:Create(part,ti,tp):Play()
+
 	wait(16)	mc_vv()
 	end
 
 	if v.Name == "IceWall" then
 	mc_vv()
-	game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame = game.Workspace.IceWall.Ring.CFrame
+local New_CFrame = game.Workspace.IceWall.Ring.CFrame
+
+                    local ts = game:GetService("TweenService")
+                    local Char = game.Players.LocalPlayer.Character            
+                    local part = Char.HumanoidRootPart
+                    local ti = TweenInfo.new(1,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = New_CFrame}
+                    ts:Create(part,ti,tp):Play()
+
 	wait(16)	mc_vv()
 	end
 
