@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 --				  _
---wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
+wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
 --     			 | |
 --				 | |___
 --				 |_____|
@@ -237,8 +237,6 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
      if toggle then
         while toggle do wait(.00001)
 
-	if _G.Conf.Load == true then Toggle3:SetState(true) end
-
 if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
 	while true do wait(.1)
@@ -277,17 +275,17 @@ for i, v in pairs(game.Workspace:GetChildren()) do
 end
 end
 
-		game.Workspace:FindFirstChild("MissionObjects").Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace:FindFirstChild("MissionObjects").Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace:FindFirstChild("MissionObjects").Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace:FindFirstChild("LobbyTeleport"):FindFirstChild("Interaction").CanCollide = false
-		game.Workspace:FindFirstChild("Boss_Gate").Interactions:FindFirstChild("Bounds").CanCollide = false
+		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace.LobbyTeleport:FindFirstChild("Interaction").CanCollide = false
+		game.Workspace.Boss_Gate.Interactions:FindFirstChild("Bounds").CanCollide = false
 
-		game.Workspace:FindFirstChild("MissionObjects").Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace:FindFirstChild("MissionObjects").Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace:FindFirstChild("MissionObjects").Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace:FindFirstChild("LobbyTeleport").Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace:FindFirstChild("Boss_Gate").Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 
 end
 end
@@ -511,8 +509,7 @@ local Toggle8 = Section3:CreateToggle("Auto load config (will load everything)",
 	function dick()
 	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
 	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
-	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.05)
-	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.05)
+	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
 	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
 	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
 	end
