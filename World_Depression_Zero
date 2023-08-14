@@ -313,6 +313,17 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextSize = 100
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Size = UDim2.new(4, 1, 5, 1)
 			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Text = "PUT YOUR ZERO ON BANK TO USE THE AUTO SELL (turn off and on)"
+			v.Perk2.Name = "ZERO" v.Perk3.Name = "ZERO" v.Perk1.Name = "ZERO"
+			wait(9999999999999999999999999999999999999999)
+			end
+
+			if string.match(v.Name, "zero") then
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Position = UDim2.new(-2.89999995, 0, 6.5, 0)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextColor3 = Color3.new(255, 0, 0)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.TextSize = 100
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Size = UDim2.new(4, 1, 5, 1)
+			game.Players:WaitForChild(JESUS).PlayerGui.QuestTracker.QuestTracker.PointsLabel.Text = "PUT YOUR ZERO ON BANK TO USE THE AUTO SELL (turn off and on)"
+			v.Perk2.Name = "ZERO" v.Perk3.Name = "ZERO" v.Perk1.Name = "ZERO"
 			wait(9999999999999999999999999999999999999999)
 			end
 		
