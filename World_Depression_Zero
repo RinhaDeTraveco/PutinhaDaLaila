@@ -35,7 +35,7 @@ _G.Conf = {
         Killau = State,
         AutoFarm = State,
         Inf = State,
-        pe
+        Pick = State
 	}
 	
 local filename = "Pink_WZ.txt"
@@ -98,8 +98,9 @@ local Classes = { -- skidded from some old script + added the new classes :troll
 
 local cl = Classes[class]
 
-local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
+local Toggle1 = Section1:CreateToggle("kill Aura",_G.Conf.nil,function(State)
     toggle = State
+_G.Conf.Killau = State
      if toggle then
         while toggle do wait(0)
 
@@ -202,6 +203,7 @@ local radius = 60 -- how far away the orbit is
 
 local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
     toggle = State
+_G.Conf.AutoFarm = State
      if toggle then
         while toggle do wait(.1)
 
@@ -226,6 +228,7 @@ end)
 
 local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
     toggle = State
+_G.Conf.Pick = State
      if toggle then
         while toggle do wait(0.001)
 
@@ -240,6 +243,7 @@ end)
 
 local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
     toggle = State
+_G.Conf.Inf = State
      if toggle then
         while toggle do wait(.00001)
 
@@ -317,6 +321,7 @@ end)
 
 local Toggle5 = Section1:CreateToggle("Auto Sell Trash",nil,function(State)
     toggle = State
+_G.Conf.Vendinha = State
      if toggle then
         while toggle do wait(.1)
      
@@ -548,6 +553,7 @@ end)
 
 local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
     toggle = State
+_G.Conf.Epic = State
      if toggle then
         while toggle do wait(.1)
 
