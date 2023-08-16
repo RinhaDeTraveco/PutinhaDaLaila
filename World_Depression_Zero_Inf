@@ -605,7 +605,7 @@ end)
 
 Toggle8:AddToolTip("this shit will active all the functions")
 
-local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime Girl","Anime Girl2","INS","Malina"}, function(Name)
+local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime Girl","Anime Girl2","INS","Malina","RAIFUTAIKA"}, function(Name)
 	if Name == "Flower" then
 		Window:SetBackground("1495453507")
 		_G.Conf.Beck = "1495453507"
@@ -624,6 +624,10 @@ local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime G
 		SaveMe()
 	elseif Name == "Malina" then
 		Window:SetBackground("7491405406")
+		_G.Conf.Beck = "7491405406"
+		SaveMe()
+	elseif Name == "RAIFUTAIKA" then
+		Windows:SetBackground("7295056622")
 		_G.Conf.Beck = "7491405406"
 		SaveMe()
 	end
