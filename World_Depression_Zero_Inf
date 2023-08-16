@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 --				  _
-wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
+--wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
 --     			 | |
 --				 | |___
 --				 |_____|
@@ -30,12 +30,12 @@ _G.Conf = {
 	Gamepass = Gamepass,
 	Load = State,
 	Beck = 1495453507,
-        Epic = State,
-        Vendinha = State,
-        Killau = State,
-        AutoFarm = State,
-        Inf = State,
-        Pick = State
+ 	Epic = State,
+ 	Vendinha = State,
+ 	Killau = State,
+ 	AutoFarm = State,
+ 	Inf = State,
+ 	Pick = State
 	}
 	
 local filename = "Pink_WZ.txt"
@@ -98,7 +98,7 @@ local Classes = { -- skidded from some old script + added the new classes :troll
 
 local cl = Classes[class]
 
-local Toggle1 = Section1:CreateToggle("kill Aura",_G.Conf.nil,function(State)
+local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
     toggle = State
 _G.Conf.Killau = State
      if toggle then
@@ -302,7 +302,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
 end
 end
 
-		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		--[[game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.LobbyTeleport:FindFirstChild("Interaction").CanCollide = false
@@ -313,7 +313,7 @@ end
 		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-
+]]
 end
 end
 end
@@ -327,9 +327,9 @@ _G.Conf.Vendinha = State
      
 for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren()) do wait(.1)
 
-		if v:FindFirstChild("Perk2") then
+		if v:FindFirstChild("Perk1") then
 		if not v:FindFirstChild("Perk3") then
-		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
+		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 		end
 		end
 		
@@ -523,6 +523,23 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 
 Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon \nif you dont wanna delete all your legs put them on your bank\n(this applies to all zeros)")
 
+local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
+    toggle = State
+_G.Conf.Epic = State
+     if toggle then
+        while toggle do wait(.1)
+
+for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren()) do wait(.1)
+
+		if v:FindFirstChild("Perk1") then
+		if not v:FindFirstChild("Perk3") then
+		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
+		end
+		end
+end
+end
+end
+end)
 
 local TextBox1 = Section1:CreateTextBox("which wave do you want to go to?", "Only numbers", true, function(WaveValue)
 	print("i want go to wave", WaveValue)
@@ -551,41 +568,30 @@ Toggle6:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 
-local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
-    toggle = State
-_G.Conf.Epic = State
-     if toggle then
-        while toggle do wait(.1)
-
-for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren()) do wait(.1)
-
-		if v:FindFirstChild("Perk2") then
-		if not v:FindFirstChild("Perk3") then
-		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
-		end
-		end
-end
-end
-end)
-
-local Toggle8 = Section3:CreateToggle("Auto load config (will load everything)",nil,function(State)
+local Toggle8 = Section3:CreateToggle("Auto load config (will load everything)",_G.Conf.Load,function(State)
 	_G.Conf.Load = State
 	
 	wait(1.75)
-	function dick()
-
-	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
-
-	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
-
-	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
-
-	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
-
-	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
-
+	
+	if _G.Conf.Epic == true then
+	ve:SendMouseButtonEvent(451,295,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,295,0,false,game,0) wait(.1)
 	end
-	dick()
+	if _G.Conf.Vendinha == true then
+	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
+	end
+	if _G.Conf.Inf == true then
+	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
+	end
+	if _G.Conf.Pick == true then
+	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
+	end
+	if _G.Conf.AutoFarm == true then
+	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
+	end
+	if _G.Conf.Killau == true then
+	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
+	end
+	
 	print("Auto Load Config is:", State)
 	SaveMe()
 	
@@ -625,5 +631,4 @@ end)
 
 load()
 Window:SetBackground(_G.Conf.Beck)
-	Toggle8:SetState(_G.Conf.Load)	
-print "PEGEI O MARLEYANO"
+	Toggle8:SetState(_G.Conf.Load)
