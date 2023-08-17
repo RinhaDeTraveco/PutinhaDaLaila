@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 --
---wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
+wait(13)
 --
 --
 --
