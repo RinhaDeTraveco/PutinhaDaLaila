@@ -1,11 +1,9 @@
 repeat
 wait()
 until game:IsLoaded()
---				  _
---wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
---     			 | |
---				 | |___
---				 |_____|
+--
+wait(13) --FAZ O | | para esse scrit de merda feito a semelhança de seu criador
+--
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
     Color = Color3.fromRGB(224, 13, 13),
@@ -48,6 +46,7 @@ function load()
 		for i,v in pairs(_G.Conf) do 
 			print(i,v)
 		end
+		print"-----------------------"
 end
 end
 
@@ -100,7 +99,9 @@ local cl = Classes[class]
 
 local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
     toggle = State
-_G.Conf.Killau = State
+	_G.Conf.Killau = State
+	print("Kill Aura is:", State)
+	SaveMe()
      if toggle then
         while toggle do wait(0)
 
@@ -115,7 +116,7 @@ local r = Random.new()
 local real = r:NextNumber(Num, Num2)
 _G.range = 80 -- killaura range xd (archer's max range is 80, melee classes's max range is 10 or 20 idfk
 
-print(real)
+--print(real)
 wait(real)
 
 ------------------------
@@ -146,23 +147,13 @@ local ind = 0
    if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(real/vezes*8)
+       wait(real/vezes*17)
        ind = ind + 2
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
        ind = ind + 3
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(real/vezes*11)
-       ind = ind + 4
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(real/vezes*20)
-       ind = ind + 5
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       ind = ind + 6
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(real/vezes*4)
-       ind = ind + 7
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       if ind >= #cl then
+      -- wait(real/vezes*11)
+              if ind >= #cl then
            ind = 0
        end
    end
@@ -203,7 +194,9 @@ local radius = 60 -- how far away the orbit is
 
 local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
     toggle = State
-_G.Conf.AutoFarm = State
+	_G.Conf.AutoFarm = State
+	print("Auto Farm is:", State)
+	SaveMe()
      if toggle then
         while toggle do wait(.1)
 
@@ -228,7 +221,9 @@ end)
 
 local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
     toggle = State
-_G.Conf.Pick = State
+	_G.Conf.Pick = State
+	print("Auto Collect is:", State)
+	SaveMe()
      if toggle then
         while toggle do wait(0.001)
 
@@ -243,7 +238,9 @@ end)
 
 local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
     toggle = State
-_G.Conf.Inf = State
+	_G.Conf.Inf = State
+	print("Auto Inf Tower is:", State)
+	SaveMe()
      if toggle then
         while toggle do wait(.00001)
 
@@ -302,7 +299,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
 end
 end
 
-		--[[game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
 		game.Workspace.LobbyTeleport:FindFirstChild("Interaction").CanCollide = false
@@ -313,7 +310,6 @@ end
 		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-]]
 end
 end
 end
@@ -321,7 +317,9 @@ end)
 
 local Toggle5 = Section1:CreateToggle("Auto Sell Trash",nil,function(State)
     toggle = State
-_G.Conf.Vendinha = State
+	_G.Conf.Vendinha = State
+	print("Auto Sell Trash is:", State)
+	SaveMe()
      if toggle then
         while toggle do wait(.1)
      
@@ -525,7 +523,8 @@ Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and w
 
 local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
     toggle = State
-_G.Conf.Epic = State
+	_G.Conf.Epic = State
+	print("Auto Sell Epic is:", State)
      if toggle then
         while toggle do wait(.1)
 
@@ -568,32 +567,36 @@ Toggle6:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), functi
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 
-local Toggle8 = Section3:CreateToggle("Auto load config (will load everything)",_G.Conf.Load,function(State)
+local Toggle8 = Section3:CreateToggle("Auto Reload on Hop",_G.Conf.Load,function(State)
 	_G.Conf.Load = State
 	
 	wait(1.75)
 	
 	if _G.Conf.Epic == true then
 	ve:SendMouseButtonEvent(451,295,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,295,0,false,game,0) wait(.1)
-	end
-	if _G.Conf.Vendinha == true then
+	--end
+	elseif _G.Conf.Vendinha == true then
 	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
-	end
-	if _G.Conf.Inf == true then
+	--end
+	elseif _G.Conf.Inf == true then
 	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
-	end
-	if _G.Conf.Pick == true then
+	--end
+	elseif _G.Conf.Pick == true then
 	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
-	end
-	if _G.Conf.AutoFarm == true then
+	--end
+	elseif _G.Conf.AutoFarm == true then
 	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
-	end
-	if _G.Conf.Killau == true then
+	--end
+	elseif _G.Conf.Killau == true then
 	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
 	end
+	--the script bellow is a excute on HOP 
+	queue_on_teleport([[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RinhaDeTraveco/PutinhaDaLaila/main/World_Depression_Zero_Inf', true))()
+]])
 	
 	print("Auto Load Config is:", State)
-	SaveMe()
+	SaveMe()	
 	
 	 toggle = State
      if toggle then
@@ -635,4 +638,6 @@ end)
 
 load()
 Window:SetBackground(_G.Conf.Beck)
+if _G.Conf.Load == true then
 	Toggle8:SetState(_G.Conf.Load)
+end
