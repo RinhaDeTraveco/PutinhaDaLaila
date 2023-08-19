@@ -7,11 +7,7 @@ function sleep(s)
   repeat until os.clock() > ntime
 end
 
---wait(13)
-if game.PlaceId ~= 10651517727 then
-	print"not supported gaem"
-	sleep(30003000000000000000000000)
-end
+wait(13)
 
 local e = game.CoreGui:GetChildren()
 
