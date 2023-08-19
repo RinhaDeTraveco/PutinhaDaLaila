@@ -14,7 +14,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Disco
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local player = game.Players.LocalPlayer
-          player.CameraMinZoomDistance = 20
+          player.CameraMinZoomDistance = 7
           player.CameraMaxZoomDistance = 70
 
 local JESUS = game.Players.LocalPlayer.Name
@@ -107,20 +107,21 @@ local Classes = { -- skidded from some old script + added the new classes :troll
 local cl = Classes[class]
 
 local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
-    toggle = State
+    toggle1 = State
 	_G.Conf.Killau = State
 	print("Kill Aura is:", State)
 	SaveMe()
-     if toggle then
-        while toggle do wait(0)
+     if toggle1 then
+        while toggle1 do wait(0)
 
 local r = Random.new()
 local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
 if ping < 0.090 then
 	repeat
-	ping = ping + r:NextNumber(0.0015,0.10)
+	ping = ping + r:NextNumber(0.0015,0.010)
 	until ping > 0.17
 	end
+ping = r:NextNumber(ping, ping/1.65)
 ------------------------
 _G.range = 80
 
@@ -149,13 +150,12 @@ local ind = 0
    c = closest()
    if c then
        ind = ind + 1
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(ping)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(ping * 1.2)
        ind = ind + 2
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(ping/666)
-       ind = ind + 3
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       ind = ind + 4
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
               if ind >= #cl then
            ind = 0
        end
@@ -200,21 +200,22 @@ local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
 	_G.Conf.AutoFarm = State
 	print("Auto Farm is:", State)
 	SaveMe()
-     if toggle then
-        while toggle do wait(.1)
+     if toggle2 == true then
+        while toggle2 == true do wait(.1)
         
    for i,v in next, workspace.Mobs:GetChildren() do
        if v:FindFirstChild("Collider") then
-       
       	local origin = v.Collider.Position + Vector3.new(0,22.5,0)
       	
-       	for i = 1, tau, increment do -- main for loop like in the example	
+       	for i = 1, tau, increment do -- main for loop like in the example
+            if v:FindFirstChild("Collider") then
+            local origin = v.Collider.Position + Vector3.new(0,22.5,0)	
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
-		part.CFrame = CFrame.new(origin + pos, origin)
-		task.wait()
-		end
-		else wait(.1)
-		end
+            part.CFrame = CFrame.new(origin + pos, origin)
+            task.wait()
+        end
+        end
+        end
 	end
 	end
 	end
@@ -245,9 +246,10 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
 	_G.Conf.Inf = State
 	print("Auto Inf Tower is:", State)
 	SaveMe()
-     if toggle then
-        while toggle do wait(.00001)
+     if toggle4 == true then
+        while toggle4 == true do wait(.001)
 print"pikA PIKA PIKA PIKA"
+
 if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
 	while true do wait(.1)
@@ -287,7 +289,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
 
     if v.Name == "RaidChestGold" then
 		game.Workspace:WaitForChild("RaidChestGold").ChestBase.CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
-		click() wait(.5) click() wait(.5) click() wait(.5) click() wait(.5) click()
+		click()
 			
 
 		game.Workspace:FindFirstChild("MissionObjects").Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
@@ -297,7 +299,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
 		game.Workspace:FindFirstChild("Boss_Gate").Interactions.Bounds.CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
 		
 	if _G.Conf.Gamepass == "sim" then
-		click() wait(.5) click() wait(.5) click() wait(.5) click() wait(.5) click()
+		click()
 		game.Workspace:FindFirstChild("RaidChestSilver").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
 			
 end
