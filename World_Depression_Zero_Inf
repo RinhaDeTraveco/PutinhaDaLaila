@@ -2,21 +2,6 @@ repeat
 wait()
 until game:IsLoaded()
 
-function sleep(s)
-  local ntime = os.clock() + s/10
-  repeat until os.clock() > ntime
-end
-
-wait(13)
-
-local e = game.CoreGui:GetChildren()
-
-if #e >= 24 then
-	sleep(30003000000000000000000000)
-end
---
---
---
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
     Color = Color3.fromRGB(224, 13, 13),
