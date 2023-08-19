@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 --
-wait(13)
+--wait(13)
 --
 --
 --
@@ -14,6 +14,10 @@ local Config = {--                                                              
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Discord0000/BracketV3/main/Lib.lua"))()
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local player = game.Players.LocalPlayer
+          player.CameraMinZoomDistance = 20
+          player.CameraMaxZoomDistance = 60
 
 local JESUS = game.Players.LocalPlayer.Name
 --game:GetService("ReplicatedStorage").Profiles:WaitForChild(JESUS).Inventory.Slots.Value = 9999999999
@@ -67,12 +71,17 @@ end
 local ve = game:GetService("VirtualInputManager")
 
 function mc_vv()
-ve:SendKeyEvent(true, "J", false, nil)
+	Toggle2:SetState(false)
+end
+function mc_vv2()
+	Toggle2:SetState(true)
 end
 
 function click()
 ve:SendMouseButtonEvent(529,600,0,true,game,0) ve:SendMouseButtonEvent(529,600,0,false,game,0)
 end
+
+local r = Random.new()
 
 --[[local mouse = game.Players.LocalPlayer:GetMouse()
 
@@ -107,19 +116,27 @@ local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
      if toggle then
         while toggle do wait(0)
 
-local vezes = 1612
+--[[local vezes = 1612
 local ping = game.Players.LocalPlayer:GetNetworkPing() * vezes
 
 local Num = ping/666
 local Num2 = 30% Num
 
-local r = Random.new()
-
 local real = r:NextNumber(Num, Num2)
 _G.range = 80 -- killaura range xd (archer's max range is 80, melee classes's max range is 10 or 20 idfk
 
---print(real)
-wait(real)
+print(real)
+wait(real)]]
+
+local r = Random.new()
+local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
+print (ping)
+if ping < 90 then
+	repeat
+	ping = ping + r:NextNumber(0.015,0.10)
+	until ping < 100
+	end
+print(ping)
 
 ------------------------
 
@@ -195,13 +212,13 @@ local radius = 60 -- how far away the orbit is
 ---------------------------------------
 
 local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
-    toggle = State
+    toggle2 = State
 	_G.Conf.AutoFarm = State
 	print("Auto Farm is:", State)
 	SaveMe()
      if toggle then
         while toggle do wait(.1)
-
+        
    for i,v in next, workspace.Mobs:GetChildren() do
        if v:FindFirstChild("Collider") then
        
@@ -229,23 +246,25 @@ local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
      if toggle then
         while toggle do wait(0.001)
 
-for i,v in next,(game.Workspace.Coins:GetChildren()) do
-		v:FindFirstChild("CoinPart")
+for i,v in next,(game.Workspace:GetDescendants()) do
+		if v:FindFirstChild("CoinPart") then
+			print"ppppppppppppppppppppppppppppppppppppppppppppppppppp"
 			game.Workspace.Coins.CoinPart.CanCollide = false
 			game.Workspace.Coins.CoinPart.Position = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position + Vector3.new(0, -2 , 0)
+		end
 end
 end
 end
 end)
 
 local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
-    toggle = State
+    toggle4 = State
 	_G.Conf.Inf = State
 	print("Auto Inf Tower is:", State)
 	SaveMe()
      if toggle then
         while toggle do wait(.00001)
-
+print"pikA PIKA PIKA PIKA"
 if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
 	while true do wait(.1)
@@ -266,7 +285,7 @@ local New_CFrame = game.Workspace.IgnisShield.Ring.CFrame
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
-	wait(16)	mc_vv()
+	wait(16)	mc_vv2()
 	end
 
 	if v.Name == "IceWall" then
@@ -280,7 +299,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
-	wait(16)	mc_vv()
+	wait(16)	mc_vv2()
 	end
 
     if v.Name == "RaidChestGold" then
@@ -318,7 +337,7 @@ end
 end)
 
 local Toggle5 = Section1:CreateToggle("Auto Sell Trash",nil,function(State)
-    toggle = State
+    toggle5 = State
 	_G.Conf.Vendinha = State
 	print("Auto Sell Trash is:", State)
 	SaveMe()
@@ -524,7 +543,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon \nif you dont wanna delete all your legs put them on your bank\n(this applies to all zeros)")
 
 local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
-    toggle = State
+    toggle7 = State
 	_G.Conf.Epic = State
 	print("Auto Sell Epic is:", State)
      if toggle then
@@ -632,7 +651,7 @@ local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime G
 		_G.Conf.Beck = "7491405406"
 		SaveMe()
 	elseif Name == "RAIFUTAIKA" then
-		Windows:SetBackground("7295056622")
+		Window:SetBackground("7295056622")
 		_G.Conf.Beck = "7491405406"
 		SaveMe()
 	end
