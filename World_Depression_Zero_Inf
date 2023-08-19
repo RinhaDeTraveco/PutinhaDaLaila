@@ -121,7 +121,7 @@ if ping < 0.090 then
 	ping = ping + r:NextNumber(0.0015,0.010)
 	until ping > 0.17
 	end
-ping = r:NextNumber(ping, ping/1.65)
+ping = r:NextNumber(ping, ping * 1.5)
 ------------------------
 _G.range = 80
 
