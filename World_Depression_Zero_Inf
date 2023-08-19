@@ -1,8 +1,23 @@
 repeat
 wait()
 until game:IsLoaded()
---
+
+function sleep(s)
+  local ntime = os.clock() + s/10
+  repeat until os.clock() > ntime
+end
+
 --wait(13)
+if game.PlaceId ~= 10651517727 then
+	print"not supported gaem"
+	sleep(30003000000000000000000000)
+end
+
+local e = game.CoreGui:GetChildren()
+
+if #e >= 24 then
+	sleep(30003000000000000000000000)
+end
 --
 --
 --
@@ -17,7 +32,7 @@ local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local player = game.Players.LocalPlayer
           player.CameraMinZoomDistance = 20
-          player.CameraMaxZoomDistance = 60
+          player.CameraMaxZoomDistance = 70
 
 local JESUS = game.Players.LocalPlayer.Name
 --game:GetService("ReplicatedStorage").Profiles:WaitForChild(JESUS).Inventory.Slots.Value = 9999999999
@@ -116,29 +131,15 @@ local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
      if toggle then
         while toggle do wait(0)
 
---[[local vezes = 1612
-local ping = game.Players.LocalPlayer:GetNetworkPing() * vezes
-
-local Num = ping/666
-local Num2 = 30% Num
-
-local real = r:NextNumber(Num, Num2)
-_G.range = 80 -- killaura range xd (archer's max range is 80, melee classes's max range is 10 or 20 idfk
-
-print(real)
-wait(real)]]
-
 local r = Random.new()
 local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
-print (ping)
-if ping < 90 then
+if ping < 0.090 then
 	repeat
-	ping = ping + r:NextNumber(0.015,0.10)
-	until ping < 100
+	ping = ping + r:NextNumber(0.0015,0.10)
+	until ping > 0.17
 	end
-print(ping)
-
 ------------------------
+_G.range = 80
 
 function closest()
 	local plr = game.Players.LocalPlayer
@@ -166,12 +167,12 @@ local ind = 0
    if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-       wait(real/vezes*17)
+       wait(ping)
        ind = ind + 2
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       wait(ping/666)
        ind = ind + 3
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
-      -- wait(real/vezes*11)
               if ind >= #cl then
            ind = 0
        end
@@ -248,7 +249,6 @@ local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
 
 for i,v in next,(game.Workspace:GetDescendants()) do
 		if v:FindFirstChild("CoinPart") then
-			print"ppppppppppppppppppppppppppppppppppppppppppppppppppp"
 			game.Workspace.Coins.CoinPart.CanCollide = false
 			game.Workspace.Coins.CoinPart.Position = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position + Vector3.new(0, -2 , 0)
 		end
@@ -542,8 +542,8 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 
 Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon \nif you dont wanna delete all your legs put them on your bank\n(this applies to all zeros)")
 
-local Toggle7 = Section1:CreateToggle("Auto Sell Epic",nil,function(State)
-    toggle7 = State
+local Toggle7 = Section1:CreateToggle("keep ONLY with legendary",nil,function(State)
+    toggle = State
 	_G.Conf.Epic = State
 	print("Auto Sell Epic is:", State)
      if toggle then
@@ -560,6 +560,8 @@ end
 end
 end
 end)
+
+Toggle7:AddToolTip("will only sell rares, epics and below")
 
 local TextBox1 = Section1:CreateTextBox("which wave do you want to go to?", "Only numbers", true, function(WaveValue)
 	print("i want go to wave", WaveValue)
