@@ -119,7 +119,12 @@ local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
 if ping < 0.090 then
 	repeat
 	ping = ping + r:NextNumber(0.0015,0.010)
-	until ping > 0.17
+	until ping > 0.14
+	end
+if ping > 190 then
+	repeat
+	ping = ping - r:NextNumber(0.0015,0.010)
+	until ping < 0.14
 	end
 ping = r:NextNumber(ping, ping/1.65)
 ------------------------
@@ -153,6 +158,7 @@ local ind = 0
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
        wait(ping * 1.2)
        ind = ind + 2
+       wait(ping/666)
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
        ind = ind + 4
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
