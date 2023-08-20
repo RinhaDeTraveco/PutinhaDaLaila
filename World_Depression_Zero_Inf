@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
-wait(13)
+--wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -67,13 +67,6 @@ function SaveMe()
 end
 
 local ve = game:GetService("VirtualInputManager")
-
-function mc_vv()
-	Toggle2:SetState(false)
-end
-function mc_vv2()
-	Toggle2:SetState(true)
-end
 
 function click()
 ve:SendMouseButtonEvent(529,600,0,true,game,0) ve:SendMouseButtonEvent(529,600,0,false,game,0)
@@ -202,6 +195,15 @@ local radius = 60 -- how far away the orbit is
 ---------------------------------------
 
 local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
+
+function mc_vv()
+	Toggle2:SetState(false)
+end
+function mc_vv2()
+	Toggle2:SetState(true)
+end
+
+
     toggle2 = State
 	_G.Conf.AutoFarm = State
 	print("Auto Farm is:", State)
