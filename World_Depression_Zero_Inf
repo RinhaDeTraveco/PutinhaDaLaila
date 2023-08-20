@@ -119,7 +119,7 @@ if ping > 190 then
 	ping = ping - r:NextNumber(0.0015,0.010)
 	until ping < 0.14
 	end
-ping = r:NextNumber(ping, ping/1.65)
+ping = r:NextNumber(ping, ping*1.5)
 ------------------------
 _G.range = 80
 
@@ -148,13 +148,13 @@ local ind = 0
    c = closest()
    if c then
        ind = ind + 1
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
        wait(ping * 1.2)
        ind = ind + 2
        wait(ping/666)
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
        ind = ind + 4
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c.Collider.Position, c.Collider.Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
               if ind >= #cl then
            ind = 0
        end
@@ -164,6 +164,7 @@ end
 end)
 Toggle1:CreateKeybind("Y", function(Key)
 end)
+
 function closest()
 	local plr = game.Players.LocalPlayer
 	local Character = plr.Character
@@ -184,15 +185,9 @@ function closest()
 
    return Target
 end
+c = closest()
 
--------------------------------------------------------------------------------------------
-
-local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
-local tau = 2*math.pi -- mathematical constant
-local increment = tau/360 -- for the loop
-local radius = 60 -- how far away the orbit is
-
----------------------------------------
+------------------------------------------------------------------------------------------
 
 local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
 
@@ -203,6 +198,10 @@ function mc_vv2()
 	Toggle2:SetState(true)
 end
 
+local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
+local tau = 2*math.pi -- mathematical constant
+local increment = tau/720 -- for the loop
+local radius = 45 -- how far away the orbit is
 
     toggle2 = State
 	_G.Conf.AutoFarm = State
@@ -210,18 +209,18 @@ end
 	SaveMe()
      if toggle2 == true then
         while toggle2 == true do wait(.1)
-        
-   for i,v in next, workspace.Mobs:GetChildren() do
-       if v:FindFirstChild("Collider") then
-      	local origin = v.Collider.Position + Vector3.new(0,22.5,0)
+
+	if c then
+       if c:FindFirstChild("Collider") then
+      	origin = c.Collider.Position + Vector3.new(0,22.5,0)
       	
        	for i = 1, tau, increment do -- main for loop like in the example
-            if v:FindFirstChild("Collider") then
-            local origin = v.Collider.Position + Vector3.new(0,22.5,0)	
+   			if c then
+            origin = c.Collider.Position + Vector3.new(0,22.5,0)
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
             part.CFrame = CFrame.new(origin + pos, origin)
             task.wait()
-        end
+           	end
         end
         end
 	end
