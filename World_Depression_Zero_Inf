@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
---wait(13)
+wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -255,7 +255,6 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
 	SaveMe()
      if toggle4 == true then
         while toggle4 == true do wait(.001)
-print"pikA PIKA PIKA PIKA"
 
 if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
