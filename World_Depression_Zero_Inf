@@ -165,6 +165,8 @@ end)
 Toggle1:CreateKeybind("Y", function(Key)
 end)
 
+local james = math.huge
+
 function closest()
 	local plr = game.Players.LocalPlayer
 	local Character = plr.Character
@@ -176,9 +178,9 @@ function closest()
 	for i,v in next, workspace.Mobs:GetChildren() do
 		if v:FindFirstChild("Collider") then
 			local mag = (HumanoidRootPart.Position - v.Collider.Position).magnitude
-			if mag < TargetDistance and v.HealthProperties.Health.Value > 0 then
-			TargetDistance = mag
-				Target = v
+				if mag < TargetDistance and mag <= james and v.HealthProperties.Health.Value > 0 then
+               TargetDistance = mag
+               Target = v
            end
        end
    end
