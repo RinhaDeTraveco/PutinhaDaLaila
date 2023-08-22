@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
---wait(13)
+wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -196,7 +196,7 @@ end
 local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
 local tau = 2*math.pi -- mathematical constant
 local increment = tau/360 -- for the loop
-local radius = 60 -- how far away the orbit is
+local radius = 45 -- how far away the orbit is
 
 ---------------------------------------
 
@@ -207,13 +207,12 @@ local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
 	SaveMe()
      if toggle2 == true then
         while toggle2 == true do wait(.1)
-        
-   for i,v in next, workspace.Mobs:GetChildren() do
-       if v:FindFirstChild("Collider") then
-      	local origin = v.Collider.Position + Vector3.new(0,22.5,0)
-      	
+
+_G.range = math.huge
+   c = closest()
+
        	for i = 1, tau, increment do -- main for loop like in the example
-            if v:FindFirstChild("Collider") and c then
+            if c then
             local origin = c.Collider.Position + Vector3.new(0,22.5,0)	
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
             part.CFrame = CFrame.new(origin + pos, origin)
@@ -221,8 +220,6 @@ local Toggle2 = Section1:CreateToggle("Auto Farm",nil,function(State)
         end
         end
         end
-	end
-	end
 	end
 end)
 Toggle2:CreateKeybind("J", function(Key)
