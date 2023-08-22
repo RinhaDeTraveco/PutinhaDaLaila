@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
---wait(13)
+wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
