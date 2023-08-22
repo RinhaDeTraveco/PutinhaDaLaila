@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
-wait(13)
+--wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -155,11 +155,12 @@ local ind = 0
     end
    if c then
        ind = ind + 1
-       wait(r:NextNumber(ping/1000, ping/666))
+        wait(r:NextNumber(ping/1000, ping/666))
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
     end
    if c then
        ind = ind + 1
+        wait(r:NextNumber(ping/1000, ping/666))
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
      end
               if ind >= #cl then
@@ -213,7 +214,7 @@ _G.range = math.huge
 
        	for i = 1, tau, increment do -- main for loop like in the example
             if c then
-            local origin = c.Collider.Position + Vector3.new(0,22.5,0)	
+            local origin = c:FindFirstChild("Collider").Position + Vector3.new(0,22.5,0)	
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
             part.CFrame = CFrame.new(origin + pos, origin)
             task.wait()
@@ -250,7 +251,6 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
 	SaveMe()
      if toggle4 == true then
         while toggle4 == true do wait(.001)
-print"pikA PIKA PIKA PIKA"
 
 if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
