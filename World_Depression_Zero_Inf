@@ -206,12 +206,14 @@ _G.range = math.huge
    c = closest()
 
        	for i = 1, tau, increment do -- main for loop like in the example
+        if _G.Conf.AutoFarm == true then
             if c then
             local origin = c:FindFirstChild("Collider").Position + Vector3.new(0,22.5,0)	
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
             part.CFrame = CFrame.new(origin + pos, origin)
             task.wait()
-        end
+            end    
+            end
         end
         end
 	end
