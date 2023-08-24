@@ -258,7 +258,7 @@ if game.Workspace.Characters:FindFirstChild(JESUS) then wait()
 else 	while true do wait(.1)	ret() end
 end
 
-if string.match(game.Players:WaitForChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
+if string.match(game.Players:FindFirstChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
 	game:GetService("ReplicatedStorage").Shared.Health.Reset:FireServer()
 	while true do wait(.1)
 	ret()
@@ -278,7 +278,7 @@ local New_CFrame = game.Workspace.IgnisShield.Ring.CFrame
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
-	wait(16)	mc_vv2()
+	wait(17.5)	mc_vv2()
 	end
 
 	if v.Name == "IceWall" then
@@ -292,11 +292,11 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
                     local tp = {CFrame = New_CFrame}
                     ts:Create(part,ti,tp):Play()
 
-	wait(16)	mc_vv2()
+	wait(17.5)	mc_vv2()
 	end
 
     if v.Name == "RaidChestGold" then
-		game.Workspace:WaitForChild("RaidChestGold").ChestBase.CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace:FindFirstChild("RaidChestGold").ChestBase.CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
 		click()
 			
 
@@ -308,7 +308,7 @@ local New_CFrame = game.Workspace.IceWall.Ring.CFrame
 		
 	if _G.Conf.Gamepass == "sim" then
 		click()
-		game.Workspace:FindFirstChild("RaidChestSilver").ChestBase.CFrame = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame
+		game.Workspace:FindFirstChild("RaidChestSilver").ChestBase.CFrame = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame
 			
 end
 end
