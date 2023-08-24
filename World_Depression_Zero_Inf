@@ -587,22 +587,22 @@ local Toggle8 = Section3:CreateToggle("Auto Reload on Hop",_G.Conf.Load,function
 	wait(1.75)
 	
 	if _G.Conf.Epic == true then
-	ve:SendMouseButtonEvent(451,295,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,295,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,295,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,295,0,false,game,0) wait(.3)
 	end
 	if _G.Conf.Vendinha == true then
-	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,270,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,270,0,false,game,0) wait(.3)
 	end
 	if _G.Conf.Inf == true then
-	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,245,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,245,0,false,game,0) wait(.3)
 	end
 	if _G.Conf.Pick == true then
-	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,220,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,220,0,false,game,0) wait(.3)
 	end
 	if _G.Conf.AutoFarm == true then
-	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,193,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,193,0,false,game,0) wait(.3)
 	end
 	if _G.Conf.Killau == true then
-	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.1)
+	ve:SendMouseButtonEvent(451,172,0,true,game,0)wait(.1) ve:SendMouseButtonEvent(451,172,0,false,game,0) wait(.3)
 	end
 	--the script bellow is a excute on HOP 
 	queue_on_teleport([[
