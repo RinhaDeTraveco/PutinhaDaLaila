@@ -118,12 +118,18 @@ local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
 
 local r = Random.new()
 local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
-if ping < 0.090 then
+if ping < 0.050 then
 	repeat
 	ping = ping + r:NextNumber(0.0015,0.010)
-	until ping > 0.17
+	until ping > 0.075
 	end
-ping = r:NextNumber(ping, ping*1.65)
+ping = r:NextNumber(ping, ping*1.15)
+if ping > 0.210 then
+	repeat
+	ping = ping - r:NextNumber(0.0015,0.010)
+	until ping > 0.075
+	end
+ping = r:NextNumber(ping, ping*1.15)
 ------------------------
 _G.range = 80
 
@@ -148,13 +154,14 @@ function closest()
    return Target
 end
 
+print(ping)
 local ind = 0
    c = closest()
    if c then
    if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-       wait(ping * 1.2)
+       wait(ping/3.5)
     end
     end
     wait(.00001)
@@ -162,13 +169,14 @@ local ind = 0
    if c then
    end
        ind = ind + 1
-        wait(r:NextNumber(ping/1000, ping/666))
+       wait(ping/3.5)
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
     end
     wait(.00001)
    if c then
    if c then
        ind = ind + 1
+       wait(ping/3.5)
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
      end
      end
@@ -253,10 +261,12 @@ local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
 	_G.Conf.Pick = State
 	print("Auto Collect is:", State)
 	SaveMe()
+    workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Size = Vector3.new(2, 2, 2)
      if toggle then
-        while toggle do wait(0.01)
+        while toggle do wait(0.1)
 
-for i,v in next,(game.Workspace:GetDescendants()) do
+
+for i,v in next,(game.Workspace:GetChildren()) do
 		if v:FindFirstChild("CoinPart") then
 			game.Workspace.Coins.CoinPart.CanCollide = false
 			game.Workspace.Coins.CoinPart.Position = game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position + Vector3.new(0, -2 , 0)
