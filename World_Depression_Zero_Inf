@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
-wait(13)
+--wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -81,6 +81,8 @@ function ret()
 ve:SendMouseButtonEvent(529,600,0,true,game,0) ve:SendMouseButtonEvent(529,600,0,false,game,0)
 end
 
+local a = true
+
 local class = game.Players.LocalPlayer.Character.Properties.Class.Value
 local Classes = { -- skidded from some old script + added the new classes :troll:
    ["Swordmaster"]     = {"Swordmaster1", "Swordmaster2", "Swordmaster3", "Swordmaster4", "Swordmaster5", "Swordmaster6", "CrescentStrike1", "CrescentStrike2", "CrescentStrike3", "Leap"};
@@ -142,20 +144,28 @@ end
 local ind = 0
    c = closest()
    if c then
+   if c then
        ind = ind + 1
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
        wait(ping * 1.2)
     end
-   if c then
-       ind = ind + 1
-        wait(r:NextNumber(ping/1000, ping/666))
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
     end
+    wait(.00001)
    if c then
+   if c then
+   end
        ind = ind + 1
         wait(r:NextNumber(ping/1000, ping/666))
-       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.Position)
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
+    end
+    wait(.00001)
+   if c then
+   if c then
+       ind = ind + 1
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
      end
+     end
+    wait(.00001)
               if ind >= #cl then
            ind = 0
        end
@@ -255,7 +265,7 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
         while toggle4 == true do wait(.001)
 
 if game.Workspace.Characters:FindFirstChild(JESUS) then wait()
-else 	while true do wait(.1)	ret() end
+else 	while a == true do wait(.1)	ret() end
 end
 
 if string.match(game.Players:FindFirstChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
