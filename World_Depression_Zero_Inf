@@ -18,7 +18,14 @@ local player = game.Players.LocalPlayer
           player.CameraMaxZoomDistance = 70
 
 local JESUS = game.Players.LocalPlayer.Name
---game:GetService("ReplicatedStorage").Profiles:WaitForChild(JESUS).Inventory.Slots.Value = 9999999999
+
+local JESUS = game.Players.LocalPlayer.Name
+
+local KYS = Instance.new("Part",Game.workspace)
+KYS.Name = "KYS"
+KYS.Anchored = true
+KYS.Size = Vector3.new(8, 1.5, 8)
+KYS.Transparency = 0.65
 
 local Tab1 = Window:CreateTab("WZ inf tower")
 local Tab2 = Window:CreateTab("UI Settings")
@@ -217,6 +224,7 @@ _G.range = math.huge
 
        	for i = 1, tau, increment do -- main for loop like in the example
         if _G.Conf.AutoFarm == true then
+        game.workspace.KYS.CFrame = game.workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame + Vector3.new(0, -4.9, 0)
             if c then
             local origin = c:FindFirstChild("Collider").Position + Vector3.new(0,22.5,0)	
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
