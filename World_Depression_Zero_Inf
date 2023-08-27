@@ -253,6 +253,7 @@ function mc_vv()
 end
 function mc_vv2()
 	Toggle2:SetState(true)
+    game.Workspace.Gravity = 196
 end
 
 local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
@@ -294,6 +295,7 @@ if string.match(game.Players:FindFirstChild(JESUS).PlayerGui.InfiniteTowerVisual
 	end
 end
 for i, v in pairs(game.Workspace:GetChildren()) do
+
 	if v.Name == "IgnisShield" then  
 	
     print"my ass is on fire"
@@ -316,7 +318,7 @@ local New_CFrame = game.Workspace.IgnisShield.Ring.CFrame
 	print"i have dripression. KILL ME PLEASE"
     mc_vv()
 
-local New_CFrame = game.Workspace.IceWall.Ring.CFrame
+local New_CFrame = game.Workspace:FindFirstChild("IceWall").Ring.CFrame
 
                     local ts = game:GetService("TweenService")
                     local Char = game.Players.LocalPlayer.Character            
