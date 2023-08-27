@@ -124,7 +124,7 @@ if ping < 0.050 then
 	until ping > 0.075
 	end
 ping = r:NextNumber(ping, ping*1.15)
-if ping > 0.210 then
+if ping > 0.210 and ping < 0.400 then
 	repeat
 	ping = ping - r:NextNumber(0.0015,0.010)
 	until ping > 0.075
@@ -249,11 +249,10 @@ end)
 
 function mc_vv()
 	Toggle2:SetState(false)
-    game.Workspace.Gravity = 0
+    game.Workspace.Gravity = 196
 end
 function mc_vv2()
 	Toggle2:SetState(true)
-    game.Workspace.Gravity = 196
 end
 
 local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
