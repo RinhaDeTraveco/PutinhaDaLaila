@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
-wait(13)
+--wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -127,7 +127,7 @@ ping = r:NextNumber(ping, ping*1.15)
 if ping > 0.210 and ping < 0.400 then
 	repeat
 	ping = ping - r:NextNumber(0.0015,0.010)
-	until ping > 0.075
+	until ping > 0.085
 	end
 ping = r:NextNumber(ping, ping*1.15)
 ------------------------
@@ -160,18 +160,21 @@ local ind = 0
     if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-       wait(ping/3.5)
+       wait(ping/2.7)
     end
+    wait(.0001)
     if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-        wait(ping/3.5)
+        wait(ping/2.7)
     end
+    wait(.0001)
     if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-        wait(ping/3.5)
+        wait(ping/2.7)
      end
+    wait(.0001)
               if ind >= #cl then
            ind = 0
        end
