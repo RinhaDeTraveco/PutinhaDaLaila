@@ -157,30 +157,21 @@ end
 print(ping)
 local ind = 0
    c = closest()
-   if c then
-   if c then
+    if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
        wait(ping/3.5)
     end
-    end
-    wait(.00001)
-   if c then
-   if c then
-   end
+    if c then
        ind = ind + 1
-       wait(ping/3.5)
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
+        wait(ping/3.5)
     end
-    wait(.00001)
-   if c then
-   if c then
+    if c then
        ind = ind + 1
-       wait(ping/3.5)
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
+        wait(ping/3.5)
      end
-     end
-    wait(.00001)
               if ind >= #cl then
            ind = 0
        end
