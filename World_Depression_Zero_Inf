@@ -2,7 +2,7 @@ repeat
 wait()
 until game:IsLoaded()
 
---wait(13)
+wait(13)
 
 local Config = {--                                                                                                                                        "
     WindowName = "WZ trash script                                                                           (i dont want credits for this shit)",
@@ -17,8 +17,7 @@ local player = game.Players.LocalPlayer
           player.CameraMinZoomDistance = 7
           player.CameraMaxZoomDistance = 70
 
-local JESUS = game.Players.LocalPlayer.Name
-
+--get player nick
 local JESUS = game.Players.LocalPlayer.Name
 
 local KYS = Instance.new("Part",Game.workspace)
@@ -208,8 +207,8 @@ end
 
 local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
 local tau = 2*math.pi -- mathematical constant
-local increment = tau/360 -- for the loop
-local radius = 45 -- how far away the orbit is
+local increment = tau/480 -- for the loop
+local radius = 47 -- how far away the orbit is
 
 ---------------------------------------
 
@@ -278,8 +277,8 @@ local Toggle4 = Section1:CreateToggle("Auto inf tower",nil,function(State)
      if toggle4 == true then
         while toggle4 == true do wait(.001)
 
-if game.Workspace.Characters:FindFirstChild(JESUS) then wait()
-else 	while a == true do wait(.1)	ret() end
+if not game.Workspace.Characters:FindFirstChild(JESUS) then wait()
+while a == true do wait(.1)	ret() end
 end
 
 if string.match(game.Players:FindFirstChild(JESUS).PlayerGui.InfiniteTowerVisual.InfiniteTowerVisual.Tower_Floor.Frame.Tracker.Text, _G.Conf.WaveValue) then
@@ -342,17 +341,17 @@ local New_CFrame = game.Workspace:FindFirstChild("IceWall").Ring.CFrame
 end
 end
 
-		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
-		game.Workspace.LobbyTeleport:FindFirstChild("Interaction").CanCollide = false
-		game.Workspace.Boss_Gate.Interactions:FindFirstChild("Bounds").CanCollide = false
+		game.Workspace:FindFirstChild("MissionObjects").Arena["2"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace:FindFirstChild("MissionObjects").Arena.BossArena:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace:FindFirstChild("MissionObjects").Arena["1"]:FindFirstChild("TeleporterLocation").CanCollide = false
+		game.Workspace:FindFirstChild("LobbyTeleport"):WaitForChild("Interaction").CanCollide = false
+		game.Workspace:FindFirstChild("Boss_Gate").Interactions:FindFirstChild("Bounds").CanCollide = false
 
-		game.Workspace.MissionObjects.Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace.MissionObjects.Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace.MissionObjects.Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace.LobbyTeleport.Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
-		game.Workspace.Boss_Gate.Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace:FindFirstChild("MissionObjects").Arena["2"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace:FindFirstChild("MissionObjects").Arena.BossArena:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace:FindFirstChild("MissionObjects").Arena["1"]:FindFirstChild("TeleporterLocation").CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace:FindFirstChild("LobbyTeleport").Interaction.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
+		game.Workspace:FindFirstChild("Boss_Gate").Interactions.Bounds.CFrame = game.Workspace.Characters:WaitForChild(JESUS):FindFirstChild("HumanoidRootPart").CFrame
 end
 end
 end
