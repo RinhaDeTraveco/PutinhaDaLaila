@@ -409,7 +409,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 			
 	if v:FindFirstChild("Perk1") then
 		if v.Perk1 == "BonusAttack" then
-			if v.Perk1.PerkValue.Value <= 0.06 then
+			if v.Perk1.PerkValue.Value <= 0.05 then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -537,7 +537,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 		
 		if v.Perk3.Value == "Glass" then
-			if v.Perk3.PerkValue.Value <= 0.98 then
+			if v.Perk3.PerkValue.Value <= 0.97 then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
