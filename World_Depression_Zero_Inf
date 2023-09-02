@@ -27,11 +27,13 @@ KYS.Size = Vector3.new(8, 1.5, 8)
 KYS.Transparency = 0.65
 
 local Tab1 = Window:CreateTab("WZ inf tower")
-local Tab2 = Window:CreateTab("UI Settings")
+local Tab2 = Window:CreateTab("Sell Settings")
+local Tab3 = Window:CreateTab("UI Settings")
 
 local Section1 = Tab1:CreateSection("Farm")
 local Section2 = Tab2:CreateSection("")
 local Section3 = Tab2:CreateSection("")
+local Section4 = Tab3:CreateSection("")
 
 _G.Conf = {
 	WaveValue = 201,
@@ -43,7 +45,18 @@ _G.Conf = {
  	Killau = State,
  	AutoFarm = State,
  	Inf = State,
- 	Pick = State
+ 	Pick = State,
+ 	Opening_Strike = 0.23,
+ 	BOB = 0.27,
+ 	Elite_Boss = 0.27,
+ 	Mob_Boss = 0.27,
+ 	Fortress = 0.32,
+ 	Glass = 0.95,
+ 	Master_Thief = 0.32,
+ 	Attack_Up = 0.05,
+ 	Damage_Reduction = 0.05,
+ 	HP_UP = 0.08,
+ 	Untouchable = 0.16
 	}
 	
 local filename = "Pink_WZ.txt"
@@ -242,11 +255,9 @@ end)
 
 function mc_vv()
 	Toggle2:SetState(false)
-    game.Workspace.Gravity = 196
 end
 function mc_vv2()
 	Toggle2:SetState(true)
-    game.Workspace.Gravity = 196
 end
 
 local Toggle3 = Section1:CreateToggle("Pickup Drops",nil,function(State)
@@ -357,7 +368,7 @@ end
 end
 end)
 
-local Toggle5 = Section1:CreateToggle("Auto Sell Trash",nil,function(State)
+local Toggle5 = Section1:CreateToggle("Custom Sell",nil,function(State)
     toggle5 = State
 	_G.Conf.Vendinha = State
 	print("Auto Sell Trash is:", State)
@@ -411,7 +422,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		
 	if v:FindFirstChild("Perk2") then
 		if v.Perk2.Value == "BonusAttack" then
-			if v.Perk2.PerkValue.Value <= 0.05 then
+			if v.Perk2.PerkValue.Value <= _G.Conf.Attack_Up then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -421,7 +432,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 			
 	if v:FindFirstChild("Perk1") then
 		if v.Perk1.Value == "BonusAttack" then
-			if v.Perk1.PerkValue.Value <= 0.05 then
+			if v.Perk1.PerkValue.Value <= _G.Conf.Attack_Up then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -431,7 +442,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		
 	if v:FindFirstChild("Perk2") then
 		if v.Perk2.Value == "BonusHP" then
-			if v.Perk2.PerkValue.Value <= 0.10 then
+			if v.Perk2.PerkValue.Value <= _G.Conf.HP_UP then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -441,7 +452,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 
 	if v:FindFirstChild("Perk1") then
 		if v.Perk1.Value == "BonusHP" then
-			if v.Perk1.PerkValue.Value <= 0.10 then
+			if v.Perk1.PerkValue.Value <= _G.Conf.HP_UP then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -451,7 +462,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		
 	if v:FindFirstChild("Perk2") then
 		if v.Perk2.Value == "DodgeChance" then
-			if v.Perk2.PerkValue.Value <= 0.18 then
+			if v.Perk2.PerkValue.Value <= _G.Conf.Untouchable then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -462,7 +473,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	
 	if v:FindFirstChild("Perk1") then
 		if v.Perk1.Value == "DodgeChance" then
-			if v.Perk1.PerkValue.Value <= 0.18 then
+			if v.Perk1.PerkValue.Value <= _G.Conf.Untouchable then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -472,7 +483,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		
 	if v:FindFirstChild("Perk2") then
 		if v.Perk2.Value == "DamageReduction" then
-			if v.Perk2.PerkValue.Value <= 0.6 then
+			if v.Perk2.PerkValue.Value <= _G.Conf.Damage_Reduction then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -482,7 +493,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 
 	if v:FindFirstChild("Perk1") then
 		if v.Perk1.Value == "DamageReduction" then
-			if v.Perk1.PerkValue.Value <= 0.6 then
+			if v.Perk1.PerkValue.Value <= _G.Conf.Damage_Reduction then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk2.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -494,7 +505,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 	
 		if v.Perk3.Value == "OpeningStrike" then
-			if v.Perk3.PerkValue.Value <= 0.23 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Opening_Strike then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -505,7 +516,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 
 		if v.Perk3.Value == "MobBoss" then
-			if v.Perk3.PerkValue.Value <= 0.28 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Mob_Boss then
 
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -516,7 +527,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 		
 		if v.Perk3.Value == "EliteBoss" then
-			if v.Perk3.PerkValue.Value <= 0.28 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Elite_Boss then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -527,7 +538,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 	
 		if v.Perk3.Value == "TestTier5" then --bob?
-			if v.Perk3.PerkValue.Value <= 0.28 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.BOB then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -538,7 +549,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 	
 		if v.Perk3.Value == "Fortress" then
-			if v.Perk3.PerkValue.Value <= 0.33 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Fortress then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -549,7 +560,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 		
 		if v.Perk3.Value == "Glass" then
-			if v.Perk3.PerkValue.Value <= 0.97 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Glass then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -560,7 +571,7 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 	if v:FindFirstChild("Perk3") then
 
 		if v.Perk3.Value == "MasterThief" then
-			if v.Perk3.PerkValue.Value <= 0.33 then
+			if v.Perk3.PerkValue.Value <= _G.Conf.Master_Thief then
 			
 				game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk3.Parent.Name)})
 			else v.Perk2.Name = "nice2" v.Perk3.Name = "nice3" v.Perk1.Name = "nice1"
@@ -570,28 +581,39 @@ for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.
 		end
 		end
 		end
-		
 		end
-		
 		end
 		end)
 
-Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon \nif you dont wanna delete all your legs put them on your bank\n(this applies to all zeros)")
+Toggle5:AddToolTip("this function ONLY SAVE perfect and semi-perfect armor and weapon")
 
 local Toggle7 = Section1:CreateToggle("keep ONLY with legendary",nil,function(State)
     toggle = State
 	_G.Conf.Epic = State
 	print("Auto Sell Epic is:", State)
      if toggle then
+     
+for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild("dudugamer20173").Inventory.Items:GetChildren()) do
+
+if v:FindFirstChild("Perk1") then 
+local key = v
+print(v.Name)
+end
+
+end
+     
         while toggle do wait(.1)
 
 for i, v in pairs(game.ReplicatedStorage.Profiles:WaitForChild(JESUS).Inventory.Items:GetChildren()) do wait(.1)
+
+if v ~= key then
 
 		if v:FindFirstChild("Perk1") then
 		if not v:FindFirstChild("Perk3") then
 		game.ReplicatedStorage.Shared.Drops.SellItems:InvokeServer({game.ReplicatedStorage.Profiles:FindFirstChild(JESUS).Inventory.Items:FindFirstChild(v.Perk1.Parent.Name)})
 		end
 		end
+end
 end
 end
 end
@@ -619,14 +641,69 @@ local Button2 = Section1:CreateButton("no", function()
 	SaveMe()
 end)
 
-local Toggle6 = Section2:CreateToggle("UI Toggle",nil,function(State)
-	Window:Toggle(State)
+local TextBox2 = Section2:CreateTextBox("Opening Strike", "Only numbers", true, function(Opening_Strike)
+	_G.Conf.Opening_Strike = Opening_Strike*.01
+	SaveMe()
+end)
+
+local TextBox3 = Section3:CreateTextBox("Boss Of Boss", "Only numbers", true, function(BOB)
+	_G.Conf.BOB = BOB*.01
+	SaveMe()
+end)
+
+local TextBox4 = Section2:CreateTextBox("Glass", "Only numbers", true, function(Glass)
+	_G.Conf.Glass = Glass*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section3:CreateTextBox("Master Thief", "Only numbers", true, function(Master_Thief)
+	_G.Conf.Mob_Boss = Master_Thief*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section2:CreateTextBox("Attack Up", "Only numbers", true, function(Attack_Up)
+	_G.Conf.Opening_Strike = Attack_Up*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section3:CreateTextBox("Damage Reduction", "Only numbers", true, function(Damage_Reduction)
+	_G.Conf.Opening_Strike = Damage_Reduction*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section2:CreateTextBox("HP UP", "Only numbers", true, function(HP_UP)
+	_G.Conf.Opening_Strike = HP_UP*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section3:CreateTextBox("Untouchable", "Only numbers", true, function(Untouchable)
+	_G.Conf.Opening_Strike = Untouchable*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section2:CreateTextBox("Elite Boss", "Only numbers", true, function(Elite_Boss)
+	_G.Conf.Elite_Boss = Elite_Boss*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section3:CreateTextBox("Mob Boss", "Only numbers", true, function(Mob_Boss)
+	_G.Conf.Mob_Boss = Mob_Boss*.01
+	SaveMe()
+end)
+
+local TextBox2 = Section2:CreateTextBox("Fortress", "Only numbers", true, function(Fortress)
+	_G.Conf.Fortress = Fortress*.01
+	SaveMe()
+end)
+
+local Toggle6 = Section4:CreateToggle("UI Toggle",nil,function(State)
+	Window:Toggle(true)
 end)
 Toggle6:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
 	Config.Keybind = Enum.KeyCode[Key]
 end)
 
-local Toggle8 = Section3:CreateToggle("Auto Reload on Hop",_G.Conf.Load,function(State)
+local Toggle8 = Section4:CreateToggle("Auto Reload on Hop",_G.Conf.Load,function(State)
 	_G.Conf.Load = State
 	
 	wait(1.75)
@@ -665,7 +742,7 @@ end
 end
 end)
 
-local Dropdown1 = Section3:CreateDropdown("Background image", {"Flower","Anime Girl","Anime Girl2","INS","Malina","RAIFUTAIKA"}, function(Name)
+local Dropdown1 = Section4:CreateDropdown("Background image", {"Flower","Anime Girl","Anime Girl2","INS","Malina","RAIFUTAIKA"}, function(Name)
 	if Name == "Flower" then
 		Window:SetBackground("1495453507")
 		_G.Conf.Beck = "1495453507"
