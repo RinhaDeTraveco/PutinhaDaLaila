@@ -19,7 +19,7 @@ local player = game.Players.LocalPlayer
 
 --get player nick
 local JESUS = game.Players.LocalPlayer.Name
-
+local kk = 1.2
 local KYS = Instance.new("Part",Game.workspace)
 KYS.Name = "KYS"
 KYS.Anchored = true
@@ -101,7 +101,7 @@ ve:SendMouseButtonEvent(529,600,0,true,game,0) ve:SendMouseButtonEvent(529,600,0
 end
 
 local a = true
-
+local CPING = 1
 local class = game.Players.LocalPlayer.Character.Properties.Class.Value
 local Classes = { -- skidded from some old script + added the new classes :troll:
    ["Swordmaster"]     = {"Swordmaster1", "Swordmaster2", "Swordmaster3", "Swordmaster4", "Swordmaster5", "Swordmaster6", "CrescentStrike1", "CrescentStrike2", "CrescentStrike3", "Leap"};
@@ -116,6 +116,8 @@ local Classes = { -- skidded from some old script + added the new classes :troll
    ["Demon"]           = {"Demon1", "Demon4", "Demon7", "Demon10", "Demon13", "Demon16", "Demon19", "Demon22", "Demon25", "DemonDPS1", "DemonDPS2", "DemonDPS3", "DemonDPS4", "DemonDPS5", "DemonDPS6", "DemonDPS7", "DemonDPS8", "DemonDPS9", "ScytheThrowDPS1", "ScytheThrowDPS2", "ScytheThrowDPS3", "DemonLifeStealDPS", "DemonSoulDPS1", "DemonSoulDPS2", "DemonSoulDPS3"};
    ["Dragoon"]         = {"Dragoon1", "Dragoon2", "Dragoon3", "Dragoon4", "Dragoon5", "Dragoon6"};
    ["Archer"]          = {"Archer"};
+   ["Warlord"]         = {"Warlord2"};
+   ["Summoner"]        = {"Summoner2", "Summoner3", "Summoner4", "Summoner5", "Summoner6"};
 };
 
 local cl = Classes[class]
@@ -127,6 +129,18 @@ local Toggle1 = Section1:CreateToggle("kill Aura",nil,function(State)
 	SaveMe()
      if toggle1 then
         while toggle1 do wait(0)
+
+if class == "Summoner" or class == "" then CPING = r:NextNumber(1.65, 2.273) end
+
+if class == "Warlord" then CPING = r:NextNumber(1.25, 1.473) end
+
+print(CPING)
+if class == "Summoner" then
+    if game.Workspace.Characters:FindFirstChild(JESUS).Properties.SummonCount.Value >= 5 then
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets"):WaitForChild("Summoner"):WaitForChild("Summon"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Combat"):WaitForChild("Skillsets"):WaitForChild("Summoner"):WaitForChild("Ultimate"):FireServer()
+    end
+end
 
 local r = Random.new()
 local ping = game.Players.LocalPlayer:GetNetworkPing() * 1.2
@@ -142,8 +156,9 @@ if ping > 0.210 and ping < 0.400 then
 	until ping > 0.085
 	end
 ping = r:NextNumber(ping, ping*1.15)
+ping = ping * CPING
 ------------------------
-_G.range = 80
+ _G.range = 80
 
 function closest()
 	local plr = game.Players.LocalPlayer
@@ -166,27 +181,38 @@ function closest()
    return Target
 end
 
-print(ping)
+--print(ping)
 local ind = 0
    c = closest()
     if c then
        ind = ind + 1
+       if class == "Archer" or class == "Warlord" then ind = 1 end
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
+       print(ind)
        wait(ping/2.7)
     end
-    wait(.0001)
     if c then
        ind = ind + 1
+       if class == "Archer" or class == "Warlord" then ind = 1 end
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-        wait(ping/2.7)
+              print(ind)
+       wait(ping/2.7)
     end
-    wait(.0001)
+    if c then
+       ind = ind + 1
+       if class == "Archer" or class == "Warlord" then ind = 1 end
+       game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
+              print(ind)
+       wait(ping/2.7)
+     end
+if class == "Summoner" then
     if c then
        ind = ind + 1
        game:GetService("ReplicatedStorage").Shared.Combat.Attack:FireServer(cl[ind],c:FindFirstChild("Collider").Position, c:FindFirstChild("Collider").Position - game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position)
-        wait(ping/2.7)
-     end
-    wait(.0001)
+              print(ind)
+       wait(ping/2.7)
+    end
+end
               if ind >= #cl then
            ind = 0
        end
@@ -222,6 +248,13 @@ local part = game.Workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart
 local tau = 2*math.pi -- mathematical constant
 local increment = tau/480 -- for the loop
 local radius = 47 -- how far away the orbit is
+local cleito = 22.5
+if class == "Warlord" then
+    increment = tau/120
+    cleito = 3.5
+    radius = 17.5
+    print(class)
+end
 
 ---------------------------------------
 
@@ -238,9 +271,25 @@ _G.range = math.huge
 
        	for i = 1, tau, increment do -- main for loop like in the example
         if _G.Conf.AutoFarm == true then
-        game.workspace.KYS.CFrame = game.workspace.Characters:WaitForChild(JESUS).HumanoidRootPart.CFrame + Vector3.new(0, -4.9, 0)
+        game.workspace.KYS.CFrame = game.workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.CFrame + Vector3.new(0, -4.9, 0)
             if c then
-            local origin = c:FindFirstChild("Collider").Position + Vector3.new(0,22.5,0)	
+            local origin = c:FindFirstChild("Collider").Position + Vector3.new(0,cleito,0)	
+
+local manga = (game.workspace.Characters:FindFirstChild(JESUS).HumanoidRootPart.Position - c:FindFirstChild("Collider").Position).magnitude
+if manga >= 50 then
+
+kk = manga/69
+
+local james = c:FindFirstChild("Collider").CFrame
+                    local ts = game:GetService("TweenService")
+                    local Char = game.Players.LocalPlayer.Character            
+                    local part = Char.HumanoidRootPart
+                    local ti = TweenInfo.new(kk,Enum.EasingStyle.Linear)
+                    local tp = {CFrame = james}
+                    ts:Create(part,ti,tp):Play()
+wait(1.2)
+end
+
 			local pos = Vector3.new(math.cos(i), 0, math.sin(i)) * radius
             part.CFrame = CFrame.new(origin + pos, origin)
             task.wait()
