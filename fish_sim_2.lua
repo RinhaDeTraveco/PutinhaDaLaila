@@ -151,8 +151,10 @@ local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
  
  
                     for i, getTools in pairs(player.Character:GetChildren()) do
-                        if getTools:IsA("Tool") and  getTools:FindFirstChild("Handle") then --GripC1/Handle
+                        if getTools:IsA("Tool") and getTools:FindFirstChild("Handle") then --GripC1/Handle
                             plrTools = getTools.Name
+                        --[[ elseif getTools:IsA("Tool") and getTools:FindFirstChild("GripC1") then
+                            plrTools = getTools.Name]]
                         end
                     end
  
@@ -512,9 +514,13 @@ if count >= 1 then
                 wait(0.3)
                 for i, v in pairs(game.Workspace.RandomChests:GetChildren()) do
                     if v:IsA("Model") and string.match(v.Name, "Chest") then
+                            count1 = count
                         teleport (v.Bottom.CFrame)
-                        wait(1.5)
+                            repeat
+                        wait(.05)
                         fireproximityprompt(v.HumanoidRootPart.ProximityPrompt)
+                            until count1 < count
+                        end                            
                     end
                 end            
         end
@@ -531,7 +537,7 @@ local Toggle5 = Section1:CreateToggle("Suken Chest", nil, function(State)
                         for i, x in pairs(v:GetChildren()) do
                             if string.match(x.Name, "Chest_") then
                                 teleport(x.HumanoidRootPart.CFrame)
-                                wait(1)
+                                wait(.1)
                                 fireproximityprompt(x.HumanoidRootPart.ProximityPrompt)    
                             end                                
                         end
@@ -570,23 +576,23 @@ local Button2 = Section1:CreateButton("Teleport", function()
         teleport(CFrame.new(1.8703980445862, 53.57190322876, -188.37982177734))           
         elseif locationSelected == "Ancient Shores" then
         teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797))
-        wait(1.7)
+        wait(.7)
         teleport(CFrame.new(-2436.431640625, 43.564971923828, -1683.4526367188))    
         elseif locationSelected == "Shadow Isles" then
         teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
-        wait(1.7)
+        wait(.7)
         teleport(CFrame.new(2196.9926757812, 43.491630554199, -2216.4543457031))    
         elseif locationSelected == "Pharaoh's Dunes" then
         teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
-        wait(1.7)
+        wait(.7)
         teleport(CFrame.new(-4142.74609375, 46.71378326416, 262.05679321289))
         elseif locationSelected == "Eruption Island" then
         teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797)) 
-        wait(1.7)
+        wait(.7)
         teleport(CFrame.new(3022.9311523438, 52.347640991211, 1323.74609375))
         elseif locationSelected == "Monster's Borough" then
         teleport(CFrame.new(127.998779296875, 58.22438049316406, -124.70226287841797))
-        wait(1.7)
+        wait(.7)
         teleport(CFrame.new(-3211.9047851562, 41.850345611572, 2735.306640625))  
         elseif locationSelected == "Suken Ship" then
              for i, v in pairs(game.Workspace:GetChildren()) do
@@ -611,16 +617,17 @@ end)
 local Button3 = Section2:CreateButton("Tp to Boat", function()
     for i, v in pairs(game.Workspace:GetChildren()) do
         if v.Name == (game.Players.LocalPlayer.Name .. "'s Boat") then
-             teleport(v.Controller.VehicleSeat.CFrame + Vector3.new(0, 3, 0))
+             teleport(v.Controller.VehicleSeat.CFrame + Vector3.new(0, 3.25, 0))
         end
     end
 end)
-local Button4 = Section2:CreateButton("Remove Borders", function()
+
+--[[local Button4 = Section2:CreateButton("Remove Borders", function()
     for i, v in pairs(game.Workspace.IgnoredByMouse.BoatBorders:GetChildren()) do
         v:Destroy()
     end
 end)   
- 
+ ]]
 Section2:CreateLabel("Pets")
  
  
@@ -662,13 +669,13 @@ end)
 Section2:CreateLabel("Misc")
  
  
-local Button8 = Section2:CreateButton("hey, put your mouse here >:)", function()
+local Button8 = Section2:CreateButton("hey, click HERE", function()
 setclipboard("i like kaede to suzu the animation")
         wait(1)
 loadstring(game:HttpGet(('https://pastebin.com/raw/yynzQp3T' ),true))()
 end) 
 
-Button8:AddToolTip("if the auto kill doesn't work \nopen the raw script and go to the line 154 and change 'Handle' per 'GripC1' \n \nand one more thing, don't click here")
+--Button8:AddToolTip("if the auto kill doesn't work \nopen the raw script and go to the line 154 and change 'Handle' per 'GripC1' \n \nand one more thing, don't click here")
 
 local Button5 = Section2:CreateButton("Rejoins", function()
 tpservice:Teleport(game.PlaceId, plr)
