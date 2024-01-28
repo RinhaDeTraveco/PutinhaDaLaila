@@ -695,7 +695,9 @@ getgenv().InviteCode = "Kaede To Suzu The Animation"
 --by TweedLeak#4003
 end)
  
-Button7:AddToolTip("Hi: \nif you want to report a problem mention me and i will do my best \n(i'm really trash and newbie scripter) \nmy discord nick:   #5691")
+Button7:AddToolTip("Hi: \nif you want to report a problem mention me and i will do my best \n(i'm really trash and newbie scripter) \nmy discord nick:᲼᲼᲼᲼#5125\nClick to copy my nick")
+setclipboard("᲼᲼᲼᲼#5125")
+end)
 
 local Toggle7 = Section2:CreateToggle("UI Toggle", nil, function(State)
     Window:Toggle(State)
