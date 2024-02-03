@@ -1,4 +1,6 @@
-k::exitapp
+k::Reload
+return
+ç::exitapp
 return
 
 f7::     ;;;;;;;;;;TURN ON
@@ -43,6 +45,7 @@ Spawn()
 
 Sleep, PORRA
 
+Button()
 Button()
 
 Sleep, 4500
@@ -132,6 +135,9 @@ Spawn()
 reseting = 1
 
 Sleep, LL
+
+Button()
+Button()
 
 Send {> down}
 Send {> up}
