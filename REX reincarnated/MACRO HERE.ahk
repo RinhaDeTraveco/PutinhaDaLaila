@@ -1,6 +1,4 @@
-﻿k::Reload
-return
-ç::exitapp
+k::exitapp
 return
 
 f7::     ;;;;;;;;;;TURN ON
