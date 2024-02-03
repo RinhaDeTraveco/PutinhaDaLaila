@@ -1,6 +1,4 @@
-k::Reload
-return
-ç::exitapp
+k::exitapp
 return
 
 f7::     ;;;;;;;;;;TURN ON
@@ -40,6 +38,14 @@ Global bb := 12
 Global reseting := 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
+
+MouseMove, 500, 600
+Sleep, PORRA
+Click, Right, down
+MouseMove, 0, -8, 100, R
+Click, Right, Up
+
+Sleep, PORRA
 
 Spawn()
 
@@ -336,12 +342,6 @@ Send {w up}
 Send {> down}
 Sleep, FastMouseMove
 Send {> up}
-
-MouseMove, 500, 600
-Sleep, PORRA
-Click, Right, down
-MouseMove, 0, -8, 100, R
-Click, Right, Up
 
 Send {i down}{i up}
 }
