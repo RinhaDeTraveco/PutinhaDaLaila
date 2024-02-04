@@ -1,4 +1,9 @@
-k::exitapp
+y::
+Exitapp
+return
+
+k::
+Pause, Toggle
 return
 
 f7::     ;;;;;;;;;;TURN ON
@@ -32,6 +37,7 @@ Random cutie, 500, 3333
 Random PORRA, 2500, 5000
 Random LL, 5000, 6000
 Random FastMouseMove, 10, 511
+Random meno, 50000, 100000
 Global Laila = 0
 Global Main := 1
 Global bb := 12
@@ -72,7 +78,7 @@ Loop
 if reseting = 1
 {
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
-if (peakValue>.0003)
+if (peakValue>.0006)
 {
 Send, {w up}
 Click, Left, up
@@ -244,10 +250,9 @@ Send {o up}
 
 loop
 {
-MouseClick, left, 647, 10
-Sleep, LL
-MouseClick, left, 647, 10
-} until Laila = 1
+MouseClick, left, pos1, pos2
+Sleep, meno
+} until stop = 1
 
 }
 
