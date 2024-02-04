@@ -8,6 +8,8 @@
 
 4 - Contente > sounds > dele all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
 
+5 - ONLY USE AT PRIVATE SERVER
+
 # IN GAME CONFIG
 
 Background Music Off
