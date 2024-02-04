@@ -1,8 +1,11 @@
 # HOW TO USE
 
 1 - Press the windows button
+
 2 - search Roblox Player and open file location
+
 3 - Right click and open file location again
+
 4 - Contente > sounds > dele all the sounds, except action_get_up, action_swim, impact_explosion_03, impact_water, volume_slider
 
 # CLOSE EVERYTHING ON YOUR PC THAT PRODUCE SOUND EXCEPT ROBLOX
