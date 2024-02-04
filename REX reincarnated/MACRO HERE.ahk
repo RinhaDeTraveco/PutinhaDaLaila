@@ -3,6 +3,9 @@ Exitapp
 return
 
 k::
+Send {w up}
+Click, Left, up
+global stop := 1
 Pause, Toggle
 return
 
@@ -42,6 +45,7 @@ Global Laila = 0
 Global Main := 1
 Global bb := 12
 Global reseting := 1
+global stop := 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;VAR
 
@@ -78,7 +82,7 @@ Loop
 if reseting = 1
 {
 VA_IAudioMeterInformation_GetPeakValue(audioMeter, peakValue) 
-if (peakValue>.0006)
+if (peakValue>.0005)
 {
 Send, {w up}
 Click, Left, up
@@ -159,6 +163,12 @@ Send {i up}{i down}{i up}{i down}{i up}{i down}{i up}{i down}{i up}
 EquipAll()
 
 bb = 12
+}
+
+if stop = 1
+{
+Send {w down}
+global stop := 0
 }
 
 lolo := (lolo +1)
@@ -261,60 +271,69 @@ EquipAll()
 Send {2 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {2 up}
 Send {3 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {3 up}
 Send {4 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {4 up}
 Send {5 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {5 up}
 Send {6 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {6 up}
 Send {7 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {7 up}
 Send {8 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {8 up}
 Send {9 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {9 up}
 Send {0 down}
 Sleep, PORRA
 Click, Left, down
+Sleep, FastMouseMove
 Click, Left, up
 Sleep, PORRA
 Send {0 up}
 Sleep, PORRA
 Send {1 down}
-Sleep, PORRA
+Sleep, FastMouseMove
 Send {1 up}
 }
 
