@@ -2,13 +2,6 @@ y::
 Exitapp
 return
 
-k::
-Send {w up}
-Click, Left, up
-global stop := 1
-Pause, Toggle
-return
-
 f7::     ;;;;;;;;;;TURN ON
 
 Global Layer := 85
