@@ -1,16 +1,12 @@
 #SingleInstance Force
 
+; GO TO LINE 148 n 148 TO CHANGE 100 FOR A BIGGER NUMBER IF YOU SCRIPT IS JUST THROWING THE ROD ON THE WATER
+
 ;CLOSE THE TOGGLE QUEST, CHAT, AND LIST OF PLAYER
 
 ; GO TO LINE +70 TO CHANGE HOW MUCH "FORCE" U WILL USE AT THE ROD (when u are fishing, not when throwing)
 
 ; USE the prefix ";change ONLY the number" to see what number you can/should change
-
-;L - END THE SCRIPT
-
-;MIDDLE BUTTON OF MOUSE (a click on it, not a scroll) - START/PAUSE
-
-;X - check some numbers (kinda useless)
 
 fail := 0
 fail2 := 0
