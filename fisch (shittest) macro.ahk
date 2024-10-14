@@ -6,6 +6,12 @@
 
 ; USE the prefix ";change ONLY the number" to see what number you can/should change
 
+;L - END THE SCRIPT
+
+;MIDDLE BUTTON OF MOUSE (a click on it, not a scroll) - START/PAUSE
+
+;X - check some numbers (kinda useless)
+
 fail := 0
 fail2 := 0
 pos := 0
