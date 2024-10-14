@@ -1,5 +1,4 @@
 #SingleInstance Force
-#Include C:\Users\jaque\OneDrive\Documentos\AutoHotkey\Lib\FindClick.ahk
 
 ;MIDDLE BUTTON OF MOUSE (a click on it) to START/PAUSE
 
