@@ -1,5 +1,9 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 #Include C:\Users\jaque\OneDrive\Documentos\AutoHotkey\Lib\FindClick.ahk
+
+; GO TO LINE +70 TO CHANGE HOW MUCH "FORCE" U WILL USE AT THE ROD (when u are fishing, not when throwing)
+
+; USE the prefix ";change ONLY the number" to see what number you can/should change
 
 fail := 0
 fail2 := 0
@@ -10,7 +14,7 @@ RCount := 0
 
 Loop 
 {
-if LOLP = 1
+if LOLP = 1 ; This is the main loop
 {
 
 Random rr, 29, 40
@@ -21,10 +25,10 @@ Random MouseSpeed, 2, 5
 ;MaxLeft 598, 595
 
 PixelSearch, x, y, 271, 545, 1052, 652, 0x434B5B,, Fast RGB
-	if (ErrorLevel = 0)
-	{
+if (ErrorLevel = 0)
+{
 	
-	if x < 598 ; LEFT = 1
+	if x < 598 ; LEFT = 1 ; 598 indicates where the script will see and say "ho, the pointer is on the left/right/middle" (this sound be on the BORDER of side you want, example: if you want the right side, take the locations of the pixels on the far LEFT of the RIGHT side, and same for the left side
 	{
 	pos := 1
 	}
@@ -42,7 +46,6 @@ PixelSearch, x, y, 271, 545, 1052, 652, 0x434B5B,, Fast RGB
 	}
 
 Random NoCheat, 1, 5 
-
 
 if (pos != LastPos)
 {
@@ -70,20 +73,20 @@ if pos = 2
 			{
 
 			Send {LButton down}
-			Sleep 501+NoCheat/8
+			Sleep 501+NoCheat/8 ;change ONLY the number
 			Send {LButton up}
 
-			Sleep, 512+NoCheat/8
+			Sleep, 508+NoCheat/8 ;change ONLY the number (just a little bit, these guys must be close numbers)
 
 			}
 
 		if LastPos = 3
 			{
 
-			Sleep, 530
+			Sleep, 530+NoCheat ;change ONLY the number
 
 			Send {LButton down}
-			Sleep 537+NoCheat/2
+			Sleep 529+NoCheat/2 ;change ONLY the number (just a little bit, these guys must be close numbers)
 			Send {LButton up}
 
 			Sleep, 10+NoCheat/4
@@ -97,9 +100,9 @@ Random StayOnMiddle, 107, 127
 ; Essa parte tem que ficar loopando pra manter a barrinha no meio
 
 	Send {LButton down}
-	Sleep StayOnMiddle*1.373
+	Sleep StayOnMiddle*1.373 ;change ONLY the number
 	Send {LButton up}
-	Sleep StayOnMiddle*1.33
+	Sleep StayOnMiddle*1.33 ;change ONLY the number
 
 	LastPos := 2
 
@@ -111,9 +114,6 @@ if pos = 3
 	LastPos := 3
 
 	Send {LButton down}
-	Sleep 200+NoCheat/9
-	Send {LButton up}
-	Sleep NoCheat/99
 
 	} ; Pos 3
 
@@ -146,7 +146,7 @@ if fail > 100
 	if fail2 > 100
 	{
 
-	Random UsingRod, 1100, 1037 
+	Random UsingRod, 1100, 1037 ;change ONLY the number
 	Send {LButton down}
 	Sleep UsingRod
 	Send {LButton up}
