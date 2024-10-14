@@ -1,10 +1,6 @@
 #SingleInstance Force
 
-;MIDDLE BUTTON OF MOUSE (a click on it) to START/PAUSE
-
-;L to END
-
-;X to check some number with a MsgBox (kinda useless)
+;CLOSE THE TOGGLE QUEST, CHAT, AND LIST OF PLAYER
 
 ; GO TO LINE +70 TO CHANGE HOW MUCH "FORCE" U WILL USE AT THE ROD (when u are fishing, not when throwing)
 
@@ -51,6 +47,7 @@ if (ErrorLevel = 0)
 	}
 
 Random NoCheat, 1, 5 
+
 
 if (pos != LastPos)
 {
