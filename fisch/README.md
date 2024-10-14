@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3f6a1d66-c928-4081-a2ed-9f9fa9a22b64)![image](https://github.com/user-attachments/assets/8f56491b-bf86-478c-94f5-bb574e0fecc5)# HOW TO USE 
+# HOW TO USE 
 
 (sorry for making a so shit script) (that's not a joke) (report bugs on my discord "leyley_the_trash_scripter" dont be shy)
 
