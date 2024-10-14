@@ -1,4 +1,4 @@
-﻿;~ Esse script foi criado com o intuito de ajudar a todos aqueles que vão utilizar os comandos PixelSearch ou ImageSearch, facilitando na hora de pegar uma cor ou uma área para fazer uma busca.
+;~ Esse script foi criado com o intuito de ajudar a todos aqueles que vão utilizar os comandos PixelSearch ou ImageSearch, facilitando na hora de pegar uma cor ou uma área para fazer uma busca.
 
 ;~ As ações e o seu funcionamento são mostrados no Vídeo Tutorial 17, na seguinte minutagem:  https://youtu.be/57AHZv4G1GM?t=506
 
@@ -13,6 +13,10 @@
 ;~ RButton:: (Linha 101)(Botão Direito do Mouse) - Serve para selecionar uma área.
 ;~ End:: (Linha 137)(Tecla End) - Serve para finalizar o script.
 
+; I AM NOT THE OWNER OF THIS SCRIPT, credits for Automações Tutoriais 
+
+; Cool guy <3
+
 #SingleInstance Force
 
 CoordMode, Mouse, Screen
@@ -20,36 +24,24 @@ CoordMode, Pixel, Screen
 
 global tool := 0
 
-MsgBox, 64, Pixel Tools, FERRAMENTA LIGADA!
+MsgBox, 64, Pixel Tools, USE RIGHT MOUSE BUTTON TO SELECT!
 
 MButton::
 
 tool++
 
-if (tool > 2)
-{
-	tool := 0
-}
-if (tool = 0)
+if (tool = 2)
 {
 	ToolTip
 	SetTimer, area, Off
-	MsgBox, 64, Pixel Tools, FERRAMENTA DESLIGADA!
+	MsgBox, 64, Pixel Tools, SCRIPT KILLED!
+	ExitApp
 }
+
 if (tool = 1)
 {
-	Gui, Area:Destroy
-	MsgBox, 64, Pixel Tools, BUSCA COR
-	Gui, Cor:New
-	Gui, Cor:+AlwaysOnTop +Resize
-	Gui, Cor:Show, w200 h200 x0 y0, COR
-	SetTimer, gui_cor, 0
-}
-if (tool = 2)
-{
-	Gui, Cor:Destroy
 	SetTimer, gui_cor, Off
-	MsgBox, 64, Pixel Tools, BUSCAR ÁREA
+	MsgBox, 64, Pixel Tools, SEARCH FOR AREA
 	SetTimer, area, 0
 	Gui, Area:New
 	Gui, Area:-Caption Border +AlwaysOnTop
