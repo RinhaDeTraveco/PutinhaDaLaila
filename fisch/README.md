@@ -8,7 +8,7 @@
 
 3 - Hold right button and select ONLY the region where the "shake" appears, dont select the entire screen and, don't close this script now
 
-4 - go to the line 30 and change this values "6, 104, 1361, 566" for the new value u just copied by selecting the area
+4 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area
 
 5 - Hold right button and select this area 
 
@@ -16,7 +16,7 @@
 ![image](https://github.com/user-attachments/assets/ddf090eb-2161-46c8-aaad-5d119d3cfebd)
 (now u can close this script)
 
-6 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area
+6 - go to the line 30 and change this values "6, 104, 1361, 566" for the new value u just copied by selecting the area
 
 7 - press the windows button and type "spy" and click on "AutoHotKey Window Spy" (if u cant find this app, use the "select_area.ahk" script, and copy a small area, the last 
 
