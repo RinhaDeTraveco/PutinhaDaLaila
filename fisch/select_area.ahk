@@ -18,30 +18,46 @@
 ; Cool guy <3
 
 #SingleInstance Force
-
 CoordMode, Mouse, Screen
 CoordMode, Pixel, Screen
 
 global tool := 0
+global MM := 0
 
-MsgBox, 64, Pixel Tools, USE RIGHT MOUSE BUTTON TO SELECT!
+MsgBox, 64, Pixel Tools, FERRAMENTA LIGADA!
 
 MButton::
 
-tool++
+MM++
 
-if (tool = 2)
+if MM = 2
+{
+ExitApp
+}
+tool := 2
+
+if (tool > 2)
+{
+	tool := 0
+}
+if (tool = 0)
 {
 	ToolTip
 	SetTimer, area, Off
-	MsgBox, 64, Pixel Tools, SCRIPT KILLED!
-	ExitApp
+	MsgBox, 64, Pixel Tools, FERRAMENTA DESLIGADA!
 }
-
 if (tool = 1)
 {
-	SetTimer, gui_cor, Off
-	MsgBox, 64, Pixel Tools, SEARCH FOR AREA
+	Gui, Area:Destroy
+	MsgBox, 64, Pixel Tools, BUSCA COR
+	Gui, Cor:New
+	Gui, Cor:+AlwaysOnTop +Resize
+	Gui, Cor:Show, w200 h200 x0 y0, COR
+	SetTimer, gui_cor, 0
+}
+if (tool = 2)
+{
+	MsgBox, 64, Pixel Tools, BUSCAR ÁREA
 	SetTimer, area, 0
 	Gui, Area:New
 	Gui, Area:-Caption Border +AlwaysOnTop
