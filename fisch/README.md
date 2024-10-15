@@ -1,4 +1,4 @@
-# HOW TO USE 
+# HOW TO USE (this is a free script, if u paid for this u got scammed)
 
 (sorry for making a so shit script) (that's not a joke) (report bugs on my discord "leyley_the_trash_scripter" dont be shy)
 
