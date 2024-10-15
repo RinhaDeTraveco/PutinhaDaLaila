@@ -34,6 +34,13 @@
 10 - do the same thing with the right side, but instead of chaging the value of the lines 34/38, change the values of **line 41 and 45** (yes, line 41 n 45 will have the same value)
 
 
+EXAMPLE of how the numbers will look like
+
+
+![fisch_IMAGE5](https://github.com/user-attachments/assets/cfba34d7-ca2d-4309-b0dc-d18557783edf)
+![fisch_IMAGE4](https://github.com/user-attachments/assets/42a86265-053f-4941-8e13-f5769cc3729a)
+
+
 GO TO LINE 147 n 150 TO CHANGE 100 FOR A BIGGER NUMBER IF YOU SCRIPT IS JUST THROWING THE ROD ON THE WATER AND GETTING IT BACK AT SAME INSTANT
 
 CLOSE THE TOGGLE QUEST, CHAT, AND LIST OF PLAYER 
