@@ -6,7 +6,7 @@
 
 ; GO TO LINE +70 TO CHANGE HOW MUCH "FORCE" U WILL USE AT THE ROD (when u are fishing, not when throwing)
 
-; USE the prefix ";change ONLY the number" to see what number you can/should change
+; Press Ctrl+F and type ";change ONLY the number" to see what number you can/should change to make your script the best optimized possibly
 
 fail := 0
 fail2 := 0
