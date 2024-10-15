@@ -6,11 +6,11 @@
 
 2 - click 2 times on the file "select_area" 
 
-3 - Hold right button and select ONLY the region where the "shake" appears, dont select the entire screen and, don't close this script now
+3 - Press middleButton of mouse. Hold right button and select ONLY the region where the "shake" appears, dont select the entire screen and, don't close this script now
 
 4 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area.
 
-5 - Hold right button and select this area 
+5 - Do the same thing with this area
 
 
 ![image](https://github.com/user-attachments/assets/ddf090eb-2161-46c8-aaad-5d119d3cfebd)
