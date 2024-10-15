@@ -41,6 +41,8 @@ EXAMPLE of how the numbers will look like
 ![fisch_IMAGE4](https://github.com/user-attachments/assets/42a86265-053f-4941-8e13-f5769cc3729a)
 
 
+for fix the delays, open the scritp, press Ctrl + F, put ';change ONLY the number' press Enter and change the number that u want. the best line to change is 107 and 109
+
 GO TO LINE 147 n 150 TO CHANGE 100 FOR A BIGGER NUMBER IF YOU SCRIPT IS JUST THROWING THE ROD ON THE WATER AND GETTING IT BACK AT SAME INSTANT
 
 CLOSE THE TOGGLE QUEST, CHAT, AND LIST OF PLAYER 
