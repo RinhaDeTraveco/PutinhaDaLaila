@@ -19,7 +19,7 @@
 
 7 - press the windows button and type "spy" and click on "AutoHotKey Window Spy"
 
-8 - but your mouse on the corner catch line
+8 - put your mouse on the corner of the catch line
 
 
 ![image](https://github.com/user-attachments/assets/33ee61e4-ba08-4b78-a0c7-3b1fc6373d2b)
