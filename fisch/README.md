@@ -8,7 +8,7 @@
 
 3 - Hold right button and select ONLY the region where the "shake" appears, dont select the entire screen and, don't close this script now
 
-4 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area
+4 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area.
 
 5 - Hold right button and select this area 
 
