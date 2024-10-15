@@ -4,9 +4,9 @@
 
 1 - download AHK (https://www.autohotkey.com)
 
-2 - click 2 times on the file "CLICK MOUSE MIDDLE BUTTON buscador de área" 
+2 - click 2 times on the file "select_area" 
 
-3 - Hold right button and select ONLY the region where the "shake" appears, don't close it now
+3 - Hold right button and select ONLY the region where the "shake" appears, dont select the entire screen and, don't close this script now
 
 4 - go to the line 30 and change this values "6, 104, 1361, 566" for the new value u just copied by selecting the area
 
@@ -14,16 +14,17 @@
 
 
 ![image](https://github.com/user-attachments/assets/ddf090eb-2161-46c8-aaad-5d119d3cfebd)
+(now u can close this script)
 
 6 - go to the line 131 and change the value "271, 545, 1052, 652" for the new value u just copied by selecting the area
 
-7 - press the windows button and type "spy" and click on "AutoHotKey Window Spy"
+7 - press the windows button and type "spy" and click on "AutoHotKey Window Spy" (if u cant find this app, use the "select_area.ahk" script, and copy a small area, the last 
 
 8 - put your mouse on the corner of the catch line
 
 
 ![image](https://github.com/user-attachments/assets/33ee61e4-ba08-4b78-a0c7-3b1fc6373d2b)
-NOW hold Ctrl and copy the value "client"
+**ONLY THE X VALUE IS USEFULL (the first number)** NOW hold Ctrl and copy the value "client" (at this example, the number will be '-49')
 
 
 ![image](https://github.com/user-attachments/assets/35c8d489-6dfe-46e4-bb05-c8e49bb51090)
