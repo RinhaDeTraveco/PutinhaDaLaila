@@ -1,4 +1,4 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 
 ; GO TO LINE 148 n 148 TO CHANGE 100 FOR A BIGGER NUMBER IF YOU SCRIPT IS JUST THROWING THE ROD ON THE WATER
 
@@ -6,7 +6,7 @@
 
 ; GO TO LINE +70 TO CHANGE HOW MUCH "FORCE" U WILL USE AT THE ROD (when u are fishing, not when throwing)
 
-; Press Ctrl+F and type ";change ONLY the number" to see what number you can/should change to make your script the best optimized possibly
+; USE the prefix ";change ONLY the number" to see what number you can/should change
 
 fail := 0
 fail2 := 0
@@ -14,6 +14,7 @@ pos := 0
 LastPos := 0
 LOLP := 0
 RCount := 0
+Onee := 1
 
 Loop 
 {
@@ -87,6 +88,9 @@ if pos = 2
 		if LastPos = 3
 			{
 
+			Send {LButton up}
+
+			Onee := 1
 			Sleep, 530+NoCheat ;change ONLY the number
 
 			Send {LButton down}
@@ -99,14 +103,14 @@ if pos = 2
 
 	} ; ZZZ = 1 pra executar isso só uma vez, essa parte ela vai botar na meiuca
 
-Random StayOnMiddle, 107, 127 
+Random StayOnMiddle, 117, 127 
 
 ; Essa parte tem que ficar loopando pra manter a barrinha no meio
 
 	Send {LButton down}
-	Sleep StayOnMiddle*1.373 ;change ONLY the number
+	Sleep StayOnMiddle*1.41 ;change ONLY the number
 	Send {LButton up}
-	Sleep StayOnMiddle*1.33 ;change ONLY the number
+	Sleep StayOnMiddle*1.3 ;change ONLY the number
 
 	LastPos := 2
 
@@ -115,9 +119,14 @@ Random StayOnMiddle, 107, 127
 if pos = 3
 	{
 
-	LastPos := 3
+		if Onee = 1
+		{
 
-	Send {LButton down}
+		LastPos := 3
+		Send {LButton down}
+		Onee := 0
+
+		}
 
 	} ; Pos 3
 
