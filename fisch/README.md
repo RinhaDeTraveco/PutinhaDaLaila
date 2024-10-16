@@ -2,6 +2,8 @@
 
 (sorry for making a so shit script) (that's not a joke) (report bugs on my discord "leyley_the_trash_scripter" dont be shy)
 
+MIDDLE BUTTON OF MOUSE TO TURN **ON/OFF** and **L** TO CLOSE IT (x used to find bugs)
+
 1 - download AHK (https://www.autohotkey.com)
 
 2 - click 2 times on the file "select_area" 
