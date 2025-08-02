@@ -1,1 +1,2 @@
-I'm really dumb so my scripts are pieces of shit (sorry)
+my script are silly 
+<img width="2445" height="3561" alt="image" src="https://github.com/user-attachments/assets/8ce25747-8678-4cb0-92f7-6482ae65ec24" />
